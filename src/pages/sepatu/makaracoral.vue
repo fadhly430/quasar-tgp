@@ -54,9 +54,24 @@
 
                 <div style="height: 40px"/>
                 <q-select outlined v-model="model" :options="options" label="Ukuran sepatu" />
+                <div style="height: 20px"/>
+                <div class="row">
+                    <div class="col-3">
+                        <q-btn-group>
+                            <q-btn outline color="grey-6" class="text-bold text-weight-bolder" label="-"/>
+                            <q-input style="width: 50px" input-class="text-center" outlined v-model="text" label=""  />
+                            <q-btn outline color="grey-6" class="text-bold text-weight-bolder" label="+"/>
+                        </q-btn-group>
+                    </div>
+                </div>
+                <div style="height: 20px"/>
+                <q-btn outline color="primary" label="Massukan Keranjang" class="full-width" />
+                <div style="height: 20px"/>
+                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" />
 
-            </div>
+            </div> 
         </div>
+        <div class="column" style="height: 50px"/>
     </div>
 </template>
 
@@ -64,7 +79,9 @@
 export default {
     data () {
     return {
-      slide: 1
+      slide: 1,
+       model: null,
+      options: []
     }
   }
 }
