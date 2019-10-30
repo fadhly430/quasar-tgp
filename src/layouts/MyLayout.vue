@@ -99,15 +99,15 @@
      <q-separator color="blue-grey-3" inset />
      <div class="column">
        <div class="column" style="height: 70px"/>
-         <div class="row" style="height: 180px">
+         <div class="row" style="height: 200px">
             <div class="col-1 q-gutter-xl"/>
             <div class="col-3">
               <div class="text-left text-overline">TENTANG KAMI</div>
-              <div class="text-left text-caption">Dalam NAH Project, kami bertujuan untuk mengacaukan </div>
-              <div class="text-left text-caption">sepatu miliaran dolar dengan bersikap transparan, </div>
-              <div class="text-left text-caption">Anda harga yang wajar menggunakan model langsung </div>
-              <div class="text-left text-caption">konsumen, dan mengembalikan semangat dan kreativitas</div>
-              <div class="text-left text-caption">dengan menjadi berani untuk mengeksplorasi.</div>
+              <div class="text-left text-caption">adalah perusahaan internasional Indonesia yang bergerak 
+                    dalam bidang desain, pengembangan, pemasaran dan penjualan alas kaki, pakaian, dan dompet. TG Project 
+                    adalah produk dari keingintahuan pemiliknya dan kecintaannya pada fashion. Mereknya telah memberinya 
+                    kesempatan untuk bepergian ke berbagai negara dan mendapatkan undangan ke berbagai acara mode yang 
+                    didominasi oleh pameran internasional.</div>
             </div>
             <div class="col-2"/>
             <div class="col-2">

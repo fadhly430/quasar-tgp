@@ -1,0 +1,44 @@
+<template>
+    <q-layout view="lhh lpR fff" class="bg-grey-3">
+      
+        <q-drawer show-if-above v-model="left" side="left" bordered content-class="bg-grey-10">
+        <div class="column" style="height: 20px"/>
+        <div class="row justify-center items-center">
+            <div class="col-1"/>
+            <div class="col-2">
+                <q-item-section avatar>
+                    <q-icon name="face" color="white"  size="30px"/>
+                </q-item-section>
+            </div>
+            <div class="col">
+                <div class="text-h6 text-white">Admin TGProject</div>
+            </div>
+        </div>
+        <div class="column" style="height: 20px"/>
+        <q-separator color="blue-grey-3" inset />
+
+
+
+        </q-drawer>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+
+    </q-layout>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      left: false
+    }
+  }
+}
+</script>
+
+
+<style lang="less" scoped>
+
+</style>
