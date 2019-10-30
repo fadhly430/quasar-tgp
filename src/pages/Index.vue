@@ -19,8 +19,8 @@
       <div class="column" style="height: 30px"/> <!-- jarak --->
         <div class="column justify-center">
             <div class="col">
-              <div class="text-h6 text-weight-regular text-center">Mendemokrasikan industri sepatu dengan menjadi merek </div>
-              <div class="text-h6 text-weight-regular text-center">transparan di Indonesia</div>
+              <div class="text-h6 text-weight-regular text-center">Mendemokrasikan industri fashion dengan menjadi tren </div>
+              <div class="text-h6 text-weight-regular text-center">di Indonesia</div>
             </div>
             <div class="column" style="height: 30px"/>
             <div class="col-4 flex flex-center">
