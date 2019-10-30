@@ -13,7 +13,16 @@ const routes = [
       { path: '/account', component: () => import('pages/account.vue') },
       { path: '/regis', component: () => import('pages/regis.vue') },
       //sepatu
-      { path: '/makara-coral', component: () => import('pages/sepatu/makaracoral.vue') }
+      { path: '/makara-coral', component: () => import('pages/sepatu/makaracoral.vue') },
+      { path: '/nolan-chery', component: () => import('pages/sepatu/nolancherywhite.vue') },
+      { path: '/nolan-beige', component: () => import('pages/sepatu/nolanbeigegray.vue') },
+      { path: '/rua-tosca', component: () => import('pages/sepatu/ruawhitetosca.vue') },
+      { path: '/rua-fushia', component: () => import('pages/sepatu/ruafushia.vue') },
+      { path: '/nolan-coral', component: () => import('pages/sepatu/nolancoral.vue') },
+      { path: '/nolan-full', component: () => import('pages/sepatu/nolanfullwhite.vue') },
+      { path: '/saka-smoke', component: () => import('pages/sepatu/sakasmoke.vue') },
+      { path: '/niliwatu', component: () => import('pages/sepatu/niliwatu.vue') },
+      { path: '/makara-reef', component: () => import('pages/sepatu/makarareef.vue') }
     ]
   }
 ]
