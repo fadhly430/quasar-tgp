@@ -15,19 +15,19 @@
 
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="ph" label="Nama Depan"  :dense="dense" />
+                <q-input outlined v-model="firstName" label="Nama Depan"  :dense="dense" />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="ph" label="Nama Belakang"  :dense="dense" />
+                <q-input outlined v-model="lastName" label="Nama Belakang"  :dense="dense" />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="ph" label="Email"  :dense="dense" />
+                <q-input outlined v-model="email" label="Email"  :dense="dense" />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
@@ -58,11 +58,15 @@
 </template>
 
 <script>
+import register_api from '../api/login/index';
+
 export default {
     data()
     {
         return{        
-        username: '',
+        firstName: '',
+        lastName:'',
+        email:'',
         password: '',
         isPwd: true,
         }
