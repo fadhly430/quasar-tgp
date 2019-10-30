@@ -1,13 +1,24 @@
-import VueResource from 'vue-resource'
-import Vue from 'vue'
+
 import {getApiNoAuth} from '../utils.js'
 
-Vue.use(VueResource)
+
 
 export default {
-    registerUser(first_name, last_name, email, password, window){
-        let self = this;
-        return getApiNoAuth().post('/users', self.first_name, self.last_name, self.email, self.password)
+    registerUser(first_name, last_name, email, password,  window){ 
+        console.log(first_name, last_name, email, password)
+     
+
+        return getApiNoAuth()
+        .post('/users/',
+        {
+            "firstName": first_name,
+            "lastName": last_name,
+            "email": email,
+            "password": password,
+            
+           })
+        
+
         .then(function(response){
             console.log(response)
             // localStorage.setItem('token', response.data.id);

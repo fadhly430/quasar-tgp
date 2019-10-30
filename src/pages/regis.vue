@@ -48,7 +48,8 @@
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4" style="width: 390px">
-                <q-btn style="background: #283b39; color: white" label="Buat Akun" class="full-width" />
+                <q-btn style="background: #283b39; color: white" label="Buat Akun" @click="onSubmit()" class="full-width" />
+                
             </div>
         </div>
 
@@ -58,7 +59,7 @@
 </template>
 
 <script>
-import register_api from '../api/login/index';
+import register from '../api/register/index';
 
 export default {
     data()
@@ -68,12 +69,24 @@ export default {
         lastName:'',
         email:'',
         password: '',
-        isPwd: true,
+        role:'',
+      
         }
+            
+    },
+
+  methods : {
+    onSubmit(){
+         let self = this;
+        register.registerUser(self.first_name, self.last_name, self.email, self.password, window).then(function (response) {
+            console.log (response)
+      return  self.$router.push('/index')
+         
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
