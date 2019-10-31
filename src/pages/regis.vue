@@ -70,6 +70,8 @@ export default {
         email:'',
         password: '',
         role:'',
+        isPwd: true
+        
       
         }
             
