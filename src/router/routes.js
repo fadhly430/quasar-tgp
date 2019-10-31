@@ -29,7 +29,10 @@ const routes = [
   path: '/admin',
     component: () => import('layouts/dashboard/admin.vue'),
     children: [
-      { path: '', component:() => import('pages/admin/index.vue')}
+      { path: '', component:() => import('pages/admin/index.vue')},
+      { path: 'tabel', component:() => import('pages/admin/tabel.vue')},
+      { path: 'message', component:() => import('pages/admin/message.vue')},
+      { path: 'order', component:() => import('pages/admin/order.vue')}
     ]
   }
 ]

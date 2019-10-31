@@ -1,5 +1,6 @@
 <template>
   <div class="q-pa-md">
+  <q-card>
    <q-carousel fluid class="sizebanner"
       animated
       v-model="slide"
@@ -16,6 +17,7 @@
       <q-carousel-slide class="responsive" name="5" img-src="./statics/5.jpg"/>
 
     </q-carousel>
+  </q-card>
       <div class="column" style="height: 30px"/> <!-- jarak --->
         <div class="column justify-center">
             <div class="col">

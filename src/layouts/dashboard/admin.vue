@@ -19,7 +19,7 @@
         <div class="column" style="height: 20px"/>
         
         <q-list padding class="menu-list">
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple @click="$router.replace('/admin')">
               <q-item-section avatar>
                 <q-icon size="30px" name="insert_chart_outlined" color="grey-3" />
               </q-item-section>
@@ -31,37 +31,37 @@
             
             <div class="column" style="height: 20px"/>
             
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple @click="$router.replace('/admin/tabel')">
               <q-item-section avatar>
-                <q-icon size="30px" name="insert_chart_outlined" color="grey-3"/>
+                <q-icon size="30px" name="dvr" color="grey-3"/>
               </q-item-section>
 
               <q-item-section>
-                <div class="text-white text-body1">Dasbor</div>
+                <div class="text-white text-body1">Table</div>
               </q-item-section>
             </q-item>
             
             <div class="column" style="height: 20px"/>
             
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple @click="$router.replace('/admin/message')">
               <q-item-section avatar>
-                <q-icon size="30px" name="insert_chart_outlined" color="grey-3"/>
+                <q-icon size="30px" name="insert_comment" color="grey-3"/>
               </q-item-section>
 
               <q-item-section>
-                <div class="text-white text-body1">Dasbor</div>
+                <div class="text-white text-body1">Message</div>
               </q-item-section>
             </q-item>
             
             <div class="column" style="height: 20px"/>
             
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple @click="$router.replace('/admin/order')">
               <q-item-section avatar>
-                <q-icon size="30px" name="insert_chart_outlined" color="grey-3"/>
+                <q-icon size="30px" name="style" color="grey-3"/>
               </q-item-section>
 
               <q-item-section>
-                <div class="text-white text-body1">Dasbor</div>
+                <div class="text-white text-body1">Order</div>
               </q-item-section>
             </q-item>
         </q-list>

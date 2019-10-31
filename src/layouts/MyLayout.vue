@@ -99,9 +99,9 @@
      <q-separator color="blue-grey-3" inset />
      <div class="column">
        <div class="column" style="height: 70px"/>
-         <div class="row" style="height: 200px">
+         <div class="row responsive" style="height: 200px">
             <div class="col-1 q-gutter-xl"/>
-            <div class="col-3">
+            <div class="col-4">
               <div class="text-left text-overline">TENTANG KAMI</div>
               <div class="text-left text-caption">adalah perusahaan internasional Indonesia yang bergerak 
                     dalam bidang desain, pengembangan, pemasaran dan penjualan alas kaki, pakaian, dan dompet. TG Project 
@@ -109,7 +109,7 @@
                     kesempatan untuk bepergian ke berbagai negara dan mendapatkan undangan ke berbagai acara mode yang 
                     didominasi oleh pameran internasional.</div>
             </div>
-            <div class="col-2"/>
+            <div class="col-1"/>
             <div class="col-2">
               <div class="text-left text-overline">MENU FOOTER</div>
               <div class="text-left text-caption">AllProduk</div>
@@ -127,6 +127,7 @@
                <q-btn style="background: #283b39; color: white" label="Langganan" />
             </div>
          </div> 
+         
          <div class="row" style="height: 100px">
           <div class="col-1 q-gutter-xl "/>
           <div class="col-10">
