@@ -16,26 +16,52 @@
         </div>
         <div class="column" style="height: 20px"/>
         <q-separator color="blue-grey-3" inset />
-
+        <div class="column" style="height: 20px"/>
         
         <q-list padding class="menu-list">
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="insert_chart_outlined" color="grey-3" />
+                <q-icon size="30px" name="insert_chart_outlined" color="grey-3" />
               </q-item-section>
 
               <q-item-section>
                 <div class="text-white text-body1">Dasbor</div>
               </q-item-section>
             </q-item>
-
+            
+            <div class="column" style="height: 20px"/>
+            
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="insert_chart_outlined" />
+                <q-icon size="30px" name="insert_chart_outlined" color="grey-3"/>
               </q-item-section>
 
               <q-item-section>
-                Dasbor
+                <div class="text-white text-body1">Dasbor</div>
+              </q-item-section>
+            </q-item>
+            
+            <div class="column" style="height: 20px"/>
+            
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon size="30px" name="insert_chart_outlined" color="grey-3"/>
+              </q-item-section>
+
+              <q-item-section>
+                <div class="text-white text-body1">Dasbor</div>
+              </q-item-section>
+            </q-item>
+            
+            <div class="column" style="height: 20px"/>
+            
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon size="30px" name="insert_chart_outlined" color="grey-3"/>
+              </q-item-section>
+
+              <q-item-section>
+                <div class="text-white text-body1">Dasbor</div>
               </q-item-section>
             </q-item>
         </q-list>

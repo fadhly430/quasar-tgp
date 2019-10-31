@@ -16,8 +16,8 @@
             <div class="row justify-center">
                 
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding ">
+                    <q-card>
                     <img src="statics/w1.jpg">
                     <q-card-actions align="around">
                     <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -26,8 +26,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w3.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -36,8 +36,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w4.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -46,8 +46,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w5.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -56,8 +56,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w6.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -73,8 +73,8 @@
             <div class="row justify-center">
                 
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w1.jpg">
                     <q-card-actions align="around">
                     <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -83,8 +83,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w3.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -93,8 +93,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w4.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -103,8 +103,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w5.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -113,8 +113,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w6.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -130,8 +130,8 @@
              <div class="row justify-center">
                 
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w1.jpg">
                     <q-card-actions align="around">
                     <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -140,8 +140,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w3.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -150,8 +150,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w4.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -160,8 +160,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w5.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -170,8 +170,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w6.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -187,8 +187,8 @@
             <div class="row justify-center">
                 
 
-                <div class="col-2">
-                    <q-card class="my-card newitem">
+                <div class="col-2 padding">
+                    <q-card>
                     <img src="statics/w1.jpg">
                     <q-card-actions align="around">
                     <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -198,7 +198,7 @@
                 </div>
 
                 <div class="col-2">
-                    <q-card class="my-card newitem">
+                    <q-card>
                     <img src="statics/w3.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -208,7 +208,7 @@
                 </div>
 
                 <div class="col-2">
-                    <q-card class="my-card newitem">
+                    <q-card>
                     <img src="statics/w4.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -218,7 +218,7 @@
                 </div>
 
                 <div class="col-2">
-                    <q-card class="my-card newitem">
+                    <q-card>
                     <img src="statics/w5.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -228,7 +228,7 @@
                 </div>
 
                 <div class="col-2">
-                    <q-card class="my-card newitem">
+                    <q-card>
                     <img src="statics/w6.jpg">
                     <q-card-actions align="around">
                         <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
@@ -262,6 +262,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.padding
+    padding: 10px
+
 .newitem
   width: 200px
   height: 200px

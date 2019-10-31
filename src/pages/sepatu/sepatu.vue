@@ -16,8 +16,8 @@
         <!-- isi -->
             <div class="row justify-center responsive">
                 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/makara-reef')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/makara-reef')">
                     <img src="statics/sepatu/s1.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -30,8 +30,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/niliwatu')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/niliwatu')">
                     <img src="statics/sepatu/s2.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -44,8 +44,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/saka-smoke')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/saka-smoke')">
                     <img src="statics/sepatu/s3.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -58,8 +58,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/makara-coral')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/makara-coral')">
                     <img src="statics/sepatu/s4.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -72,8 +72,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/nolan-coral')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/nolan-coral')">
                     <img src="statics/sepatu/s5.jpg" class="responsive">
                     <q-card-actions align="around">
                         <div class="row justify-center">
@@ -92,8 +92,8 @@
 
             <div class="row justify-center responsive">
                 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/rua-tosca')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/rua-tosca')">
                     <img src="statics/sepatu/s6.jpg" class="responsive" >
                     <q-card-actions align="around">
                         <div class="row justify-center">
@@ -106,8 +106,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/rua-fushia')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/rua-fushia')">
                     <img src="statics/sepatu/s7.jpg" class="responsive">
                     <q-card-actions align="around">
                         <div class="row justify-center">
@@ -120,8 +120,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/nolan-beige')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/nolan-beige')">
                     <img src="statics/sepatu/s8.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -134,8 +134,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/nolan-chery')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/nolan-chery')">
                     <img src="statics/sepatu/s9.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -148,8 +148,8 @@
                     </q-card>
                 </div>
 
-                <div class="col-2">
-                    <q-card class="my-card newitem" @click="$router.replace('/nolan-full')">
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/nolan-full')">
                     <img src="statics/sepatu/s10.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
