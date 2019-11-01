@@ -70,7 +70,7 @@
                 <div style="height: 20px"/>
                 <q-btn outline color="primary" label="Massukan Keranjang" class="full-width" />
                 <div style="height: 20px"/>
-                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" />
+                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" @click="$router.replace('/payment')"/>
 
             </div> 
         </div>

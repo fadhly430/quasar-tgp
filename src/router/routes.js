@@ -13,6 +13,7 @@ const routes = [
       { path: 'about', component: () => import('pages/about.vue') },
       { path: 'account', component: () => import('pages/account.vue') },
       { path: 'regis', component: () => import('pages/regis.vue') },
+      { path: 'laccount', component: () => import('pages/pageacount.vue') },
       //sepatu
       { path: 'makara-coral', component: () => import('pages/sepatu/makaracoral.vue') },
       { path: 'nolan-chery', component: () => import('pages/sepatu/nolancherywhite.vue') },
