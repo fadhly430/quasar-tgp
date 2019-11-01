@@ -72,7 +72,7 @@
         </div>
 
         <div class="column" style="height: 10px"/>
-        <div class="row" style="height: 100px">
+        <div class="row" style="height: 100px" @submit="message">
             <div class="col-2"/>
             <div class="col-8">
                 <div class="row" style="height: 70px">
@@ -100,7 +100,7 @@
                         </div>
                         <div class="column">
                             <div class="col-1">
-                                <q-btn style="background: #283b39; color: white" label="Send Message" class="full-width" />
+                                <q-btn type="sumbit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,22 @@ export default {
             phone:''
 
         }
-    }
+    },
+
+    message() 
+    {
+      let regis = this;
+      
+      postregis.postregistrasi(window).then(function(result){})
+      postlogin.login(window).then(function(result){})
+      then(function (response) {
+      return regis.$router.push("/");
+         
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }       
     
 }
 </script>

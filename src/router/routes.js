@@ -34,7 +34,8 @@ const routes = [
         { path: '', component:() => import('pages/admin/index.vue')},
         { path: 'tabel', component:() => import('pages/admin/tabel.vue')},
         { path: 'message', component:() => import('pages/admin/message.vue')},
-        { path: 'order', component:() => import('pages/admin/order.vue')}
+        { path: 'order', component:() => import('pages/admin/order.vue')},
+        { path: 'login', component:() => import('pages/admin/login.vue')},
       ]
  
   },
@@ -44,7 +45,8 @@ const routes = [
     children: [
       { path: '', component:() => import('pages/admin/tabel.vue')},
       { path: 'message', component:() => import('pages/admin/message.vue')},
-      { path: 'order', component:() => import('pages/admin/order.vue')}
+      { path: 'order', component:() => import('pages/admin/order.vue')},
+      { path: 'login', component:() => import('pages/admin/login.vue')}
     ]
   }
 ]

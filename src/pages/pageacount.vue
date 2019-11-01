@@ -12,10 +12,24 @@
         <div class="row" style="height:30px"/>
         <div class="row">
             <div class="col-1 q-gutter-xl"/>
-             <div class="col-7">
+             <div class="col-7  ">
              <q-table  :data="data" :columns="columns" row-key="name"/>   
             </div>
+            <div class="col-1 q-gutter-xl"/>
+            <div class="col-1 q-gutter-xl">
+                <q-separator  color="blue-grey-3" vertical />
+            </div>
+            <div class="col">
+                <div class="text-center text-body1 text-grey-5">Primary address</div>
+                <div style="height: 10px"/>
+                <q-separator  color="blue-grey-3"  inset />
+                <div style="height: 10px"/>
+                <div class="text-center text-body text-grey-6"> isi nya alamat</div>
+            </div>
+        
         </div>
+
+        <div class="column" style="height: 100px"/>        
     </div>
 </template>
 
