@@ -6,10 +6,10 @@ Vue.use(VueResource)
 
 export default {
 
-    loginUser(window,email,password) {
+  userlogin(window, firstName, password){
     // let self = this;
     return getApiNoAuth()
-      .get("users/", self.email, self.password)
+      .get("/users/")
       .then(function(response) {
         console.log(response);
         
@@ -20,3 +20,18 @@ export default {
       });
   }
 };
+
+
+// loginUser(window, firstName, password){
+//   return getApiNoAuth()
+//   .post('api/v9/users', {
+//     firstName : firstName,
+//     password : password
+//   })
+//   .then(function (response){
+//       console.log(response)
+//       return response.data
+//   }).catch(function(err){
+//       console.log(err)
+//   })
+// }
