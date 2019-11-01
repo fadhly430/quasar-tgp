@@ -8,6 +8,7 @@ const routes = [
       { path: 'apparel', component: () => import('pages/apparel/apparel.vue') },
       { path: 'wallet', component: () => import('pages/wallet/wallet.vue') },
       { path: 'sepatu', component: () => import('pages/sepatu/sepatu.vue') },
+      { path: 'payment', component: () => import('pages/payment.vue') },
       { path: 'hubungi', component: () => import('pages/hubungi.vue') },
       { path: 'about', component: () => import('pages/about.vue') },
       { path: 'account', component: () => import('pages/account.vue') },
@@ -26,11 +27,21 @@ const routes = [
     ]
   },
   {
-  path: '/admin',
+    path: '/owner',
+      component: () => import('layouts/dashboard/owner.vue'),
+      children: [
+        { path: '', component:() => import('pages/admin/index.vue')},
+        { path: 'tabel', component:() => import('pages/admin/tabel.vue')},
+        { path: 'message', component:() => import('pages/admin/message.vue')},
+        { path: 'order', component:() => import('pages/admin/order.vue')}
+      ]
+ 
+  },
+  {
+   path: '/admin',
     component: () => import('layouts/dashboard/admin.vue'),
     children: [
-      { path: '', component:() => import('pages/admin/index.vue')},
-      { path: 'tabel', component:() => import('pages/admin/tabel.vue')},
+      { path: '', component:() => import('pages/admin/tabel.vue')},
       { path: 'message', component:() => import('pages/admin/message.vue')},
       { path: 'order', component:() => import('pages/admin/order.vue')}
     ]

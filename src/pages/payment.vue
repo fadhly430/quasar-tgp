@@ -1,0 +1,195 @@
+<template>
+    <div class="q-pa-md">
+        <div class="column" style="height: 100px"/>
+        <div class="row justify-center">
+            <div class="col-1 q-col-gutter-xl"/>
+            <div class="col-7">
+                <div class="column">
+                    <div class="col-1">
+                        <div class="text-h4">LOGO</div>
+                    </div>
+                    <div class="col-1" style="height:20px"/>
+                    <div class="col-1" style="height:40px">
+                        <div class="text-left text-h6">Shipping address</div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-6 q-col-gutter-xl">
+                             <q-input outlined v-model="fnama" placeholder="Nama Depan" :dense="dense" style="200px" />
+                            </div>
+                            <div class="col-1 q-gutter-md"/>
+                            <div class="col-6 q-col-gutter-xl">
+                             <q-input outlined v-model="lnama" placeholder="Nama Belakang" :dense="dense" style="200px" />
+                            </div>
+                        </div>
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-input outlined v-model="alamat" placeholder="Alamat" :dense="dense"/>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-input outlined v-model="kecamatan" placeholder="Kecamatan" :dense="dense"/>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-input outlined v-model="kota" placeholder="Kota" :dense="dense"/>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-4 q-gutter-xl">
+                                <q-select outlined v-model="negara" :options="negara" placeholder="Negara" :dense="dense"/>
+                            </div>
+                            <div class="col-1 q-col-gutter-md"/>
+                            
+                            <div class="col-4 q-gutter-xl">
+                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Privonsi" :dense="dense"/>
+                            </div>
+                            <div class="col-1 q-col-gutter-md"/>
+                            
+                            <div class="col-4 q-gutter-xl">
+                                <q-input outlined v-model="kodepose"  placeholder="Kode pos" :dense="dense"/>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-input outlined v-model="kota" placeholder="Kota" :dense="dense"/>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-select outlined v-model="shiping" :options="ship" placeholder="Privonsi" :dense="dense"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row" style="height: 25px"/>
+
+                        <div class="row">
+                            <div class="col-8 q-gutter-md"/>
+                            <div class="col-1 q-gutter-xs"/>
+                            <div class="col-3">
+                                <q-btn style="background: #283b39; color: white" label="Confrim Shiping" size="15px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 q-gutter-xl">
+                 <q-separator  color="blue-grey-3" vertical inset />
+            </div>
+            <div class="col">
+                <div class="row">
+                   <div class="col-3">
+                       <q-card>
+
+                       </q-card>
+                </div>
+                <div class="col-4">
+                    <div class="text-body1 text-bold"> nama produk </div>
+                </div>
+                <div class="col-2"/>
+                <div class="col-2">
+                    <div class="text-body2 text-bold">Harga</div>
+                </div>
+                </div>
+
+            <div class="column" style="height: 50px"/>
+            <div class="row">
+                <div class="col">
+                    <q-separator color="grey-5" />
+                </div>
+            </div>
+            <div class="column" style="height: 30px"/>
+
+            <div class="row">
+                <div class="col-8">
+                    <q-input outlined v-model="diskon"  placeholder="Kode Diskon" :dense="dense"/>
+                </div>
+                <div class="col-1 q-gutter-lg"/>
+                <div class="col-1">
+                <q-btn style="background: #283b39; color: white" class="text-body2" label="Apply" size="21px"/>
+                </div>
+            </div>
+            <div class="column" style="height: 30px"/>
+            <q-separator color="grey-5" />
+            <div class="column" style="height: 30px"/>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="text-left text-bold">Subtotal</div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="text-right text-bold">angka</div>
+                </div>
+
+            </div>
+            <div class="column" style="height: 30px"/>
+            <div class="row">
+                <div class="col-6">
+                    <div class="text-left text-bold">Shipping</div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="text-right text-bold">angka</div>
+                </div>
+            </div>
+
+            <div class="column" style="height: 30px"/>
+            <q-separator color="grey-5" />
+            <div class="column" style="height: 30px"/>
+
+             <div class="row">
+                <div class="col-6">
+                    <div class="text-left text-bold">Total</div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="text-right text-bold">angka</div>
+                </div>
+             </div>
+        </div>
+
+        </div>
+        <div class="column" style="height: 100px"/><!-- jarak --->
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            prov: null,
+            ship: null,
+
+            fnama:'',
+            lnama:'',
+            alamat:'',
+            kecamatan:'',
+            kota:'',
+            negara:'',
+            provinsi:'',
+            kodepose:'',
+            kota:'',
+            diskon:'',
+        }
+    }
+}
+</script>
+
+<style lang="less" scoped>
+
+</style>

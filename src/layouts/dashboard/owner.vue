@@ -11,7 +11,7 @@
                 </q-item-section>
             </div>
             <div class="col">
-                <div class="text-h6 text-white">Admin TGProject</div>
+                <div class="text-h6 text-white">Owner TGProject</div>
             </div>
         </div>
         <div class="column" style="height: 20px"/>
@@ -19,8 +19,19 @@
         <div class="column" style="height: 20px"/>
         
         <q-list padding class="menu-list">
+            <q-item clickable v-ripple @click="$router.replace('/owner')">
+              <q-item-section avatar>
+                <q-icon size="30px" name="insert_chart_outlined" color="grey-3" />
+              </q-item-section>
+
+              <q-item-section>
+                <div class="text-white text-body1">Dasbor</div>
+              </q-item-section>
+            </q-item>
             
-            <q-item clickable v-ripple @click="$router.replace('/admin/')">
+            <div class="column" style="height: 20px"/>
+            
+            <q-item clickable v-ripple @click="$router.replace('/owner/tabel')">
               <q-item-section avatar>
                 <q-icon size="30px" name="dvr" color="grey-3"/>
               </q-item-section>
@@ -32,7 +43,7 @@
             
             <div class="column" style="height: 20px"/>
             
-            <q-item clickable v-ripple @click="$router.replace('/admin/message')">
+            <q-item clickable v-ripple @click="$router.replace('/owner/message')">
               <q-item-section avatar>
                 <q-icon size="30px" name="insert_comment" color="grey-3"/>
               </q-item-section>
@@ -44,7 +55,7 @@
             
             <div class="column" style="height: 20px"/>
             
-            <q-item clickable v-ripple @click="$router.replace('/admin/order')">
+            <q-item clickable v-ripple @click="$router.replace('/owner/order')">
               <q-item-section avatar>
                 <q-icon size="30px" name="style" color="grey-3"/>
               </q-item-section>

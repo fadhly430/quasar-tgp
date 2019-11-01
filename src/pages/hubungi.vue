@@ -77,17 +77,17 @@
             <div class="col-8">
                 <div class="row" style="height: 70px">
                     <div class="col-4">
-                        <q-input outlined v-model="ph" placeholder="Your name" :dense="dense" style="300px" />
+                        <q-input outlined v-model="nama" placeholder="Your name" :dense="dense" style="300px" />
                     </div>
                     <div class="col-1 q-col-gutter-xl"/>
                     <div class="col-4">
-                        <q-input outlined v-model="ph" placeholder="Your email" :dense="dense" style="300px" />
+                        <q-input outlined v-model="email" placeholder="Your email" :dense="dense" style="300px" />
                     </div>
                 </div>
 
                 <div class="row" style="height: 70px">
                     <div class="col-9 q-col-gutter-xl">
-                        <q-input outlined v-model="ph" placeholder="Your phone" :dense="dense" style="300px" />
+                        <q-input outlined v-model="phone" placeholder="Your phone" :dense="dense" style="300px" />
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                     <div class="col-9 q-col-gutter-xl">
                         <div class="column" style="height: 70px">
                             <div class="col-4">
-                                <q-input outlined v-model="ph" placeholder="Your message" :dense="dense"  />
+                                <q-input outlined v-model="message" placeholder="Your message" :dense="dense"  />
                             </div>
                         </div>
                         <div class="column">
@@ -117,6 +117,16 @@
 
 <script>
 export default {
+    data() 
+    {
+        return{
+            message:'',
+            name:'',
+            email:'',
+            phone:''
+
+        }
+    }
     
 }
 </script>
