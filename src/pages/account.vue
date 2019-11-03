@@ -78,7 +78,7 @@ export default {
            .loginUser(window, self.firstName, self.password) .then(function (result){
                     console.log(result)
                     if (result){
-                        self.$router.push("/");
+                        self.$router.push("/TGProject");
                     }
                 })
                 .catch(function(err) {

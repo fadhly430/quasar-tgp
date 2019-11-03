@@ -1,6 +1,23 @@
 
 const routes = [  
   {
+    path: '/TGProject',
+    component: () => import('layouts/copy.vue'),
+    children: [
+      { path: '', component: () => import('pages/Index.vue') },
+      { path: 'apparel', component: () => import('pages/apparel/apparel.vue') },
+      { path: 'wallet', component: () => import('pages/wallet/wallet.vue') },
+      { path: 'sepatu', component: () => import('pages/sepatu/sepatu.vue') },
+      { path: 'payment', component: () => import('pages/payment.vue') },
+      { path: 'hubungi', component: () => import('pages/hubungi.vue') },
+      { path: 'about', component: () => import('pages/about.vue') },
+      { path: 'account', component: () => import('pages/account.vue') },
+      { path: 'regis', component: () => import('pages/regis.vue') },
+      { path: 'laccount', component: () => import('pages/pageacount.vue') },
+    ]
+  },
+
+  {
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
