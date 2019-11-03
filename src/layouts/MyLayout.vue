@@ -25,7 +25,7 @@
             <q-item-label>Search</q-item-label>
           </q-item-section>
           <q-menu transition-show="jump-down" transition-hide="jump-up">
-            <q-input  dense  v-model="text" input-class="text-right" class="q-ml-md">
+            <q-input    v-model="text" input-class="text-right" class="q-ml-md">
               <template v-slot:append>
                 <q-icon v-if="text === ''" name="search" />
                 <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
@@ -34,7 +34,7 @@
           </q-menu>
       </q-item>
 
-       <q-item dense flat round clickable @click="drawer = !drawer">
+       <q-item  flat round clickable @click="drawer = !drawer">
          <q-item-section>
             <q-item-label>Cart</q-item-label>
           </q-item-section>
@@ -122,7 +122,7 @@
               <div class="text-left text-caption">Berlangganan untuk menerima pembaruan,</div>
               <div class="text-left text-caption">akses ke penawaran eksklusif, dan banyak lagi.</div>
               <div style="height: 10px"/>
-               <q-input outlined v-model="text" placeholder="Enter your email addres" :dense="dense" style="300px" />
+               <q-input outlined v-model="text" placeholder="Enter your email addres" := style="300px" />
                <div style="height: 10px"/>
                <q-btn style="background: #283b39; color: white" label="Langganan" />
             </div>
