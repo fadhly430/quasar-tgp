@@ -47,12 +47,12 @@
 
                         <div class="row">
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="negara" :options="negara" placeholder="Negara" :dense="dense"/>
+                                <q-select outlined v-model="negara" :options="nega" placeholder="Negara" :dense="dense" label="Negara"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Privonsi" :dense="dense"/>
+                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Privonsi" :dense="dense" label="Probinsi"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
@@ -71,7 +71,7 @@
 
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="shiping" :options="ship" placeholder="Privonsi" :dense="dense"/>
+                                <q-select outlined v-model="shipping" :options="ship" placeholder="shipping" :dense="dense" label="Shipping"/>
                             </div>
                         </div>
                         
@@ -172,6 +172,7 @@
 export default {
     data(){
         return{
+            nega: null,
             prov: null,
             ship: null,
 
@@ -185,6 +186,12 @@ export default {
             kodepose:'',
             kota:'',
             diskon:'',
+
+            nega: ['Indonesia'],
+            prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
+        ,'Jawa Tengah','Jawa Timur','Kalimantan Timur',' Kalimantan Utara','Kepulauan Riau','Lampung','Maluku','Maluku Utara','Nusa Tenggara Barat','Nusa Tenggara Timur','Papua','Papua Barat','Riau','Sulawesi Barat','Sulewasi Selatan','Sulawesi Selatan'
+        ,'Sulawesi Tengah','Sulawesi Tenggara','Sulawesi Utara','Sumatra Barat','Sumatra Selatan','Sumatra Selatan','Sumatra Utara','Yogyakarta'],
+            ship:['JNE (Regular) - Rp. 13.000']
         }
     }
 }

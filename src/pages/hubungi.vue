@@ -75,19 +75,19 @@
         <div class="row" style="height: 100px" @submit="message">
             <div class="col-2"/>
             <div class="col-8">
-                <div class="row" style="height: 70px">
+                <div class="row" style="height: 70px" @submit=message>
                     <div class="col-4">
-                        <q-input outlined v-model="nama" placeholder="Your name" :dense="dense" style="300px" />
+                        <q-input outlined v-model="Nama" placeholder="Your name" :dense="dense" style="300px" />
                     </div>
                     <div class="col-1 q-col-gutter-xl"/>
                     <div class="col-4">
-                        <q-input outlined v-model="email" placeholder="Your email" :dense="dense" style="300px" />
+                        <q-input outlined v-model="Email" placeholder="Your email" :dense="dense" style="300px" />
                     </div>
                 </div>
-
+                
                 <div class="row" style="height: 70px">
                     <div class="col-9 q-col-gutter-xl">
-                        <q-input outlined v-model="phone" placeholder="Your phone" :dense="dense" style="300px" />
+                        <q-input outlined v-model="Phone" placeholder="Your phone" :dense="dense" style="300px" />
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                     <div class="col-9 q-col-gutter-xl">
                         <div class="column" style="height: 70px">
                             <div class="col-4">
-                                <q-input outlined v-model="message" placeholder="Your message" :dense="dense"  />
+                                <q-input outlined v-model="Message" placeholder="Your message" :dense="dense"  />
                             </div>
                         </div>
                         <div class="column">
@@ -105,37 +105,34 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>        
         
-              
-
-        <div class="column" style="height: 300px"/><!-- jarak --->
+        <div class="column" style="height: 300px"/>
     </div>
 </template>
 
 <script>
+import message from '../api/message/index';
+
 export default {
     data() 
     {
         return{
-            message:'',
-            name:'',
-            email:'',
-            phone:''
-
+            Message:"",
+            Name:"",
+            Email:"",
+            Phone:""
         }
     },
-
-    message() 
-    {
-      let regis = this;
+    methods : {
+        onSubmit(){
+      let message = this;
       
-      postregis.postregistrasi(window).then(function(result){})
-      postlogin.login(window).then(function(result){})
+      message.postmessagedata(window).then(function(result){})
+     postmessagedata(window).then(function(result){})
       then(function (response) {
-      return regis.$router.push("/");
+      return message.$router.push("/");
          
       })
       .catch(function (error) {
@@ -143,6 +140,7 @@ export default {
       });
     }       
     
+    }
 }
 </script>
 
