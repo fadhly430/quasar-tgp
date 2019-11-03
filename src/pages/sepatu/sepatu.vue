@@ -191,4 +191,7 @@ export default {
 .newitem
   width: 200px
   height: 200px
+
+.padding
+    padding: 5px
 </style>
