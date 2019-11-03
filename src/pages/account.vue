@@ -75,29 +75,7 @@ export default {
         }
     },
 
-<<<<<<< HEAD
-=======
-       methods : {
-        onSubmit(){
-            let self = this;
-            login_api
-           .loginUser(window, self.email, self.password) .then(function (result){
-                    console.log(result)
-                    if (result){
-                        self.$router.push("/TGProject");
-                    }
-                })
-                .catch(function(err) {
-                    console.log(err);
-                });
-        }
-       }
-
-}
-</script>
->>>>>>> fd256088ed54b5604b3ccc7a23e069b6539ed4a8
-
-         methods : {
+    methods : {
     onSubmit() {
       let self = this;
       login
@@ -114,6 +92,6 @@ export default {
       });
     }
   }
- }
 
+}
 </script>
