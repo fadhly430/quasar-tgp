@@ -16,7 +16,7 @@
 
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="firstName" label="Username"  :dense="dense" />
+                <q-input outlined v-model="email" label="Email"  :dense="dense" />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
@@ -58,14 +58,14 @@
 </template>
 
 <script>
-const API_URL = 'http://localhost:8888/api/v9/users';
+
 import login_api from '../api/login/index'
 import axios from 'axios'
 export default {
     data()
     {
         return{        
-        firstName: '',
+        email: '',
         password: '',
         isPwd: true,
         }
@@ -75,7 +75,7 @@ export default {
         onSubmit(){
             let self = this;
             login_api
-           .loginUser(window, self.firstName, self.password) .then(function (result){
+           .loginUser(window, self.email, self.password) .then(function (result){
                     console.log(result)
                     if (result){
                         self.$router.push("/TGProject");
@@ -89,3 +89,5 @@ export default {
 
 }
 </script>
+
+

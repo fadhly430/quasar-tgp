@@ -23,7 +23,7 @@ export function getApiNoAuth(){
         timeout: 10000,
         withCredentials: false,
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': 'http://localhost:8080',
             'COntent-Type': 'application/json'
         }
     })
@@ -60,7 +60,7 @@ export function getApi2(token, params){
         withCredentials: false,
         params: params,
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': '',
             'Content-Type': 'application/json; charset=utf-8'
         }
     })
