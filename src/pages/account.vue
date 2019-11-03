@@ -36,8 +36,11 @@
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4" style="width: 390px">
-                <q-btn style="background: #283b39; color: white" label="Login" @click="OnSubmit()" class="full-width" />
+                <q-form  @submit="onSubmit" >
+                <q-btn style="background: #283b39; color: white" label="Login" type="submit" class="full-width" />
+            </q-form>
             </div>
+
         </div>
 
 <!-- btn login -->
@@ -59,35 +62,37 @@
 
 <script>
 
-import login_api from '../api/login/index'
-import axios from 'axios'
+import login from '../api/login/index'
+
 export default {
     data()
     {
         return{        
         email: '',
         password: '',
-        isPwd: true,
+        roles:'',
+        isPwd: true
         }
     },
 
-       methods : {
-        onSubmit(){
-            let self = this;
-            login_api
-           .loginUser(window, self.email, self.password) .then(function (result){
-                    console.log(result)
-                    if (result){
-                        self.$router.push("/");
-                    }
-                })
-                .catch(function(err) {
-                    console.log(err);
-                });
-        }
-       }
 
-}
+         methods : {
+    onSubmit() {
+      let self = this;
+      login
+      .loginUser(window, self.email, self.password )
+      .then(function(result)
+        {
+            console.log(result);   
+            if(result){
+                self.$router.push('admin')
+            }
+        })
+      .catch(function(err){
+        console.log(err);
+      });
+    }
+  }
+ }
+
 </script>
-
-
