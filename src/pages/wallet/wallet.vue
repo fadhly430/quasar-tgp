@@ -16,7 +16,7 @@
            <div class="row justify-center responsive">
                 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rua-tosca')">
+                    <q-card  @click="$router.replace('/keiocivision')">
                     <img src="statics/wallet/w1.jpg" class="responsive" >
                     <q-card-actions align="around">
                         <div class="row justify-center">
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rua-fushia')">
+                    <q-card  @click="$router.replace('/keionami')">
                     <img src="statics/wallet/w2.jpg" class="responsive">
                     <q-card-actions align="around">
                         <div class="row justify-center">
@@ -44,12 +44,12 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-beige')">
+                    <q-card  @click="$router.replace('/keiohexablack')">
                     <img src="statics/wallet/w3.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
                             <div class="col">
-                        <div class="text-center text--subtitle1">Nolan Beige Gray</div>
+                        <div class="text-center text--subtitle1">Keio Hexa Black</div>
                         <div class="text-center" >Rp. 169.900</div>
                     </div>
                         </div>
@@ -58,12 +58,12 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-chery')">
+                    <q-card  @click="$router.replace('/clauszara')">
                     <img src="statics/wallet/w4.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
                             <div class="col">
-                                <div class="text-center text--subtitle1">Keio Hexa Black</div>
+                                <div class="text-center text--subtitle1">Claus Zara</div>
                                 <div class="text-center" >Rp. 169.900</div>
                             </div>
                          </div>
@@ -72,12 +72,12 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-full')">
+                    <q-card  @click="$router.replace('/adlermojave')">
                     <img src="statics/wallet/w5.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
                             <div class="col">
-                                <div class="text-center text--subtitle1">Claus Zara</div>
+                                <div class="text-center text--subtitle1">Adler Mojave</div>
                                 <div class="text-center" >Rp. 169.900</div>
                             </div>
                         </div>
@@ -92,12 +92,12 @@
             <div class="row justify-center responsive">
                 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rua-tosca')">
+                    <q-card  @click="$router.replace('/liviamac')">
                     <img src="statics/wallet/w6.jpg" class="responsive" >
                     <q-card-actions align="around">
                         <div class="row justify-center">
                             <div class="col">
-                                <div class="text-center text--subtitle1">Adler Mojave</div>
+                                <div class="text-center text--subtitle1">Livia Mac</div>
                                 <div class="text-center" >Rp. 169.900</div>
                         </div>
                         </div>
@@ -106,12 +106,12 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rua-fushia')">
+                    <q-card  @click="$router.replace('/clausnami')">
                     <img src="statics/wallet/w7.jpg" class="responsive">
                     <q-card-actions align="around">
                         <div class="row justify-center">
                             <div class="col">
-                                <div class="text-center text--subtitle1">Livia Mac</div>
+                                <div class="text-center text--subtitle1">Clausa Nami</div>
                                 <div class="text-center" >Rp. 169.900</div>
                              </div>
                         </div>
@@ -120,12 +120,12 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-beige')">
+                    <q-card  @click="$router.replace('/carrieruler')">
                     <img src="statics/wallet/w8.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
                             <div class="col">
-                        <div class="text-center text--subtitle1">Claus Nami</div>
+                        <div class="text-center text--subtitle1">Carrie Ruler</div>
                         <div class="text-center" >Rp. 169.900</div>
                     </div>
                         </div>
@@ -134,7 +134,7 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-chery')">
+                    <q-card  @click="$router.replace('/adlercaren')">
                     <img src="statics/wallet/w9.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-full')">
+                    <q-card  @click="$router.replace('/dwightcision')">
                     <img src="statics/wallet/w10.jpg" class="responsive">
                     <q-card-actions align="around">
                          <div class="row justify-center">
@@ -188,7 +188,7 @@ export default {
 
 <style lang="sass" scoped>
 .padding
-    padding: 10px
+    padding: 5px
 
 .newitem
   width: 200px

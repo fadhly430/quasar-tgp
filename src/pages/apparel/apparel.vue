@@ -14,54 +14,74 @@
            <div class="column" style="height: 30px"/><!-- jarak --->
         
         <!-- isi -->
-            <div class="row justify-center">
+            <div class="row justify-center responsive">
                 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j3.jpg">
+                    <q-card  @click="$router.replace('/crazyasiancoach')">
+                    <img src="statics/apparel/j1.jpg" class="responsive" >
                     <q-card-actions align="around">
-                    <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                    <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                        <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Crazy Asian Coach</div>
+                                <div class="text-center" >Rp. 475.000</div>
+                        </div>
+                        </div>
+                        </q-card-actions>
+                    </q-card>
+                </div>
+
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/taigacoach')">
+                    <img src="statics/apparel/j2.jpg" class="responsive">
+                    <q-card-actions align="around">
+                        <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Taiga Coach</div>
+                                <div class="text-center" >Rp. 475.000</div>
+                             </div>
+                        </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j5.jpg">
+                    <q-card  @click="$router.replace('/gomenasaibomber')">
+                    <img src="statics/apparel/j3.jpg" class="responsive">
                     <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                         <div class="row justify-center">
+                            <div class="col">
+                        <div class="text-center text--subtitle1">Gomenasai Bomber</div>
+                        <div class="text-center" >Rp. 465.000</div>
+                    </div>
+                        </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j6.jpg">
+                    <q-card  @click="$router.replace('/rilekrangerbomber')">
+                    <img src="statics/apparel/j4.jpg" class="responsive">
                     <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                         <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Rilek Ranger Bomber</div>
+                                <div class="text-center" >Rp. 465.000</div>
+                            </div>
+                         </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j1.jpg">
+                    <q-card  @click="$router.replace('/antimabubomber')">
+                    <img src="statics/apparel/j5.jpg" class="responsive">
                     <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j2.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                         <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Anti Mabu Bomber</div>
+                                <div class="text-center" >Rp. 465.000</div>
+                            </div>
+                        </div>
                     </q-card-actions>
                     </q-card>
                 </div>
@@ -70,166 +90,74 @@
 
              <div class="column" style="height: 70px"/><!-- jarak --->
 
-            <div class="row justify-center">
+            <div class="row justify-center responsive">
                 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j3.jpg">
+                    <q-card  @click="$router.replace('/neotokyobomber')">
+                    <img src="statics/apparel/j6.jpg" class="responsive" >
                     <q-card-actions align="around">
-                    <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                    <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                        <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Neotokyo Bomber</div>
+                                <div class="text-center" >Rp. 465.000</div>
+                        </div>
+                        </div>
+                        </q-card-actions>
+                    </q-card>
+                </div>
+
+                <div class="col-2 padding">
+                    <q-card  @click="$router.replace('/naisubomber')">
+                    <img src="statics/apparel/j7.jpg" class="responsive">
+                    <q-card-actions align="around">
+                        <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Naisu Bomber</div>
+                                <div class="text-center" >Rp. 465.000</div>
+                             </div>
+                        </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j5.jpg">
+                    <q-card  @click="$router.replace('/okeboskuhsweatshirt')">
+                    <img src="statics/apparel/j8.jpg" class="responsive">
                     <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                         <div class="row justify-center">
+                            <div class="col">
+                        <div class="text-center text--subtitle1">Oke Boskuh Sweatshirt</div>
+                        <div class="text-center" >Rp. 330.000</div>
+                    </div>
+                        </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j6.jpg">
+                    <q-card  @click="$router.replace('/jutsuitsweatshirt')">
+                    <img src="statics/apparel/j9.jpg" class="responsive">
                     <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                         <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Jutsu It Sweatshirt</div>
+                                <div class="text-center" >Rp. 330.000</div>
+                            </div>
+                         </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
                 <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j1.jpg">
+                    <q-card  @click="$router.replace('/koreazipperhoodie')">
+                    <img src="statics/apparel/j10.jpg" class="responsive">
                     <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j2.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-            </div>
-
-            <div class="column" style="height: 70px"/><!-- jarak --->
-
-             <div class="row justify-center">
-                
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j3.jpg">
-                    <q-card-actions align="around">
-                    <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                    <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j5.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j6.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j1.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j2.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-            </div>
-
-            <div class="column" style="height: 70px"/><!-- jarak --->
-
-            <div class="row justify-center">
-                
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j3.jpg">
-                    <q-card-actions align="around">
-                    <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                    <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j5.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j6.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j1.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card >
-                    <img src="statics/j2.jpg">
-                    <q-card-actions align="around">
-                        <q-item-label class="text-center text-overline">Makara Coral Man</q-item-label>
-                        <q-item-label class="text-center" >Rp. 419.000</q-item-label>
+                         <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center text--subtitle1">Korea Zipper Hoodie</div>
+                                <div class="text-center" >Rp. 365.000</div>
+                            </div>
+                        </div>
                     </q-card-actions>
                     </q-card>
                 </div>
@@ -263,4 +191,7 @@ export default {
 .newitem
   width: 200px
   height: 200px
+
+.padding
+    padding: 5px
 </style>
