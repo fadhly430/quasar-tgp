@@ -100,11 +100,7 @@
                         </div>
                         <div class="column">
                             <div class="col-1">
-<<<<<<< HEAD
-                                <q-btn style="background: #283b39; color: white" label="Send Message" class="full-width" type="submit"/>
-=======
                                 <q-btn type="sumbit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
->>>>>>> 6895deb3c281f66fcd770c35133229ccfb1d93c6
                             </div>
                         </div>
                     </div>
@@ -129,7 +125,6 @@ export default {
             Phone:""
         }
     },
-<<<<<<< HEAD
     methods : {
         onSubmit(){
       let message = this;
@@ -138,29 +133,14 @@ export default {
      postmessagedata(window).then(function(result){})
       then(function (response) {
       return message.$router.push("/");
-=======
-
-    message() 
-    {
-      let regis = this;
-      
-      postregis.postregistrasi(window).then(function(result){})
-      postlogin.login(window).then(function(result){})
-      then(function (response) {
-      return regis.$router.push("/");
->>>>>>> 6895deb3c281f66fcd770c35133229ccfb1d93c6
          
       })
       .catch(function (error) {
         console.log(error);
       });
-<<<<<<< HEAD
-    }    
-}
-=======
     }       
     
->>>>>>> 6895deb3c281f66fcd770c35133229ccfb1d93c6
+    }
 }
 </script>
 
