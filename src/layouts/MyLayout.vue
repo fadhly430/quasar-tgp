@@ -4,11 +4,11 @@
     
     <q-header elevated class="bg-grey-10 text-white " height-hint="100">
       <q-toolbar align="center">
-        <div class="absolute-center">
+        <div class="absolute-center text-bold">
         <q-toolbar-title >
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-          </q-avatar>
+            <img src="/statics/IconLogo_Transparent_300x.png">
+          </q-avatar >
           TG Project
         </q-toolbar-title>
         </div>
@@ -95,7 +95,7 @@
       <router-view />
     </q-page-container>
 
-    <q-footer class="bg-white text-black">
+    <q-footer class="bg-white text-black" >
      <q-separator color="blue-grey-3" inset />
      <div class="column">
        <div class="column" style="height: 70px"/>
@@ -117,14 +117,16 @@
               <div class="text-left text-caption">Contact Us</div>
             </div>
             <div class="col-1"/>
-            <div class="col-3 q-gutter-xs">
-              <div class="text-left text-overline">NEWSLETTER</div>
+            <div class="col-3 q-gutter-xs" @submit="promosi">
+              <div class="text-left text-overline">NEWS LETTER</div>
               <div class="text-left text-caption">Berlangganan untuk menerima pembaruan,</div>
               <div class="text-left text-caption">akses ke penawaran eksklusif, dan banyak lagi.</div>
               <div style="height: 10px"/>
-               <q-input outlined v-model="text" placeholder="Enter your email addres" :dense="dense" style="300px" />
+              <q-form @submit="promosi">
+               <q-input outlined v-model="email" placeholder="Enter your email addres" :dense="dense" style="300px" />
                <div style="height: 10px"/>
-               <q-btn style="background: #283b39; color: white" label="Langganan" />
+               <q-btn type="submit" style="background: #283b39; color: white" label="Langganan" />
+              </q-form>
             </div>
          </div> 
          
@@ -161,17 +163,28 @@
 </template>
 
 <script>
+import promote from '../api/promosi/promosi';
+
 export default {
   data () {
     return {
        tab: 'mails',
-       text: '',
+       email: "",
        drawer: false
     }
   },
   methods: {
-   
-
+        promosi()
+        {
+          let prom = this;
+          promote.postpromotedata(window).then(function(result){})
+          then(function (responsive){
+            return prom.$router.push("/");
+          })
+          .catch(function (error) {
+          console.log(error);
+         });
+        }
     }
   }
 
@@ -181,19 +194,6 @@ export default {
 
 .visa
   height: 50px
-  width:  80px 
-
-// #dropdown 
-// {
-//   position: relative;
-//   display: inline-block;
-// }
-// #dropdown-content 
-// {
-//   display: none;
-//   position: absolute;
-//   z-index: 1;
-// }
-// #dropdown:hover #dropdown-content {display: block;} 
+  width:  80px  
 </style>
 

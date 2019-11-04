@@ -72,10 +72,10 @@
         </div>
 
         <div class="column" style="height: 10px"/>
-        <div class="row" style="height: 100px" @submit="message">
+        <div class="row" style="height: 100px" >
             <div class="col-2"/>
             <div class="col-8">
-                <div class="row" style="height: 70px" @submit=message>
+                <div class="row" style="height: 70px" @submit="onSubmit">
                     <div class="col-4">
                         <q-input outlined v-model="Nama" placeholder="Your name" :dense="dense" style="300px" />
                     </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="column">
                             <div class="col-1">
-                                <q-btn type="sumbit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
+                                <q-btn type="submit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
                             </div>
                         </div>
                     </div>
@@ -127,12 +127,11 @@ export default {
     },
     methods : {
         onSubmit(){
-      let message = this;
+      let massage = this;
       
       message.postmessagedata(window).then(function(result){})
-     postmessagedata(window).then(function(result){})
-      then(function (response) {
-      return message.$router.push("/");
+      then(function (resposive) {
+      return massage.$router.push("/");
          
       })
       .catch(function (error) {
