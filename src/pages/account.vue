@@ -16,7 +16,7 @@
 
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="email" label="Email"  :dense="dense" />
+                <q-input outlined v-model="email" label="Email"   />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
@@ -84,7 +84,7 @@ export default {
         {
             console.log(result);   
             if(result){
-                self.$router.push('admin')
+                self.$router.push('/TGProject')
             }
         })
       .catch(function(err){

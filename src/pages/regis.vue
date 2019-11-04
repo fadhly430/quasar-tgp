@@ -44,52 +44,55 @@
                 </q-input>
             </div>
         </div>
-        
-        <div class="row justify-center" style="height: 20px"/>
+           <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4" style="width: 390px">
-                <q-btn style="background: #283b39; color: white" label="Buat Akun" @click="onSubmit()" class="full-width" />
-                
+                <q-form  @submit="onSubmit" >
+                <q-btn style="background: #283b39; color: white" label="Login" type="submit" class="full-width" />
+            </q-form>
             </div>
+
         </div>
-
         <div class="column" style="height: 100px"/>
-
-    </div>
+         </div>
+ 
 </template>
 
 <script>
-import register from '../api/register/index';
-import axios from 'axios'
-
+import register from "../api/Register/index";
 export default {
-    data()
-    {
-        return{        
-        firstName: '',
-        lastName:'',
-        email:'',
-        password: '',
-        role:'',
-        isPwd: true
-        
-      
-        }
-            
+    name: 'register',
+    data () {
+    return {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      isPwd: true
+   
+      }
     },
-
-  methods : {
-    onSubmit(){
-         let self = this;
-        register.registerUser(self.first_name, self.last_name, self.email, self.password, window).then(function (response) {
-            console.log (response)
-      return  self.$router.push('/account')
-         
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    methods: {
+    onSubmit() {
+        let credentials = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          konfirm_password: this.konfirm_password 
+        };
+        const self = this;
+        register
+          .postUser(credentials, window)
+          .then(function(result) {
+            return result;
+          })
+          .catch(function(err) {
+            console.log(err);
+          });
+        alert('Sukses')
+        self.$router.push("/account");
+      }
     }
-  }
-}
-</script>
+   
+}</script>
