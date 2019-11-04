@@ -60,6 +60,7 @@
 
 <script>
 import register from '../api/register/index';
+import axios from 'axios'
 
 export default {
     data()
@@ -82,7 +83,7 @@ export default {
          let self = this;
         register.registerUser(self.first_name, self.last_name, self.email, self.password, window).then(function (response) {
             console.log (response)
-      return  self.$router.push('/index')
+      return  self.$router.push('/account')
          
     })
     .catch(function (error) {

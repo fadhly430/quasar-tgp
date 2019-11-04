@@ -1,4 +1,3 @@
-
 <template>
     <div class="q-pa-md">
         <div class="column" style="height: 50px"/>
@@ -16,7 +15,7 @@
 
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="email" label="Email"  :dense="dense" />
+                <q-input outlined v-model="ph" label="Username"  :dense="dense" />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
@@ -36,7 +35,7 @@
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4" style="width: 390px">
-                <q-btn style="background: #283b39; color: white" label="Login" @click="OnSubmit()" class="full-width" />
+                <q-btn style="background: #283b39; color: white" label="Login" class="full-width" @click="$router.replace('/laccount')"  />
             </div>
         </div>
 
@@ -58,36 +57,18 @@
 </template>
 
 <script>
-
-import login_api from '../api/login/index'
-import axios from 'axios'
 export default {
     data()
     {
         return{        
-        email: '',
+        username: '',
         password: '',
         isPwd: true,
         }
-    },
-
-       methods : {
-        onSubmit(){
-            let self = this;
-            login_api
-           .loginUser(window, self.email, self.password) .then(function (result){
-                    console.log(result)
-                    if (result){
-                        self.$router.push("/TGProject");
-                    }
-                })
-                .catch(function(err) {
-                    console.log(err);
-                });
-        }
-       }
-
+    }
 }
 </script>
 
+<style scoped>
 
+</style>
