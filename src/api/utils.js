@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 const API_URL = 'http://localhost:8888/api/v9/';
-const API_URL2 = 'http://localhost:3000/api/';
+const API_URL1 = 'http://localhost:3000/api/';
 
 //API loopback
-export function getApiNoAuth2(){
+export function getApiNoAuth1(){
     return axios.create({
-        baseURL: API_URL2,
+        baseURL: API_URL1,
         timeout:10000,
         withCredentials: false,
         headers: {
