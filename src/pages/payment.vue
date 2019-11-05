@@ -47,20 +47,12 @@
 
                         <div class="row">
                             <div class="col-4 q-gutter-xl">
-<<<<<<< HEAD
                                 <q-select outlined v-model="Negara" :options="Negara" placeholder="Negara"/>
-=======
-                                <q-select outlined v-model="negara" :options="nega" placeholder="Negara" :dense="dense" label="Negara"/>
->>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
-<<<<<<< HEAD
                                 <q-select outlined v-model="Provinsi" :options="Provinsi" placeholder="Provinsi"/>
-=======
-                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Provinsi" :dense="dense" label="Probinsi"/>
->>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
@@ -72,11 +64,7 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-<<<<<<< HEAD
                                 <q-select outlined v-model="Shipping" :options="Shipping" placeholder="Provinsi"/>
-=======
-                                <q-select outlined v-model="shipping" :options="ship" placeholder="shipping" :dense="dense" label="Shipping"/>
->>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
@@ -85,7 +73,7 @@
                             <div class="col-8 q-gutter-md"/>
                             <div class="col-1 q-gutter-xs"/>
                             <div class="col-3">
-                                <q-btn style="background: #283b39; color: white" label="Confrim Shipping" size="15px" type="submit" @click="onSubmit()"  />
+                                <q-btn style="background: #283b39; color: white" label="Confirm Shipping" size="15px" type="submit" @click="onSubmit()"  />
                             </div>
                         </div>
                     </div>
@@ -102,7 +90,7 @@
                        </q-card>
                 </div>
                 <div class="col-4">
-                    <div class="text-body1 text-bold"> nama produk </div>
+                    <div class="text-body1 text-bold"> Nama Produk </div>
                 </div>
                 <div class="col-2"/>
                 <div class="col-2">
@@ -181,7 +169,6 @@ export default {
             prov: null,
             ship: null,
 
-<<<<<<< HEAD
             FNama:'',
             LNama:'',
             Alamat:'',
@@ -190,25 +177,7 @@ export default {
             Negara:'',
             Provinsi:'',
             Kodepos:'',
-            Diskon:'',
-=======
-            fnama:"",
-            lnama:"",
-            alamat:"",
-            kecamatan:"",
-            kota:"",
-            negara:"",
-            provinsi:"",
-            kodepose:"",
-            kota:"",
-            diskon:"",
-
-            nega: ['Indonesia'],
-            prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
-        ,'Jawa Tengah','Jawa Timur','Kalimantan Timur',' Kalimantan Utara','Kepulauan Riau','Lampung','Maluku','Maluku Utara','Nusa Tenggara Barat','Nusa Tenggara Timur','Papua','Papua Barat','Riau','Sulawesi Barat','Sulewasi Selatan','Sulawesi Selatan'
-        ,'Sulawesi Tengah','Sulawesi Tenggara','Sulawesi Utara','Sumatra Barat','Sumatra Selatan','Sumatra Selatan','Sumatra Utara','Yogyakarta'],
-            ship:['JNE (Regular) - Rp. 13.000']
->>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
+            Diskon:''
         }
     },
     methods : {
