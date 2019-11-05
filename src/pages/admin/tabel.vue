@@ -31,7 +31,13 @@
         </div>
         <div class="column" style="height: 50px"/>
 
-        <q-table title="Treats" :data="data" :columns="columns" row-key="name"/>
+        <div class="column">
+          <div class="col-1 self-end">
+             <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addapparel')"/>
+          </div>
+        </div>
+        <q-table  :data="data" :columns="columns" row-key="name"/>
+       
 
         <div class="column" style="height: 50px"/>
         <div class="row items-center">
@@ -46,8 +52,12 @@
           </div>
         </div>
         <div class="column" style="height: 50px"/>
-
-        <q-table title="Treats" :data="data" :columns="columns" row-key="name"/>
+        <div class="column">
+          <div class="col-1 self-end">
+             <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addwallet')"/>
+          </div>
+        </div>
+        <q-table  :data="data" :columns="columns" row-key="name"/>
 
         <div class="column" style="height: 50px"/>
         <div class="row items-center">
@@ -62,8 +72,12 @@
           </div>
         </div>
         <div class="column" style="height: 50px"/>
-
-        <q-table title="Treats" :data="data" :columns="columns" row-key="name"/>
+        <div class="column">
+          <div class="col-1 self-end">
+             <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addsepatu')"/>
+          </div>
+        </div>
+        <q-table  :data="data" :columns="columns" row-key="name"/>
         
     </div> 
 </template>

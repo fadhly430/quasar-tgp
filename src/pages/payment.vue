@@ -52,7 +52,7 @@
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Privonsi" :dense="dense" label="Probinsi"/>
+                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Provinsi" :dense="dense" label="Probinsi"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             

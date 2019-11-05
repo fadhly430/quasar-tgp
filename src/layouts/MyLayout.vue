@@ -122,12 +122,8 @@
               <div class="text-left text-caption">Berlangganan untuk menerima pembaruan,</div>
               <div class="text-left text-caption">akses ke penawaran eksklusif, dan banyak lagi.</div>
               <div style="height: 10px"/>
-<<<<<<< HEAD
               <q-form @submit="promosi">
                <q-input outlined v-model="email" placeholder="Enter your email addres" :dense="dense" style="300px" />
-=======
-               <q-input outlined v-model="text" placeholder="Enter your email addres" := style="300px" />
->>>>>>> 564987137418da71711458252fc0980a47719543
                <div style="height: 10px"/>
                <q-btn type="submit" style="background: #283b39; color: white" label="Langganan" />
               </q-form>
@@ -188,6 +184,9 @@ export default {
           .catch(function (error) {
           console.log(error);
          });
+
+
+         this.email = null
         }
     }
   }

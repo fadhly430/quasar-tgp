@@ -85,7 +85,12 @@ const routes = [
       { path: '', component:() => import('pages/admin/tabel.vue')},
       { path: 'message', component:() => import('pages/admin/message.vue')},
       { path: 'order', component:() => import('pages/admin/order.vue')},
-      { path: 'login', component:() => import('pages/admin/login.vue')}
+      { path: 'login', component:() => import('pages/admin/login.vue')},
+      { path: 'addapparel', component:() => import('pages/admin/postapparel.vue')},
+      { path: 'addwallet', component:() => import('pages/admin/postwallet.vue')},
+      { path: 'addsepatu', component:() => import('pages/admin/postsepatu.vue')},
+
+
     ]
   }
 ]
