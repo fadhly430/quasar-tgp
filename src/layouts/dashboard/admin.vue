@@ -13,6 +13,15 @@
             <div class="col">
                 <div class="text-h6 text-white">Admin TGProject</div>
             </div>
+
+                  <q-item clickable tag="a" href="/#/account">
+                                      <q-item-section avatar>
+                                      </q-item-section>
+                                      <q-item-section>
+                                        <q-item-label class="text-white text-body1">Logout</q-item-label>
+                                      </q-item-section>
+                                    </q-item>
+                                    
         </div>
         <div class="column" style="height: 20px"/>
         <q-separator color="blue-grey-3" inset />
@@ -70,7 +79,19 @@ export default {
     return {
       left: false
     }
-  }
+  },
+
+   async  mounted(){
+    let getRole = await localStorage.getItem('role');
+    if(getRole !='admin' || getRole ==='owner'){
+         this.$router.push('/owner/')
+      }
+          else if(getRole !='admin' || getRole ==='customer'){
+         this.$router.push('/TGProjek')
+      } else {
+        alert('anda login sebagai admin')
+      } 
+}
 }
 </script>
 
