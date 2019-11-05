@@ -1,16 +1,16 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8080/api/v9/';
-const API_URL1 = 'http://localhost:3000/api/';
+const API_URL = 'http://localhost:8888/api/v9/';
+const API_URL2 = 'http://localhost:3000/api/';
 
 //API loopback
-export function getApiNoAuth1(){
+export function getApiNoAuth2(){
     return axios.create({
-        baseURL: API_URL1,
+        baseURL: API_URL2,
         timeout:10000,
         withCredentials: false,
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': '',
             'Content-Type': 'application/json'
         }
     })
