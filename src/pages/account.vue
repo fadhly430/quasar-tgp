@@ -91,7 +91,7 @@ export default {
               } else if (result.role=='owner'){
                 self.$router.push('/owner/')
               } else {
-                self.$router.push('/')
+                self.$router.push('/TGProject')
               }
             }
         })
