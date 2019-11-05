@@ -84,7 +84,15 @@ export default {
         {
             console.log(result);   
             if(result){
-                self.$router.push('/TGProject')
+              localStorage.setItem('email', result.email)
+              localStorage.setItem('role', result.role)
+              if(result.role=='admin'){
+                self.$router.push('/admin/')
+              } else if (result.role=='owner'){
+                self.$router.push('/owner/')
+              } else {
+                self.$router.push('/')
+              }
             }
         })
       .catch(function(err){
