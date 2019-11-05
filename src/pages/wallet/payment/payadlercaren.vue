@@ -126,7 +126,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0/div>
                 </div>
 
             </div>
@@ -137,7 +137,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0/div>
                 </div>
             </div>
 
@@ -151,7 +151,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0/div>
                 </div>
              </div>
         </div>

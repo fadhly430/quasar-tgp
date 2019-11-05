@@ -66,9 +66,17 @@ const routes = [
       { path: 'koreazipperhoodie', component: () => import('pages/apparel/koreazipperhoodie.vue') },
 //Payment
       { path: 'payadlercaren', component: () => import('pages/wallet/payment/payadlercaren.vue') },
+      { path: 'paykeiocision', component: () => import('pages/wallet/payment/paykeiocision.vue') },
+      { path: 'paykeionami', component: () => import('pages/wallet/payment/paykeionami.vue') },
+      { path: 'paykeiohexablack', component: () => import('pages/wallet/payment/paykeiohexablack.vue') },
+      { path: 'payclauszara', component: () => import('pages/wallet/payment/payclauszara.vue') },
+      { path: 'payadlermojave', component: () => import('pages/wallet/payment/payadlermojave.vue') },
+      { path: 'payliviamac', component: () => import('pages/wallet/payment/payliviamac.vue') },
+      { path: 'payclausnami', component: () => import('pages/wallet/payment/payclausnami.vue') },
+      { path: 'paycarrieruler', component: () => import('pages/wallet/payment/paycarrieruler.vue') },
+      { path: 'paydwightcision', component: () => import('pages/wallet/payment/paydwightcision.vue') },
 
-
-
+      
 
     ]
   },

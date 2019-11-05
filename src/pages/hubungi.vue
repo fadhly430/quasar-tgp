@@ -72,17 +72,10 @@
         </div>
 
         <div class="column" style="height: 10px"/>
-<<<<<<< HEAD
-        <div class="row" style="height: 100px" >
-            <div class="col-2"/>
-            <div class="col-8">
-                <div class="row" style="height: 70px" @submit="onSubmit">
-=======
         <div class="row" style="height: 100px">
             <div class="col-2"/>
             <div class="col-8">
                 <div class="row" style="height: 70px">
->>>>>>> ff0c161449a7c7ba9851be0fe37d895e33a4aa3e
                     <div class="col-4">
                         <q-input outlined v-model="Nama" placeholder="Your name"  style="300px" />
                     </div>
@@ -107,11 +100,7 @@
                         </div>
                         <div class="column">
                             <div class="col-1">
-<<<<<<< HEAD
-                                <q-btn type="submit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
-=======
                                 <q-btn style="background: #283b39; color: white" label="Send Message" class="full-width" type="submit" @click="onSubmit()"/>
->>>>>>> ff0c161449a7c7ba9851be0fe37d895e33a4aa3e
                             </div>
                         </div>
                     </div>
