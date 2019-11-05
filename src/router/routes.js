@@ -64,6 +64,12 @@ const routes = [
       { path: 'okeboskuhsweatshirt', component: () => import('pages/apparel/okeboskuhsweatshirt.vue') },
       { path: 'jutsuitsweatshirt', component: () => import('pages/apparel/jutsuitsweatshirt.vue') },
       { path: 'koreazipperhoodie', component: () => import('pages/apparel/koreazipperhoodie.vue') },
+//Payment
+      { path: 'payadlercaren', component: () => import('pages/wallet/payment/payadlercaren.vue') },
+
+
+
+
     ]
   },
   {

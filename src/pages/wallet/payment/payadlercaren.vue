@@ -6,7 +6,7 @@
             <div class="col-7">
                 <div class="column">
                     <div class="col-1">
-                        <img src="/statics/IconLogo_Transparent_300x.png">
+                         <img src="/statics/IconLogo_Transparent_300x.png">
                     </div>
                     <div class="col-1" style="height:20px"/>
                     <div class="col-1" style="height:40px">
@@ -64,13 +64,6 @@
 
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-input outlined v-model="kota" placeholder="Kota" :dense="dense"/>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 25px"/>
-
-                        <div class="row">
-                            <div class="col-12 q-gutter-xl">
                                 <q-select outlined v-model="shipping" :options="ship" placeholder="shipping" :dense="dense" label="Shipping"/>
                             </div>
                         </div>
@@ -91,18 +84,18 @@
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
             <div class="col">
-                <div class="row">
+                <div class="row items-center">
                    <div class="col-3">
-                       <q-card>
-
-                       </q-card>
+                      <q-card class="iconbarang">
+                        <q-img src="statics/wallet/w9.jpg"/>
+                    </q-card>
                 </div>
-                <div class="col-4">
-                    <div class="text-body1 text-bold"> nama produk </div>
+                <div class="col-4 ">
+                    <div class="text-body1 text-bold"> Adler Caren </div>
                 </div>
                 <div class="col-2"/>
-                <div class="col-2">
-                    <div class="text-body2 text-bold">Harga</div>
+                <div class="col-3">
+                    <div class="text-body2 text-bold">Rp. 169.900</div>
                 </div>
                 </div>
 
@@ -197,6 +190,9 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="sass" scoped>
 
+.iconbarang
+  height: 80px
+  width:  80px  
 </style>
