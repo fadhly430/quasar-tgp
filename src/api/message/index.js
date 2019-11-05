@@ -1,12 +1,19 @@
 
-import {getApiNoAuth} from '../utils.js'
+import {getApiNoAuth2} from '../utils.js'
 
 export default
 {
-    postmessagedata(window)
+    postmessagedata(window, message, name, email, phone)
     {
-    return getApiNoAuth()
-    .get('message')
+    return getApiNoAuth2()
+    .post('messages', 
+        {
+            "Name" : name,
+            "Email" : email,
+            "Phone" : phone,
+            "Message" : message
+        }
+    )
     .then(function (response)
         {
             console.log(response)
@@ -16,4 +23,5 @@ export default
         {
             console.log(err)
         })
-    }}
+    }
+}

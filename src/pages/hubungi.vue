@@ -72,22 +72,22 @@
         </div>
 
         <div class="column" style="height: 10px"/>
-        <div class="row" style="height: 100px" @submit="message">
+        <div class="row" style="height: 100px">
             <div class="col-2"/>
             <div class="col-8">
-                <div class="row" style="height: 70px" @submit=message>
+                <div class="row" style="height: 70px">
                     <div class="col-4">
-                        <q-input outlined v-model="Nama" placeholder="Your name" :dense="dense" style="300px" />
+                        <q-input outlined v-model="Nama" placeholder="Your name"  style="300px" />
                     </div>
                     <div class="col-1 q-col-gutter-xl"/>
                     <div class="col-4">
-                        <q-input outlined v-model="Email" placeholder="Your email" :dense="dense" style="300px" />
+                        <q-input outlined v-model="Email" placeholder="Your email"  style="300px" />
                     </div>
                 </div>
                 
                 <div class="row" style="height: 70px">
                     <div class="col-9 q-col-gutter-xl">
-                        <q-input outlined v-model="Phone" placeholder="Your phone" :dense="dense" style="300px" />
+                        <q-input outlined v-model="Phone" placeholder="Your phone" style="300px" />
                     </div>
                 </div>
 
@@ -95,16 +95,12 @@
                     <div class="col-9 q-col-gutter-xl">
                         <div class="column" style="height: 70px">
                             <div class="col-4">
-                                <q-input outlined v-model="Message" placeholder="Your message" :dense="dense"  />
+                                <q-input outlined v-model="Message" placeholder="Your message"/>
                             </div>
                         </div>
                         <div class="column">
                             <div class="col-1">
-<<<<<<< HEAD
-                                <q-btn style="background: #283b39; color: white" label="Send Message" class="full-width" type="submit"/>
-=======
-                                <q-btn type="sumbit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
->>>>>>> 6895deb3c281f66fcd770c35133229ccfb1d93c6
+                                <q-btn style="background: #283b39; color: white" label="Send Message" class="full-width" type="submit" @click="onSubmit()"/>
                             </div>
                         </div>
                     </div>
@@ -124,43 +120,29 @@ export default {
     {
         return{
             Message:"",
-            Name:"",
+            Nama:"",
             Email:"",
             Phone:""
         }
     },
-<<<<<<< HEAD
     methods : {
         onSubmit(){
-      let message = this;
-      
-      message.postmessagedata(window).then(function(result){})
-     postmessagedata(window).then(function(result){})
-      then(function (response) {
-      return message.$router.push("/");
-=======
-
-    message() 
-    {
-      let regis = this;
-      
-      postregis.postregistrasi(window).then(function(result){})
-      postlogin.login(window).then(function(result){})
-      then(function (response) {
-      return regis.$router.push("/");
->>>>>>> 6895deb3c281f66fcd770c35133229ccfb1d93c6
-         
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-<<<<<<< HEAD
+            let self = this;
+            
+            message.postmessagedata(window, self.Message, self.Nama, self.Email, self.Phone).then(function(result){
+                console.log(response)
+                return self.$router.push("/hubungi");
+                
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            this.Message=null,
+            this.Nama=null,
+            this.Email=null,
+            this.Phone=null
     }    
 }
-=======
-    }       
-    
->>>>>>> 6895deb3c281f66fcd770c35133229ccfb1d93c6
 }
 </script>
 

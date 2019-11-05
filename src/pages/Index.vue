@@ -18,7 +18,7 @@
 
     </q-carousel>
   </q-card>
-      <div class="column" style="height: 30px"/> <!-- jarak --->
+      <div class="column" style="height: 30px"/>
         <div class="column justify-center">
             <div class="col">
               <div class="text-h6 text-weight-regular text-center">Mendemokrasikan industri fashion dengan menjadi tren </div>

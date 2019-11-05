@@ -15,73 +15,65 @@
                     <div class="col">
                         <div class="row">
                             <div class="col-6 q-col-gutter-xl">
-                             <q-input outlined v-model="fnama" placeholder="Nama Depan" :dense="dense" style="200px" />
+                             <q-input outlined v-model="FNama" placeholder="Nama Depan" style="200px" />
                             </div>
                             <div class="col-1 q-gutter-md"/>
                             <div class="col-6 q-col-gutter-xl">
-                             <q-input outlined v-model="lnama" placeholder="Nama Belakang" :dense="dense" style="200px" />
+                             <q-input outlined v-model="LNama" placeholder="Nama Belakang" style="200px" />
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-input outlined v-model="alamat" placeholder="Alamat" :dense="dense"/>
+                                <q-input outlined v-model="Alamat" placeholder="Alamat"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-input outlined v-model="kecamatan" placeholder="Kecamatan" :dense="dense"/>
+                                <q-input outlined v-model="Kecamatan" placeholder="Kecamatan"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-input outlined v-model="kota" placeholder="Kota" :dense="dense"/>
+                                <q-input outlined v-model="Kota" placeholder="Kota"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="negara" :options="negara" placeholder="Negara" :dense="dense"/>
+                                <q-select outlined v-model="Negara" :options="Negara" placeholder="Negara"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="provinsi" :options="prov" placeholder="Privonsi" :dense="dense"/>
+                                <q-select outlined v-model="Provinsi" :options="Provinsi" placeholder="Provinsi"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
-                                <q-input outlined v-model="kodepose"  placeholder="Kode pos" :dense="dense"/>
+                                <q-input outlined v-model="Kodepos"  placeholder="Kode pos"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
-
-                        <div class="row">
-                            <div class="col-12 q-gutter-xl">
-                                <q-input outlined v-model="kota" placeholder="Kota" :dense="dense"/>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 25px"/>
-
-                        <div class="row">
-                            <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="shiping" :options="ship" placeholder="Privonsi" :dense="dense"/>
-                            </div>
-                        </div>
                         
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-select outlined v-model="Shipping" :options="Shipping" placeholder="Provinsi"/>
+                            </div>
+                        </div>
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
                             <div class="col-8 q-gutter-md"/>
                             <div class="col-1 q-gutter-xs"/>
                             <div class="col-3">
-                                <q-btn style="background: #283b39; color: white" label="Confrim Shiping" size="15px" />
+                                <q-btn style="background: #283b39; color: white" label="Confrim Shipping" size="15px" type="submit" @click="onSubmit()"  />
                             </div>
                         </div>
                     </div>
@@ -116,11 +108,11 @@
 
             <div class="row">
                 <div class="col-8">
-                    <q-input outlined v-model="diskon"  placeholder="Kode Diskon" :dense="dense"/>
+                    <q-input outlined v-model="Diskon"  placeholder="Kode Diskon"/>
                 </div>
                 <div class="col-1 q-gutter-lg"/>
                 <div class="col-1">
-                <q-btn style="background: #283b39; color: white" class="text-body2" label="Apply" size="21px"/>
+                <q-btn style="background: #283b39; color: white" class="text-body2" label="Apply" size="21px"  type="submit" @click="onSubmit()"/>
                 </div>
             </div>
             <div class="column" style="height: 30px"/>
@@ -158,36 +150,57 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">angka</div> 
                 </div>
              </div>
         </div>
 
         </div>
-        <div class="column" style="height: 100px"/><!-- jarak --->
-    </div>
+        <div class="column" style="height: 100px"/>
+        </div>
 </template>
 
 <script>
+import customer from '../api/payment/index';
 export default {
     data(){
         return{
             prov: null,
             ship: null,
 
-            fnama:'',
-            lnama:'',
-            alamat:'',
-            kecamatan:'',
-            kota:'',
-            negara:'',
-            provinsi:'',
-            kodepose:'',
-            kota:'',
-            diskon:'',
+            FNama:'',
+            LNama:'',
+            Alamat:'',
+            Kecamatan:'',
+            Kota:'',
+            Negara:'',
+            Provinsi:'',
+            Kodepos:'',
+            Diskon:'',
         }
-    }
-}
+    },
+    methods : {
+        onSubmit(){
+            let self = this;
+            
+            customer.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos, self.Diskon).then(function(result){
+                console.log(response)
+                return self.$router.push("/");
+                
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            this.FNama=null,
+            this.LNama=null,
+            this.Alamat=null,
+            this.Kecamatan=null,
+            this.Kota=null,
+            this.Negara=null,
+            this.Provinsi=null,
+            this.Kodepos=null,
+            this.Diskon=null
+        }}}
 </script>
 
 <style lang="less" scoped>
