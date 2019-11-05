@@ -54,15 +54,14 @@
                 </div>
 
                 <div style="height: 40px"/>
-                <q-select outlined v-model="model" :options="options" label="Ukuran sepatu" />
+                <q-select outlined v-model="model" :options="sepatu" label="Ukuran sepatu" />
                 <div style="height: 20px"/>
                 <div class="row">
                     <div class="col-3">
-                        <q-btn-group>
-                            <q-btn outline color="grey-6" class="text-bold text-weight-bolder" label="-"/>
-                            <q-input style="width: 50px" input-class="text-center" outlined v-model="text" label=""  />
-                            <q-btn outline color="grey-6" class="text-bold text-weight-bolder" label="+"/>
-                        </q-btn-group>
+                      <q-input filled type="number" v-model="age" label="Jumlah" lazy-rules :rules="[
+                                val => val !== null && val !== '' || 'Please type your age',
+                                val => val > 0 && val < 100 || 'Please type a real age'
+                        ]"/>
                     </div>
                 </div>
                 <div style="height: 20px"/>
@@ -82,7 +81,7 @@ export default {
     return {
       slide: 1,
        model: null,
-      options: []
+      sepatu: ['36','37','38','39','40','41','42','43','44']
     }
   }
 }

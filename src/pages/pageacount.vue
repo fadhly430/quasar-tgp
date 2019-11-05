@@ -39,19 +39,11 @@ export default {
    {
        return{
          columns: [
-            {
-            name: 'name',
-            required: true,
-            label: 'Order',
-            align: 'left',
-            field: row => row.name,
-            format: val => `${val}`,
-            sortable: true
-            },
-            { name: 'calories', label: 'Date', field: 'calories', sortable: true },
-            { name: 'fat', label: 'Payment Status', field: 'fat', sortable: true },
-            { name: 'carbs', label: 'Fulfillment Status', field: 'carbs' },
-            { name: 'protein', label: 'total', field: 'protein' }
+            {name: '', required: true, label: 'Order', align: 'left', format: val => `${val}`, sortable: true},
+            { name: '', label: 'Date', field: 'calories', sortable: true },
+            { name: '', label: 'Payment Status', field: 'fat', sortable: true },
+            { name: '', label: 'Fulfillment Status', field: 'carbs' },
+            { name: '', label: 'total', field: 'protein' }
             ],  
         }
     } 

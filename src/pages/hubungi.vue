@@ -72,10 +72,17 @@
         </div>
 
         <div class="column" style="height: 10px"/>
+<<<<<<< HEAD
         <div class="row" style="height: 100px">
             <div class="col-2"/>
             <div class="col-8">
                 <div class="row" style="height: 70px">
+=======
+        <div class="row" style="height: 100px" >
+            <div class="col-2"/>
+            <div class="col-8">
+                <div class="row" style="height: 70px" @submit="onSubmit">
+>>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
                     <div class="col-4">
                         <q-input outlined v-model="Nama" placeholder="Your name"  style="300px" />
                     </div>
@@ -100,7 +107,11 @@
                         </div>
                         <div class="column">
                             <div class="col-1">
+<<<<<<< HEAD
                                 <q-btn style="background: #283b39; color: white" label="Send Message" class="full-width" type="submit" @click="onSubmit()"/>
+=======
+                                <q-btn type="submit" style="background: #283b39; color: white" label="Send Message" class="full-width" />
+>>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
                             </div>
                         </div>
                     </div>
@@ -127,6 +138,7 @@ export default {
     },
     methods : {
         onSubmit(){
+<<<<<<< HEAD
             let self = this;
             
             message.postmessagedata(window, self.Message, self.Nama, self.Email, self.Phone).then(function(result){
@@ -143,6 +155,21 @@ export default {
             this.Phone=null
     }    
 }
+=======
+      let massage = this;
+      
+      message.postmessagedata(window).then(function(result){})
+      then(function (resposive) {
+      return massage.$router.push("/");
+         
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }       
+    
+    }
+>>>>>>> 4d22b588a4ba9e009ec97c7ab3a72ae8ddc4e25a
 }
 </script>
 
