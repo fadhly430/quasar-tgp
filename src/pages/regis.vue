@@ -15,19 +15,19 @@
 
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="firstName" label="Nama Depan"  :dense="dense" />
+                <q-input outlined v-model="firstName" label="Nama Depan"   />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="lastName" label="Nama Belakang"  :dense="dense" />
+                <q-input outlined v-model="lastName" label="Nama Belakang"   />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>
         <div class="row justify-center">
             <div class="col-4 q-col-gutter-xl" style="widht: 300px">
-                <q-input outlined v-model="email" label="Email"  :dense="dense" />
+                <q-input outlined v-model="email" label="Email"   />
             </div>
         </div>
         <div class="row justify-center" style="height: 20px"/>

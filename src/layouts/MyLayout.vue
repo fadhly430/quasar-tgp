@@ -123,7 +123,7 @@
               <div class="text-left text-caption">akses ke penawaran eksklusif, dan banyak lagi.</div>
               <div style="height: 10px"/>
               <q-form @submit="promosi">
-               <q-input outlined v-model="email" placeholder="Enter your email addres" :dense="dense" style="300px" />
+               <q-input outlined v-model="email" placeholder="Enter your email addres"  style="300px" />
                <div style="height: 10px"/>
                <q-btn type="submit" style="background: #283b39; color: white" label="Langganan" />
               </q-form>

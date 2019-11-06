@@ -64,7 +64,7 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-input outlined v-model="Tlp" placeholder="Phone" :dense="dense"/>
+                                <q-input outlined v-model="Tlp" placeholder="Phone" "/>
                             </div>
                         </div>
 
