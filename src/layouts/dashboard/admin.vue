@@ -86,7 +86,7 @@ export default {
     if(getRole !='admin' || getRole ==='owner'){
          this.$router.push('/owner/')
       }
-          else if(getRole !='admin' || getRole ==='customer'){
+           if(getRole !='admin' || getRole ==='customer'){
          this.$router.push('/TGProjek')
       } else {
         alert('anda login sebagai admin')

@@ -88,7 +88,7 @@ export default {
               localStorage.setItem('role', result.role)
               if(result.role=='admin'){
                 self.$router.push('/admin/')
-              } else if (result.role=='owner'){
+              }  if (result.role=='owner'){
                 self.$router.push('/owner/')
               } else {
                 self.$router.push('/TGProject')
