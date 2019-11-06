@@ -47,12 +47,12 @@
 
                         <div class="row">
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="Negara" :options="Negara" placeholder="Negara"/>
+                                <q-select outlined v-model="Negara" :options="nega" placeholder="Negara"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="Provinsi" :options="Provinsi" placeholder="Provinsi"/>
+                                <q-select outlined v-model="Provinsi" :options="prov" placeholder="Provinsi"/>
                             </div>
                             <div class="col-1 q-col-gutter-md"/>
                             
@@ -64,7 +64,7 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="Shipping" :options="Shipping" placeholder="Provinsi"/>
+                                <q-select outlined v-model="Shipping" :options="ship" placeholder="Provinsi"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
