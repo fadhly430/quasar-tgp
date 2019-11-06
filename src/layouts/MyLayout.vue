@@ -170,7 +170,8 @@ export default {
     return {
        tab: 'mails',
        email: "",
-       drawer: false
+       drawer: false,
+       text: ''
     }
   },
   methods: {
@@ -199,4 +200,3 @@ export default {
   height: 50px
   width:  80px  
 </style>
-

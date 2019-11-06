@@ -3,10 +3,11 @@ import {getApiNoAuth2} from '../utils.js'
 
 export default
 {
-    postcustomerdata(window, FNama, LNama, Alamat, Kecamatan, Kota, Negara, Provinsi, Kodepos, Diskon)
+    postmessagedata(window, FNama, LNama, Alamat, Kecamatan, Kota, Negara, Provinsi, Kodepos, Tlp, Shipping, Diskon)
     {
+        console.log(FNama, LNama, Alamat, Kecamatan, Kota, Negara, Provinsi, Kodepos, Tlp, Shipping, Diskon)
     return getApiNoAuth2()
-    .post('customer', 
+    .post('payments', 
         {
             "FNama": FNama,
             "LNama": LNama,
@@ -15,7 +16,10 @@ export default
             "Kota": Kota,
             "Negara": Negara,
             "Provinsi": Provinsi,
-            "Kodepos": Kodepos
+            "Kodepos": Kodepos,
+            "Tlp": Tlp,
+            "Shipping": Shipping,
+            "Diskon": Diskon
            
         }
     )

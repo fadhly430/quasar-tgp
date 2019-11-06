@@ -179,14 +179,14 @@ export default {
             prov: null,
             ship: null,
 
-            Fnama:"",
-            Lnama:"",
+            FNama:"",
+            LNama:"",
             Alamat:"",
             Kecamatan:"",
             Kota:"",
             Negara:"",
             Provinsi:"",
-            Kodepose:"",
+            Kodepos:"",
             Kota:"",
 
             nega: ['Indonesia'],
