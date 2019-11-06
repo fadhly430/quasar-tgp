@@ -31,7 +31,9 @@ const routes = [
       { path: 'account', component: () => import('pages/account.vue') },
       { path: 'regis', component: () => import('pages/regis.vue') },
       { path: 'laccount', component: () => import('pages/pageacount.vue') },
- //sepatu
+
+      //sepatu
+
       { path: 'makara-coral', component: () => import('pages/sepatu/makaracoral.vue') },
       { path: 'nolan-chery', component: () => import('pages/sepatu/nolancherywhite.vue') },
       { path: 'nolan-beige', component: () => import('pages/sepatu/nolanbeigegray.vue') },
@@ -42,7 +44,9 @@ const routes = [
       { path: 'saka-smoke', component: () => import('pages/sepatu/sakasmoke.vue') },
       { path: 'niliwatu', component: () => import('pages/sepatu/niliwatu.vue') },
       { path: 'makara-reef', component: () => import('pages/sepatu/makarareef.vue') }, 
- //wallet
+
+      //wallet
+
       { path: 'keiocivision', component: () => import('pages/wallet/keiocision.vue') },
       { path: 'keionami', component: () => import('pages/wallet/keionami.vue') },
       { path: 'keiohexablack', component: () => import('pages/wallet/keiohexablack.vue') },
@@ -53,7 +57,9 @@ const routes = [
       { path: 'carrieruler', component: () => import('pages/wallet/carrieruler.vue') },
       { path: 'adlercaren', component: () => import('pages/wallet/adlercaren.vue') },
       { path: 'dwightcision', component: () => import('pages/wallet/dwightcision.vue') },
-  // apparel
+
+      // apparel
+
       { path: 'crazyasiancoach', component: () => import('pages/apparel/crazyasiancoach.vue') },
       { path: 'taigacoach', component: () => import('pages/apparel/taigacoach.vue') },
       { path: 'gomenasaibomber', component: () => import('pages/apparel/gomenasaibomber.vue') },
@@ -64,7 +70,9 @@ const routes = [
       { path: 'okeboskuhsweatshirt', component: () => import('pages/apparel/okeboskuhsweatshirt.vue') },
       { path: 'jutsuitsweatshirt', component: () => import('pages/apparel/jutsuitsweatshirt.vue') },
       { path: 'koreazipperhoodie', component: () => import('pages/apparel/koreazipperhoodie.vue') },
-//Payment
+
+      //Payment wallet
+
       { path: 'payadlercaren', component: () => import('pages/wallet/payment/payadlercaren.vue') },
       { path: 'paykeiocision', component: () => import('pages/wallet/payment/paykeiocision.vue') },
       { path: 'paykeionami', component: () => import('pages/wallet/payment/paykeionami.vue') },
@@ -76,7 +84,31 @@ const routes = [
       { path: 'paycarrieruler', component: () => import('pages/wallet/payment/paycarrieruler.vue') },
       { path: 'paydwightcision', component: () => import('pages/wallet/payment/paydwightcision.vue') },
 
+      // payment sepatu
+
+      { path: 'paymakara-coral', component: () => import('pages/sepatu/payment/paymakaracoral.vue') },
+      { path: 'paynolan-chery', component: () => import('pages/sepatu/payment/paynolancherywhite.vue') },
+      { path: 'paynolan-beige', component: () => import('pages/sepatu/payment/paynolanbeigegray.vue') },
+      { path: 'payrua-tosca', component: () => import('pages/sepatu/payment/payruawhitetosca.vue') },
+      { path: 'payrua-fushia', component: () => import('pages/sepatu/payment/payruafushia.vue') },
+      { path: 'paynolan-coral', component: () => import('pages/sepatu/payment/paynolancoral.vue') },
+      { path: 'paynolan-full', component: () => import('pages/sepatu/payment/paynolanfullwhite.vue') },
+      { path: 'paysaka-smoke', component: () => import('pages/sepatu/payment/paysakasmoke.vue') },
+      { path: 'payniliwatu', component: () => import('pages/sepatu/payment/payniliwatu.vue') },
+      { path: 'paymakara-reef', component: () => import('pages/sepatu/payment/paymakarareef.vue') }, 
       
+      // payment Appalre
+
+      { path: 'paycrazyasiancoach', component: () => import('pages/apparel/payment/paycrazyasiancoach.vue') },
+      { path: 'paytaigacoach', component: () => import('pages/apparel/payment/paytaigacoach.vue') },
+      { path: 'paygomenasaibomber', component: () => import('pages/apparel/payment/paygomenasaibomber.vue') },
+      { path: 'payrilekrangerbomber', component: () => import('pages/apparel/payment/payrilekrangerbomber.vue') },
+      { path: 'payantimabubomber', component: () => import('pages/apparel/payment/payantimabubomber.vue') },
+      { path: 'payneotokyobomber', component: () => import('pages/apparel/payment/payneotokyobomber.vue') },
+      { path: 'paynaisubomber', component: () => import('pages/apparel/payment/paynaisubomber.vue') },
+      { path: 'payokeboskuhsweatshirt', component: () => import('pages/apparel/payment/payokeboskuhsweatshirt.vue') },
+      { path: 'payjutsuitsweatshirt', component: () => import('pages/apparel/payment/payjutsuitsweatshirt.vue') },
+      { path: 'paykoreazipperhoodie', component: () => import('pages/apparel/payment/paykoreazipperhoodie.vue') },
 
     ]
   },

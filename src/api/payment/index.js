@@ -15,8 +15,8 @@ export default
             "Kota": Kota,
             "Negara": Negara,
             "Provinsi": Provinsi,
-            "Kodepos": Kodepos,
-            "Diskon": Diskon
+            "Kodepos": Kodepos
+           
         }
     )
     .then(function (response)

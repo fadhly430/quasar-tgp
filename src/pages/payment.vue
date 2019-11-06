@@ -64,10 +64,20 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="Shipping" :options="ship" placeholder="Provinsi"/>
+                                <q-input outlined v-model="Tlp" placeholder="Phone" :dense="dense"/>
+                            </div>
+                        </div>
+
+                        <div class="row" style="height: 25px"/>
+                        
+                        <div class="row">
+                            <div class="col-12 q-gutter-xl">
+                                <q-select outlined v-model="Shipping" :options="ship" placeholder="Shipping"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
+                       
+                        
 
                         <div class="row">
                             <div class="col-8 q-gutter-md"/>
@@ -125,7 +135,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0</div>
                 </div>
 
             </div>
@@ -136,7 +146,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0</div>
                 </div>
             </div>
 
@@ -150,7 +160,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div> 
+                    <div class="text-right text-bold">0</div> 
                 </div>
              </div>
         </div>
@@ -178,7 +188,6 @@ export default {
             Provinsi:"",
             Kodepose:"",
             Kota:"",
-            Diskon:"",
 
             nega: ['Indonesia'],
             prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
@@ -191,7 +200,7 @@ export default {
         onSubmit(){
             let self = this;
             
-            customer.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos, self.Diskon).then(function(result){
+            customer.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos).then(function(result){
                 console.log(response)
                 return self.$router.push("/");
                 
@@ -206,8 +215,7 @@ export default {
             this.Kota=null,
             this.Negara=null,
             this.Provinsi=null,
-            this.Kodepos=null,
-            this.Diskon=null
+            this.Kodepos=null
         }}}
 </script>
 

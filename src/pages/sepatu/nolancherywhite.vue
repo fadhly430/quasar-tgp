@@ -54,7 +54,7 @@
                 </div>
 
                 <div style="height: 40px"/>
-                <q-select outlined v-model="model" :options="options" label="Ukuran sepatu" />
+                <q-select outlined v-model="model" :options="sepatu" label="Ukuran sepatu" />
                 <div style="height: 20px"/>
                 <div class="row">
                     <div class="col-3">
@@ -67,7 +67,7 @@
                 <div style="height: 20px"/>
                 <q-btn outline color="primary" label="Massukan Keranjang" class="full-width" />
                 <div style="height: 20px"/>
-                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" @click="$router.replace('/payment')" />
+                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" @click="$router.replace('/paynolan-chery')" />
 
             </div> 
         </div>

@@ -96,15 +96,15 @@
                 <div class="row items-center">
                    <div class="col-2">
                         <q-card class="iconbarang">
-                            <q-img src="statics/wallet/w2.jpg"/>
+                            <q-img src="statics/sepatu/s5.jpg"/>
                         </q-card>
                     </div>
                     <div class="col-4">
-                        <div class="text-body1 text-center text-bold"> Keio Nami </div>
+                        <div class="text-body1 text-center text-bold"> Nolan Coral </div>
                     </div>
                     <div class="col-2"/>
                     <div class="col-4">
-                        <div class="text-body2 text-bold">Rp. 169.900</div>
+                        <div class="text-body2 text-right text-bold">Rp. 379.000</div>
                     </div>
                 </div>
 
@@ -135,7 +135,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">Rp.169.900</div>
+                    <div class="text-right text-bold">Rp.379.000</div>
                 </div>
 
             </div>
