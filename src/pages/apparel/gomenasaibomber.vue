@@ -49,9 +49,9 @@
                 <div style="height: 20px"/>
                 <div class="row">
                     <div class="col-3">
-                        <q-input filled type="number" v-model="age" label="0" lazy-rules :rules="[
-                                val => val !== null && val !== '' || 'Please type your age',
-                                val => val > 0 && val < 100 || 'Please type a real age'
+                        <q-input filled type="number" v-model="jumlah" label="0" lazy-rules :rules="[
+                                val => val !== null && val !== '' || 'Masukan jumlah',
+                                val => val > 0 && val < 100 || 'Masukan Jumlah Order'
                         ]"/>
                     </div>
                 </div>
