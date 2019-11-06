@@ -85,20 +85,20 @@
             </div>
             <div class="col">
                 <div class="row items-center">
-                   <div class="col-3">
-                      <q-card class="iconbarang">
-                        <q-img src="statics/wallet/w9.jpg"/>
-                    </q-card>
+                    <div class="col-3">
+                        <q-card class="iconbarang">
+                            <q-img src="statics/wallet/w9.jpg"/>
+                        </q-card>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="text-body1 text-bold"> Adler Caren </div>
+                    </div>
+                    <div class="col-2"/>
+                    <div class="col-3">
+                        <div class="text-body2 text-bold">Rp. 169.900</div>
+                    </div>
                 </div>
-                <div class="col-4 ">
-                    <div class="text-body1 text-bold"> Adler Caren </div>
-                </div>
-                <div class="col-2"/>
-                <div class="col-3">
-                    <div class="text-body2 text-bold">Rp. 169.900</div>
-                </div>
-                </div>
-
+            </div>
             <div class="column" style="height: 50px"/>
             <div class="row">
                 <div class="col">
@@ -126,7 +126,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0/div>
+                    <div class="text-right text-bold">0</div>
                 </div>
 
             </div>
@@ -137,7 +137,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0/div>
+                    <div class="text-right text-bold">0</div>
                 </div>
             </div>
 
@@ -151,14 +151,14 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0/div>
+                    <div class="text-right text-bold">0</div>
                 </div>
              </div>
+    </div>
+              <div class="column" style="height: 100px"/><!-- jarak --->
         </div>
 
-        </div>
-        <div class="column" style="height: 100px"/><!-- jarak --->
-    </div>
+      
 </template>
 
 <script>

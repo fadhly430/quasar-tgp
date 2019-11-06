@@ -80,24 +80,23 @@
                     </div>
                 </div>
             </div>
-        
             <div class="col-1 q-gutter-xl">
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
             <div class="col">
                 <div class="row items-center">
-                   <div class="col-3">
-                      <q-card class="iconbarang">
-                        <q-img src="statics/wallet/w3.jpg"/>
-                    </q-card>
-                </div>
-                <div class="col-4 ">
-                    <div class="text-body1 text-bold"> Keio Hexa Black</div>
-                </div>
-                <div class="col-2"/>
-                <div class="col-3">
-                    <div class="text-body2 text-bold">Rp. 169.900</div>
-               </div>
+                    <div class="col-3">
+                        <q-card class="iconbarang">
+                            <q-img src="statics/sepatu/s4.jpg"/>
+                        </q-card>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="text-body1 text-bold"> Makara Coral </div>
+                    </div>
+                    <div class="col-2"/>
+                    <div class="col-3">
+                        <div class="text-body2 text-bold">Rp. 419.900</div>
+                    </div>
                 </div>
             </div>
             <div class="column" style="height: 50px"/>
@@ -127,7 +126,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div>
+                    <div class="text-right text-bold">0/div>
                 </div>
 
             </div>
@@ -138,7 +137,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div>
+                    <div class="text-right text-bold">0/div>
                 </div>
             </div>
 
@@ -152,16 +151,14 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div>
+                    <div class="text-right text-bold">0/div>
                 </div>
-             </div> 
+             </div>
         </div>
-             <div class="column" style="height: 100px"/><!-- jarak --->
-    </div>
 
-        
-       
-  
+        </div>
+        <div class="column" style="height: 100px"/><!-- jarak --->
+    </div>
 </template>
 
 <script>

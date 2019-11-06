@@ -80,6 +80,7 @@
                     </div>
                 </div>
             </div>
+        
             <div class="col-1 q-gutter-xl">
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
@@ -98,7 +99,7 @@
                     <div class="text-body2 text-bold">Rp. 169.900</div>
                 </div>
                 </div>
-
+            </div>
             <div class="column" style="height: 50px"/>
             <div class="row">
                 <div class="col">
@@ -155,10 +156,10 @@
                 </div>
              </div>
         </div>
-
+             <div class="column" style="height: 100px"/><!-- jarak --->
         </div>
-        <div class="column" style="height: 100px"/><!-- jarak --->
-    </div>
+
+       
 </template>
 
 <script>

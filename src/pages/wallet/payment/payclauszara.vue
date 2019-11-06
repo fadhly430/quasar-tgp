@@ -9,6 +9,7 @@
                          <img src="/statics/IconLogo_Transparent_300x.png">
                     </div>
                     <div class="col-1" style="height:20px"/>
+                    
                     <div class="col-1" style="height:40px">
                         <div class="text-left text-h6">Shipping address</div>
                     </div>
@@ -17,11 +18,13 @@
                             <div class="col-6 q-col-gutter-xl">
                              <q-input outlined v-model="fnama" placeholder="Nama Depan" :dense="dense" style="200px" />
                             </div>
+
                             <div class="col-1 q-gutter-md"/>
                             <div class="col-6 q-col-gutter-xl">
                              <q-input outlined v-model="lnama" placeholder="Nama Belakang" :dense="dense" style="200px" />
                             </div>
                         </div>
+
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
@@ -29,6 +32,7 @@
                                 <q-input outlined v-model="alamat" placeholder="Alamat" :dense="dense"/>
                             </div>
                         </div>
+
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
@@ -36,6 +40,7 @@
                                 <q-input outlined v-model="kecamatan" placeholder="Kecamatan" :dense="dense"/>
                             </div>
                         </div>
+
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
@@ -43,17 +48,20 @@
                                 <q-input outlined v-model="kota" placeholder="Kota" :dense="dense"/>
                             </div>
                         </div>
+
                         <div class="row" style="height: 25px"/>
 
                         <div class="row">
                             <div class="col-4 q-gutter-xl">
                                 <q-select outlined v-model="negara" :options="nega" placeholder="Negara" :dense="dense" label="Negara"/>
                             </div>
+
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
                                 <q-select outlined v-model="provinsi" :options="prov" placeholder="Provinsi" :dense="dense" label="Probinsi"/>
                             </div>
+
                             <div class="col-1 q-col-gutter-md"/>
                             
                             <div class="col-4 q-gutter-xl">
@@ -80,44 +88,56 @@
                     </div>
                 </div>
             </div>
+        
             <div class="col-1 q-gutter-xl">
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
+
             <div class="col">
                 <div class="row items-center">
                    <div class="col-3">
-                      <q-card class="iconbarang">
-                        <q-img src="statics/wallet/w4.jpg"/>
-                    </q-card>
+                        <q-card class="iconbarang">
+                            <q-img src="statics/wallet/w4.jpg"/>
+                        </q-card>
+                    </div>
+
+                    <div class="col-4 ">
+                        <div class="text-body1 text-bold"> Livia Mac </div>
+                    </div>
+                    <div class="col-2"/>
+
+                    <div class="col-3">
+                        <div class="text-body2 text-bold">Rp. 169.900</div>
+                    </div>
                 </div>
-                <div class="col-4 ">
-                    <div class="text-body1 text-bold"> Claus Zara </div>
-                </div>
-                <div class="col-2"/>
-                <div class="col-3">
-                    <div class="text-body2 text-bold">Rp. 169.900</div>
-                </div>
-                </div>
+            </div>
 
             <div class="column" style="height: 50px"/>
+            
             <div class="row">
                 <div class="col">
                     <q-separator color="grey-5" />
                 </div>
             </div>
+            
             <div class="column" style="height: 30px"/>
 
             <div class="row">
                 <div class="col-8">
                     <q-input outlined v-model="diskon"  placeholder="Kode Diskon" :dense="dense"/>
                 </div>
+                
                 <div class="col-1 q-gutter-lg"/>
+                
                 <div class="col-1">
-                <q-btn style="background: #283b39; color: white" class="text-body2" label="Apply" size="21px"/>
+                    <q-btn style="background: #283b39; color: white" class="text-body2" label="Apply" size="21px"/>
                 </div>
             </div>
+
             <div class="column" style="height: 30px"/>
+           
             <q-separator color="grey-5" />
+           
             <div class="column" style="height: 30px"/>
             
             <div class="row">
@@ -126,38 +146,42 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0</div>
                 </div>
 
             </div>
+           
             <div class="column" style="height: 30px"/>
+           
             <div class="row">
                 <div class="col-6">
                     <div class="text-left text-bold">Shipping</div>
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0</div>
                 </div>
             </div>
 
             <div class="column" style="height: 30px"/>
+            
             <q-separator color="grey-5" />
+            
             <div class="column" style="height: 30px"/>
 
-             <div class="row">
+            <div class="row">
                 <div class="col-6">
                     <div class="text-left text-bold">Total</div>
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">angka</div>
+                    <div class="text-right text-bold">0</div>
                 </div>
-             </div>
+            </div>
         </div>
 
-        </div>
-        <div class="column" style="height: 100px"/><!-- jarak --->
+            <div class="column" style="height: 100px"/><!-- jarak --->
+        
     </div>
 </template>
 
