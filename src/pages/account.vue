@@ -86,12 +86,13 @@ export default {
             if(result){
               localStorage.setItem('email', result.email)
               localStorage.setItem('role', result.role)
-              if(result.role=='admin'){
+
+                 if(result.role=='admin'){
                 self.$router.push('/admin/')
-              }  if (result.role=='owner'){
+              } else if (result.role=='owner'){
                 self.$router.push('/owner/')
               } else {
-                self.$router.push('/TGProject')
+                self.$router.push('TGProject')
               }
             }
         })

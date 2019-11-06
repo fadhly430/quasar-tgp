@@ -97,7 +97,7 @@ async  mounted(){
          this.$router.push('/admin/')
       }
      if(getRole !='owner' || getRole ==='customer'){
-         this.$router.push('/TGProjek')
+         this.$router.push('/TGProject')
       } else {
         alert('anda login sebagai owner')
       } 
