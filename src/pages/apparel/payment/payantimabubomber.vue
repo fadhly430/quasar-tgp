@@ -171,7 +171,7 @@
 </template>
 
 <script>
-import customer from '../../../api/payment/index';
+import payment from '../../../api/payment/index';
 export default {
     data(){
         return{
@@ -187,7 +187,8 @@ export default {
             Negara:"",
             Provinsi:"",
             Kodepos:"",
-            Kota:"",
+            Tlp:"",
+            Shipping:"",
 
             nega: ['Indonesia'],
             prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
@@ -200,7 +201,7 @@ export default {
         onSubmit(){
             let self = this;
             
-            customer.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos).then(function(result){
+            payment.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos, self.Tlp, self.Shipping ).then(function(result){
                 console.log(response)
                 return self.$router.push("/");
                 
@@ -215,7 +216,11 @@ export default {
             this.Kota=null,
             this.Negara=null,
             this.Provinsi=null,
-            this.Kodepos=null
+            this.Kodepos=null,
+            this.Tlp=null,
+            this.Shipping=null
+        
+            
         }}}
 </script>
 
