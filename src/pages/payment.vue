@@ -203,7 +203,7 @@ export default {
         onSubmit(){
             let self = this;
             
-            payment.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos, self.Tlp, self.Diskon, self.Shipping ).then(function(result){
+            payment.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos, self.Tlp, self.Shipping ).then(function(result){
                 console.log(response)
                 return self.$router.push("/payment");
                 
@@ -220,8 +220,8 @@ export default {
             this.Provinsi=null,
             this.Kodepos=null,
             this.Tlp=null,
-            this.Shipping=null,
-            this.Diskon=null
+            this.Shipping=null
+        
             
         }}}
 </script>
