@@ -1,11 +1,15 @@
-import {getApiNoAuth} from '../utils.js'
+import {getApiNoAuth2} from '../utils.js'
 
 export default
 {
-    postpromotedata(window)
+    postmessagedata(window, email)
     {
-    return getApiNoAuth()
-    .get('promotes')
+    return getApiNoAuth2()
+    .post('promotes', 
+        {
+            "Email" : email
+        }
+    )
     .then(function (response)
         {
             console.log(response)
@@ -15,4 +19,5 @@ export default
         {
             console.log(err)
         })
-    }}
+    }
+}

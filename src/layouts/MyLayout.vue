@@ -117,16 +117,14 @@
               <div class="text-left text-caption">Contact Us</div>
             </div>
             <div class="col-1"/>
-            <div class="col-3 q-gutter-xs" @submit="promosi">
+            <div class="col-3 q-gutter-xs">
               <div class="text-left text-overline">NEWS LETTER</div>
               <div class="text-left text-caption">Berlangganan untuk menerima pembaruan,</div>
               <div class="text-left text-caption">akses ke penawaran eksklusif, dan banyak lagi.</div>
               <div style="height: 10px"/>
-              <q-form @submit="promosi">
                <q-input outlined v-model="email" placeholder="Enter your email addres"  style="300px" />
                <div style="height: 10px"/>
-               <q-btn type="submit" style="background: #283b39; color: white" label="Langganan" />
-              </q-form>
+               <q-btn style="background: #283b39; color: white" label="Langganan" type="submit" @click="onSubmit()"/>
             </div>
          </div> 
          
@@ -163,7 +161,7 @@
 </template>
 
 <script>
-import promote from '../api/promosi/promosi';
+import promote from '../api/promote/promote';
 
 export default {
   data () {
@@ -175,18 +173,15 @@ export default {
     }
   },
   methods: {
-        promosi()
-        {
-          let prom = this;
-          promote.postpromotedata(window).then(function(result){})
-          then(function (responsive){
-            return prom.$router.push("/");
+        onSubmit(){
+          let self = this;
+          promote.postmessagedata(window, self.email).then(function(result){
+            console.log(response)
+            return self.$router.push("/");
           })
           .catch(function (error) {
           console.log(error);
          });
-
-
          this.email = null
         }
     }
