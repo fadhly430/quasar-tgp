@@ -36,8 +36,81 @@
              <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addapparel')"/>
           </div>
         </div>
-        <q-table  :data="data" :columns="columns" row-key="name"/>
-       
+<!-- apparel -->
+      <q-list bordered class="rounded-borders bg-white text-white">
+        <q-item class="bg-primary">
+          <q-item-section avatar top class="col-1 gt-xs text-center" style="align : left">
+              <q-item-label class="q-mt-sm">No</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-sm text-center" style="align : left">
+              <q-item-label class="q-mt-sm">Kode Apparel</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Nama Apparel</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Ukuran</q-item-label>
+          </q-item-section>
+          
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Stock</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Img</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Harga</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm">
+              <q-item-label class="q-mt-sm flex flex-center"></q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item v-for="(barang, index) in barangs" :key="barang.id" class="bg-grey-3" line="1">
+          <q-item-section avatar top class="col-1 gt-xm text-center">
+              <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : left">
+              <q-item-label class="q-mt-sm">{{barang.KodeApparel}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.NamaApparel}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.StockApparel}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.UkuranApparel}}</q-item-label>
+          </q-item-section>
+          
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.ImgApparel}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.HargaApparel }}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm">
+            <div class="q-mt-sm flex flex-center" style="align : right">
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="edit" />
+              <q-btn size="12px" flat dense round icon="more_vert" />
+            </div>
+          </q-item-section>
+        </q-item>
+      </q-list>
+<!--  -->
 
         <div class="column" style="height: 50px"/>
         <div class="row items-center">
@@ -57,7 +130,73 @@
              <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addwallet')"/>
           </div>
         </div>
-        <q-table  :data="data" :columns="columns" row-key="name"/>
+<!-- Wallet -->
+        <q-list bordered class="rounded-borders bg-white text-white">
+        <q-item class="bg-primary">
+          <q-item-section avatar top class="col-1 gt-xs text-center" style="align : left">
+              <q-item-label class="q-mt-sm">No</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-sm text-center" style="align : left">
+              <q-item-label class="q-mt-sm">Kode Wallet</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Nama Wallet</q-item-label>
+          </q-item-section>
+          
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Stock</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Img</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Harga</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm">
+              <q-item-label class="q-mt-sm flex flex-center"></q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item v-for="(barang, index) in barangs" :key="barang.id" class="bg-grey-3" line="1">
+          <q-item-section avatar top class="col-1 gt-xm text-center">
+              <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : left">
+              <q-item-label class="q-mt-sm">{{barang.KodeWallet}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.NamaWallet}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.StockWallet}}</q-item-label>
+          </q-item-section>
+          
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.ImgWallet}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.HargaWallet }}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm">
+            <div class="q-mt-sm flex flex-center" style="align : right">
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="edit" />
+              <q-btn size="12px" flat dense round icon="more_vert" />
+            </div>
+          </q-item-section>
+        </q-item>
+      </q-list>
+<!--  -->
 
         <div class="column" style="height: 50px"/>
         <div class="row items-center">
@@ -77,138 +216,102 @@
              <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addsepatu')"/>
           </div>
         </div>
-        <q-table  :data="data" :columns="columns" row-key="name"/>
-        
+<!-- Shoes -->
+        <q-list bordered class="rounded-borders bg-white text-white">
+        <q-item class="bg-primary">
+          <q-item-section avatar top class="col-1 gt-xs text-center" style="align : left">
+              <q-item-label class="q-mt-sm">No</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-sm text-center" style="align : left">
+              <q-item-label class="q-mt-sm">Kode Shoes</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Nama Shoes</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Ukuran</q-item-label>
+          </q-item-section>
+          
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Stock</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Img</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Harga</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm">
+              <q-item-label class="q-mt-sm flex flex-center"></q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item v-for="(barang, index) in barangs" :key="barang.id" class="bg-grey-3" line="1">
+          <q-item-section avatar top class="col-1 gt-xm text-center">
+              <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : left">
+              <q-item-label class="q-mt-sm">{{barang.KodeShoes}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.NamaShoes}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.StockShoes}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.UkuranShoes}}</q-item-label>
+          </q-item-section>
+          
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.ImgShoes}}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{barang.HargaShoes }}</q-item-label>
+          </q-item-section>
+
+          <q-item-section top class="col-2 gt-xm">
+            <div class="q-mt-sm flex flex-center" style="align : right">
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="edit" />
+              <q-btn size="12px" flat dense round icon="more_vert" />
+            </div>
+          </q-item-section>
+        </q-item>
+      </q-list>
+<!--  -->
+
     </div> 
 </template>
 
 <script>
-export default {
-data () {
-    return {
-      columns: [
-        {
-          name: 'name',
-          required: true,
-          label: 'Dessert (100g serving)',
-          align: 'left',
-          field: row => row.name,
-          format: val => `${val}`,
-          sortable: true
-        },
-        { name: 'calories', align: 'center', label: 'Calories', field: 'calories', sortable: true },
-        { name: 'fat', label: 'Fat (g)', field: 'fat', sortable: true },
-        { name: 'carbs', label: 'Carbs (g)', field: 'carbs' },
-        { name: 'protein', label: 'Protein (g)', field: 'protein' },
-        { name: 'sodium', label: 'Sodium (mg)', field: 'sodium' },
-        { name: 'calcium', label: 'Calcium (%)', field: 'calcium', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) },
-        { name: 'iron', label: 'Iron (%)', field: 'iron', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) }
-      ],
-      data: [
-        {
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          sodium: 87,
-          calcium: '14%',
-          iron: '1%'
-        },
-        {
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          sodium: 129,
-          calcium: '8%',
-          iron: '1%'
-        },
-        {
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          sodium: 337,
-          calcium: '6%',
-          iron: '7%'
-        },
-        {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          sodium: 413,
-          calcium: '3%',
-          iron: '8%'
-        },
-        {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          sodium: 327,
-          calcium: '7%',
-          iron: '16%'
-        },
-        {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          sodium: 50,
-          calcium: '0%',
-          iron: '0%'
-        },
-        {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          sodium: 38,
-          calcium: '0%',
-          iron: '2%'
-        },
-        {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          sodium: 562,
-          calcium: '0%',
-          iron: '45%'
-        },
-        {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          sodium: 326,
-          calcium: '2%',
-          iron: '22%'
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          sodium: 54,
-          calcium: '12%',
-          iron: '6%'
-        }
-      ]
-    }
-  }
-}
+import apparel from '../../api/barang/apparel';
+
+// export default {
+//   data () {
+//     return {
+//      jaket: [{}]
+//     }
+//   },
+//   async mounted() {
+//         const response = await
+//         apparel. 
+//           {
+//             this.jaket = response
+//           }
+//   }
+// }
 </script>
 
 
