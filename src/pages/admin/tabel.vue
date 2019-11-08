@@ -298,20 +298,20 @@
 <script>
 import apparel from '../../api/barang/apparel';
 
-// export default {
-//   data () {
-//     return {
-//      jaket: [{}]
-//     }
-//   },
-//   async mounted() {
-//         const response = await
-//         apparel. 
-//           {
-//             this.jaket = response
-//           }
-//   }
-// }
+export default {
+  data () {
+    return {
+     jaket: [{}]
+    }
+  },
+  // async mounted() {
+  //       const response = await
+  //       apparel. 
+  //         {
+  //           this.jaket = response
+  //         }
+  // }
+}
 </script>
 
 
