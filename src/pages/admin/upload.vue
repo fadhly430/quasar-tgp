@@ -16,14 +16,6 @@
 
           <q-input
             filled
-            v-model="qty"
-            label="Qty"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
             v-model="category"
             label="Product Category"
             lazy-rules
@@ -65,10 +57,15 @@
               </p>
             </div>
           </div>
-
+            
           <div>
-            <q-btn label="Submit" type="submit" color="black" @click="submit(waitedFormData)"/>
-            <q-btn label="Reset" type="reset" color="black" flat class="q-ml-sm" @click="reset"/>
+            
+       
+                  <div class="q-pa-md q-gutter-sm">
+            <q-btn label="Submit" type="submit" color="" @click="submit(waitedFormData)"/>
+
+            <q-btn label="Reset" type="reset" color=""  @click="reset"/>
+            </div>
           </div>
         </q-form>
       </div>
@@ -99,7 +96,6 @@ export default {
       filesImage: '',
       filesPdf: '',
       productName: '',
-      qty: '',
       category: '',
       desc: '',
       harga: '',
@@ -131,7 +127,7 @@ export default {
     methods: {
       postProduct() {
           product
-          .postproduct(window, this.nameFile, this.harga, this.qty, this.category, this.desc, this.nameFile+'.jpg' )
+          .postproduct(window, this.nameFile, this.harga, this.category, this.desc, this.nameFile+'.jpg' )
           .then(function(result) {
             return result;
           })
@@ -144,7 +140,12 @@ export default {
         this.currentStatus = STATUS_INITIAL;
         this.uploadedFiles = [];
         this.uploadError = null;
-        this.nameFile = ''
+        this.nameFile = '',
+        this.harga ='',
+        this.category = '',
+        this.desc= ''
+
+
       },
       save(formData) {
         // upload data to the server
