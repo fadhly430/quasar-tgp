@@ -15,19 +15,17 @@
             </div>
 
             <q-item clickable tag="a" href="/#/account">
-                                      <q-item-section avatar>
-                                      </q-item-section>
-                                      <q-item-section>
-                                        <q-item-label class="text-white text-body1">Logout</q-item-label>
-                                      </q-item-section>
-                                    </q-item>
+              <q-item-section>
+                <q-item-label class="text-white text-body1">Logout</q-item-label>
+              </q-item-section>
+            </q-item>
 
         </div>
         <div class="column" style="height: 20px"/>
         <q-separator color="blue-grey-3" inset />
         <div class="column" style="height: 20px"/>
         
-        <q-list padding class="menu-list">
+        <q-list padding class="rounded-borders">
             <q-item clickable v-ripple @click="$router.replace('/owner')">
               <q-item-section avatar>
                 <q-icon size="30px" name="insert_chart_outlined" color="grey-3" />
@@ -40,15 +38,29 @@
             
             <div class="column" style="height: 20px"/>
             
-            <q-item clickable v-ripple @click="$router.replace('/owner/tabel')">
-              <q-item-section avatar>
-                <q-icon size="30px" name="dvr" color="grey-3"/>
-              </q-item-section>
+            <q-expansion-item header-class="text-white" expand-separator icon="dvr" label="Table" class="text-body1" :content-inset-level="1" default-opened >
+                <q-card class="bg-grey-10">
+                  <q-card-section>
+                    <q-item clickable v-ripple @click="$router.replace('/owner/tabelapparel')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Apparel</div>
+                    </q-item-section>
+                    </q-item>
 
-              <q-item-section>
-                <div class="text-white text-body1">Table</div>
-              </q-item-section>
-            </q-item>
+                    <q-item clickable v-ripple @click="$router.replace('/owner/tabelwallet')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Wallet</div>
+                    </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-ripple @click="$router.replace('/owner/tabelsepatu')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Shoes</div>
+                    </q-item-section>
+                    </q-item>
+                  </q-card-section>
+                </q-card>
+            </q-expansion-item>
             
             <div class="column" style="height: 20px"/>
             

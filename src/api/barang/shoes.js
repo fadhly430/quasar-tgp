@@ -2,10 +2,10 @@ import {getApiNoAuth2} from '../utils'
 
 export default
 {
-    postapparelsdata(window)
+    postdShoesdata(window)
     {
     return getApiNoAuth2()
-    .get('formbajus')
+    .get('formsepatus')
     .then(function (response)
         {
             console.log(response)
@@ -17,9 +17,9 @@ export default
         })
     },
 
-        getBarangApparel(window) {
+        getBarangdShoes(window) {
           return getApiNoAuth2()
-            .get('formbajus')
+            .get('formsepatus')
             .then(function (response) {
               console.log(response)
               return response.data
@@ -28,9 +28,9 @@ export default
             })
         },
 
-        deleteBarangApparel(window, id){
+        deleteBarangShoes(window, id){
             return getApiNoAuth2()
-            .delete('/formbajus/'.concat(id))
+            .delete('/formsepatus/'.concat(id))
             .then(function(response){
                 console.log(response)
                 return response.data
@@ -39,17 +39,17 @@ export default
             })
           },
 
-    updateBarangApparel(window,id,KodeApparel,NamaApparel,UkuranApparel,StockApparel,HargaApparel,ImgApparel)
+    updateBarangShoes(window,id,KodedShoes,NamadShoes,UkurandShoes,StockdShoes,HargadShoes,ImgdShoes)
     {
         return getApiNoAuth2()
-        .put('/formbajus/'+id,
+        .put('/formsepatus/'+id,
         {
-            KodeApparel : KodeApparel,
-            NamaApparel : NamaApparel,
-            UkuranApparel : UkuranApparel,
-            StockApparel : StockApparel,
-            HargaApparel : HargaApparel,
-            ImgApparel : ImgApparel  
+            KodedShoes : KodedShoes,
+            NamadShoes : NamadShoes,
+            UkurandShoes : UkurandShoes,
+            StockdShoes : StockdShoes,
+            HargadShoes : HargadShoes,
+            ImgdShoes : ImgdShoes  
         })
         .then(function(response)
         {

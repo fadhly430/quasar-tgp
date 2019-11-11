@@ -2,10 +2,10 @@ import {getApiNoAuth2} from '../utils'
 
 export default
 {
-    postapparelsdata(window)
+    postWalletsdata(window)
     {
     return getApiNoAuth2()
-    .get('formbajus')
+    .get('formdompets')
     .then(function (response)
         {
             console.log(response)
@@ -17,9 +17,9 @@ export default
         })
     },
 
-        getBarangApparel(window) {
+        getBarangWallet(window) {
           return getApiNoAuth2()
-            .get('formbajus')
+            .get('formdompets')
             .then(function (response) {
               console.log(response)
               return response.data
@@ -28,9 +28,9 @@ export default
             })
         },
 
-        deleteBarangApparel(window, id){
+        deleteBarangWallet(window, id){
             return getApiNoAuth2()
-            .delete('/formbajus/'.concat(id))
+            .delete('/formdompets/'.concat(id))
             .then(function(response){
                 console.log(response)
                 return response.data
@@ -39,17 +39,17 @@ export default
             })
           },
 
-    updateBarangApparel(window,id,KodeApparel,NamaApparel,UkuranApparel,StockApparel,HargaApparel,ImgApparel)
+    updateBarangWallet(window,id,KodeWallet,NamaWallet,UkuranWallet,StockWallet,HargaWallet,ImgWallet)
     {
         return getApiNoAuth2()
-        .put('/formbajus/'+id,
+        .put('/formdompets/'+id,
         {
-            KodeApparel : KodeApparel,
-            NamaApparel : NamaApparel,
-            UkuranApparel : UkuranApparel,
-            StockApparel : StockApparel,
-            HargaApparel : HargaApparel,
-            ImgApparel : ImgApparel  
+            KodeWallet : KodeWallet,
+            NamaWallet : NamaWallet,
+            UkuranWallet : UkuranWallet,
+            StockWallet : StockWallet,
+            HargaWallet : HargaWallet,
+            ImgWallet : ImgWallet  
         })
         .then(function(response)
         {
