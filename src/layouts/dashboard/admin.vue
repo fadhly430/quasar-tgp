@@ -51,17 +51,11 @@
               </q-item-section>
             </q-item>
 
-             <q-item clickable v-ripple @click="$router.replace('/admin/upload')">
-              <q-item-section avatar>
-                <q-icon size="30px" name="insert_comment" color="grey-3"/>
-              </q-item-section>
+             
 
-              <q-item-section>
-                <div class="text-white text-body1">Upload</div>
-              </q-item-section>
-            </q-item>
+  
             
-            <div class="column" style="height: 20px"/>
+          
             
             <q-item clickable v-ripple @click="$router.replace('/admin/order')">
               <q-item-section avatar>
