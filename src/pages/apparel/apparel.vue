@@ -14,161 +14,29 @@
            <div class="column" style="height: 30px"/><!-- jarak --->
         
         <!-- isi -->
-            <div class="row justify-center responsive">
+            <div class="row justify-center ">
                 
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/crazyasiancoach')">
-                    <img src="statics/apparel/j1.jpg" class="responsive" >
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Crazy Asian Coach</div>
-                                <div class="text-center" >Rp. 475.000</div>
-                        </div>
-                        </div>
-                        </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/taigacoach')">
-                    <img src="statics/apparel/j2.jpg" class="responsive">
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Taiga Coach</div>
-                                <div class="text-center" >Rp. 475.000</div>
-                             </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/gomenasaibomber')">
-                    <img src="statics/apparel/j3.jpg" class="responsive">
+                <div class="col-3 q-gutter-xl padding" v-for="item in images" :key="item.id">
+                    <q-card  @click="show(item)">
+                    <img :src="item.ImgApparel" >
                     <q-card-actions align="around">
                          <div class="row justify-center">
                             <div class="col">
-                        <div class="text-center text--subtitle1">Gomenasai Bomber</div>
-                        <div class="text-center" >Rp. 465.000</div>
+                    <div class="text-center text-subtitle1">{{item.NamaApparel}}</div>
+                    <div class="text-center" >Rp. {{item.HargaApparel}}</div>
                     </div>
                         </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rilekrangerbomber')">
-                    <img src="statics/apparel/j4.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Rilek Ranger Bomber</div>
-                                <div class="text-center" >Rp. 465.000</div>
-                            </div>
-                         </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/antimabubomber')">
-                    <img src="statics/apparel/j5.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Anti Mabu Bomber</div>
-                                <div class="text-center" >Rp. 465.000</div>
-                            </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-            </div>
-
-             <div class="column" style="height: 70px"/><!-- jarak --->
-
-            <div class="row justify-center responsive">
-                
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/neotokyobomber')">
-                    <img src="statics/apparel/j6.jpg" class="responsive" >
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Neotokyo Bomber</div>
-                                <div class="text-center" >Rp. 465.000</div>
-                        </div>
-                        </div>
-                        </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/naisubomber')">
-                    <img src="statics/apparel/j7.jpg" class="responsive">
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Naisu Bomber</div>
-                                <div class="text-center" >Rp. 465.000</div>
-                             </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/okeboskuhsweatshirt')">
-                    <img src="statics/apparel/j8.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Oke Boskuh Sweatshirt</div>
-                        <div class="text-center" >Rp. 330.000</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/jutsuitsweatshirt')">
-                    <img src="statics/apparel/j9.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Jutsu It Sweatshirt</div>
-                                <div class="text-center" >Rp. 330.000</div>
-                            </div>
-                         </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/koreazipperhoodie')">
-                    <img src="statics/apparel/j10.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Korea Zipper Hoodie</div>
-                                <div class="text-center" >Rp. 365.000</div>
-                            </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-            </div>
+            </div>    
         <!--  -->
 
             <div class="column" style="height: 70px"/><!-- jarak --->
 
             <div class="q-pa-lg flex flex-center">
-                <q-pagination v-model="current" color="purple" :max="10" :max-pages="6" :boundary-numbers="true"                >
+                <q-pagination v-model="current" color="purple" :max="10" :max-pages="3" :boundary-numbers="true"                >
                 </q-pagination>
             </div>
             <div class="column" style="height: 80px"/><!-- jarak --->
@@ -178,11 +46,40 @@
 </template>
 
 <script>
+import containeer from '../../api/container/container';
+import {downloadImage} from '../../api/upload/index';
+import product from '../../api/barang/apparel';
 export default {
   data () {
     return {
-      current: 6
+        images:[],
+        current: 1
     }
+  },
+  
+  computed: {
+      getImgs(){
+          this.getImg()
+      }
+  },
+
+  beforeCreate(){
+      let self=this;
+      product.getBarangApparel(window).then(function (result){
+          console.log(result);
+          self.images=result
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+  },
+  
+  methods:{
+      show(item){
+          localStorage.setItem('id',item.id)
+          this.$router.push('/payment')
+      }
   }
 }
 </script>

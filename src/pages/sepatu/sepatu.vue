@@ -14,176 +14,78 @@
             <div class="column" style="height: 30px"/><!-- jarak --->
         
         <!-- isi -->
-            <div class="row justify-center responsive">
+            <div class="row justify-center ">
                 
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/makara-reef')">
-                    <img src="statics/sepatu/s1.jpg" class="responsive">
+                <div class="col-3 q-gutter-xl padding" v-for="item in images" :key="item.id">
+                    <q-card  @click="show(item)">
+                    <img :src="item.ImgShoes" >
                     <q-card-actions align="around">
                          <div class="row justify-center">
                             <div class="col">
-                    <div class="text-center text--subtitle1">Makara Reef</div>
-                    <div class="text-center" >Rp. 419.000</div>
+                    <div class="text-center text-subtitle1">{{item.NamaShoes}}</div>
+                    <div class="text-center" >Rp. {{item.HargaShoes}}</div>
                     </div>
                         </div>
                     </q-card-actions>
                     </q-card>
                 </div>
 
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/niliwatu')">
-                    <img src="statics/sepatu/s2.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Niliwatu White</div>
-                        <div class="text-center" >Rp. 399.000</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/saka-smoke')">
-                    <img src="statics/sepatu/s3.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Saka Smoke</div>
-                        <div class="text-center" >Rp. 419.000</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/makara-coral')">
-                    <img src="statics/sepatu/s4.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Makara Coral</div>
-                        <div class="text-center" >Rp. 419.000</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-coral')">
-                    <img src="statics/sepatu/s5.jpg" class="responsive">
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Nolan Coral</div>
-                                <div class="text-center" >Rp. 379.000</div>
-                            </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-            </div>
-
-             <div class="column" style="height: 70px"/><!-- jarak --->
-
-            <div class="row justify-center responsive">
-                
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rua-tosca')">
-                    <img src="statics/sepatu/s6.jpg" class="responsive" >
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Rua White Tosca</div>
-                                <div class="text-center" >Rp. 389.000</div>
-                        </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/rua-fushia')">
-                    <img src="statics/sepatu/s7.jpg" class="responsive">
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Rua Fushia</div>
-                                <div class="text-center" >Rp. 389.000</div>
-                             </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-beige')">
-                    <img src="statics/sepatu/s8.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Nolan Beige Gray</div>
-                        <div class="text-center" >Rp. 379.000</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-chery')">
-                    <img src="statics/sepatu/s9.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Nolan Chery White</div>
-                                <div class="text-center" >Rp. 379.000</div>
-                            </div>
-                         </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-                <div class="col-2 padding">
-                    <q-card  @click="$router.replace('/nolan-full')">
-                    <img src="statics/sepatu/s10.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Nolan Full White</div>
-                                <div class="text-center" >Rp. 399.000</div>
-                            </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-                </div>
-
-            </div>
+            </div>    
 
            
             <div class="column" style="height: 70px"/><!-- jarak --->
 
             <div class="q-pa-lg flex flex-center">
-                <q-pagination v-model="current" color="purple" :max="10" :max-pages="6" :boundary-numbers="true"                >
+                <q-pagination v-model="current" color="purple" :max="10" :max-pages="3" :boundary-numbers="true"                >
                 </q-pagination>
             </div>
+
             <div class="column" style="height: 80px"/><!-- jarak --->
 
-        </div>
+        
+    </div>
     </div>
 </template>
 
 <script>
+import containeer from '../../api/container/container';
+import {downloadImage} from '../../api/upload/index';
+import product from '../../api/barang/shoes';
 export default {
   data () {
     return {
-      current: 6
+        images:[],
+        current: 1
     }
+  },
+  
+  computed: {
+      getImgs(){
+          this.getImg()
+      }
+  },
+
+  beforeCreate(){
+      let self=this;
+      product.getBarangShoes(window).then(function (result){
+          console.log(result);
+          self.images=result
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+  },
+  
+  methods:{
+      show(item){
+          localStorage.setItem('id',item.id)
+          this.$router.push('/payment')
+      }
   }
+  
+
+
 }
 </script>
 
@@ -193,5 +95,5 @@ export default {
   height: 200px
 
 .padding
-    padding: 5px
+    padding: 15px
 </style>
