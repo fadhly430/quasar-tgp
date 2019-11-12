@@ -117,7 +117,9 @@ const routes = [
       component: () => import('layouts/dashboard/owner.vue'),
       children: [
         { path: '', component:() => import('pages/admin/index.vue')},
-        { path: 'tabel', component:() => import('pages/admin/tabel.vue')},
+        { path: 'tabelapparel', component:() => import('pages/admin/tabelapparel.vue')},
+        { path: 'tabelwallet', component:() => import('pages/admin/tabelwallet.vue')},
+        { path: 'tabelsepatu', component:() => import('pages/admin/tabelsepatu.vue')},
         { path: 'message', component:() => import('pages/admin/message.vue')},
         { path: 'order', component:() => import('pages/admin/order.vue')},
         { path: 'login', component:() => import('pages/admin/login.vue')},
@@ -128,7 +130,9 @@ const routes = [
    path: '/admin',
     component: () => import('layouts/dashboard/admin.vue'),
     children: [
-      { path: '', component:() => import('pages/admin/tabel.vue')},
+      { path: '', component:() => import('pages/admin/tabelapparel.vue')},
+      { path: 'tabelwallet', component:() => import('pages/admin/tabelwallet.vue')},
+      { path: 'tabelsepatu', component:() => import('pages/admin/tabelsepatu.vue')},
       { path: 'message', component:() => import('pages/admin/message.vue')},
       { path: 'upload', component:() => import('pages/admin/upload.vue')},
       { path: 'order', component:() => import('pages/admin/order.vue')},
