@@ -14,30 +14,42 @@
                 <div class="text-h6 text-white">Admin TGProject</div>
             </div>
 
-                  <q-item clickable tag="a" href="/#/account">
-                                      <q-item-section avatar>
-                                      </q-item-section>
-                                      <q-item-section>
-                                        <q-item-label class="text-white text-body1">Logout</q-item-label>
-                                      </q-item-section>
-                                    </q-item>
+              <q-item clickable tag="a" href="/#/account">
+                <q-item-section>
+                  <q-item-label class="text-white text-body1">Logout</q-item-label>
+                </q-item-section>
+              </q-item>
                                     
         </div>
         <div class="column" style="height: 20px"/>
         <q-separator color="blue-grey-3" inset />
         <div class="column" style="height: 20px"/>
         
-        <q-list padding class="menu-list">
+        <q-list padding class="rounded-borders">
             
-            <q-item clickable v-ripple @click="$router.replace('/admin/')">
-              <q-item-section avatar>
-                <q-icon size="30px" name="dvr" color="grey-3"/>
-              </q-item-section>
+            <q-expansion-item header-class="text-white" expand-separator icon="dvr" label="Table" class="text-body1" :content-inset-level="1" default-opened >
+                <q-card class="bg-grey-10">
+                  <q-card-section>
+                    <q-item clickable v-ripple @click="$router.replace('/admin')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Apparel</div>
+                    </q-item-section>
+                    </q-item>
 
-              <q-item-section>
-                <div class="text-white text-body1">Table</div>
-              </q-item-section>
-            </q-item>
+                    <q-item clickable v-ripple @click="$router.replace('/admin/tabelwallet')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Wallet</div>
+                    </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-ripple @click="$router.replace('/admin/tabelsepatu')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Shoes</div>
+                    </q-item-section>
+                    </q-item>
+                  </q-card-section>
+                </q-card>
+            </q-expansion-item>
             
             <div class="column" style="height: 20px"/>
             
@@ -51,15 +63,31 @@
               </q-item-section>
             </q-item>
 
-             <q-item clickable v-ripple @click="$router.replace('/admin/upload')">
-              <q-item-section avatar>
-                <q-icon size="30px" name="insert_comment" color="grey-3"/>
-              </q-item-section>
+              <div class="column" style="height: 20px"/>
 
-              <q-item-section>
-                <div class="text-white text-body1">Upload</div>
-              </q-item-section>
-            </q-item>
+             <!-- <q-expansion-item header-class="text-white" expand-separator icon="dvr" label="Upload" class="text-body1" :content-inset-level="1" default-opened >
+                <q-card class="bg-grey-10">
+                  <q-card-section>
+                    <q-item clickable v-ripple @click="$router.replace('/admin/addapparel')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Apparel</div>
+                    </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-ripple @click="$router.replace('/admin/addwallet')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Wallet</div>
+                    </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-ripple @click="$router.replace('/admin/addsepatu')">
+                    <q-item-section>
+                      <div class="text-white text-body1">Shoes</div>
+                    </q-item-section>
+                    </q-item>
+                  </q-card-section>
+                </q-card>
+            </q-expansion-item> -->
             
             <div class="column" style="height: 20px"/>
             

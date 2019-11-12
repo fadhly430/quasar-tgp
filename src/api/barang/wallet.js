@@ -17,6 +17,27 @@ export default
         })
     },
 
+    postproduct(window,KodeWallet,NamaWallet,KeteranganWallet,StockWallet,HargaWallet,ImgWallet){
+        return getApiNoAuth2()
+        .post('/formdompets/' ,{
+            KodeWallet : KodeWallet,
+            NamaWallet : NamaWallet,
+            KeteranganWallet : KeteranganWallet,
+            StockWallet : StockWallet,
+            HargaWallet : HargaWallet,
+            ImgWallet: 'http://localhost:3000/api/container/images/download/'+KodeWallet+ '.jpg'
+            
+            
+        })
+        .then(function(response){
+        console.log(response)
+        return response.data
+        }).catch(function(err){
+        console.log(err)
+        })
+    },
+    
+
         getBarangWallet(window) {
           return getApiNoAuth2()
             .get('formdompets')
@@ -39,14 +60,14 @@ export default
             })
           },
 
-    updateBarangWallet(window,id,KodeWallet,NamaWallet,UkuranWallet,StockWallet,HargaWallet,ImgWallet)
+    updateBarangWallet(window,id,KodeWallet,NamaWallet,KeteranganWallet,StockWallet,HargaWallet,ImgWallet)
     {
         return getApiNoAuth2()
         .put('/formdompets/'+id,
         {
             KodeWallet : KodeWallet,
             NamaWallet : NamaWallet,
-            UkuranWallet : UkuranWallet,
+            KeteranganWallet : KeteranganWallet,
             StockWallet : StockWallet,
             HargaWallet : HargaWallet,
             ImgWallet : ImgWallet  
@@ -60,6 +81,17 @@ export default
         {
             console.log(err)
         })
-    }
+    },
+
+    downloadImage(window, file){
+        return getApiNoAuth2()
+        .get('container/images/download/'+file)
+        .then(function(response){
+            return response.config
+        })
+        .catch (function(err){
+            console.log(err)
+        })
+      }
 
 }

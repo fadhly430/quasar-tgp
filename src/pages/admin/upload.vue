@@ -1,50 +1,25 @@
 <template>
-
-
-    <div class="flex flex-center">
-      <div class="q-pa-md" style="max-width: 500px; width:100%">
-        <h4 style="text-align:center;">Upload Items TGP_Projek</h4>
-        <q-form class="q-gutter-md">
+    <div  class="q-pa-md">
+        <div class="column" style="height: 50px"/>
+        <div class="row items-center">
+            <div class="col-5">
+              <q-separator color="blue-grey-3" inset />
+            </div>
+          <div class="col-2">
+          <div class="text-h5 text-center text-weight-regular">Apparel</div>
+          </div>
+          <div class="col-5">
+            <q-separator color="blue-grey-3" inset />
+          </div>
+        </div>
+        <q-form id= "formlogin" @submit="postApparel" class="q-gutter-md " >
   
-          <q-input
-            filled
-            v-model="nameFile"
-            label="Nama Product"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
-            v-model="qty"
-            label="Qty"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
-            v-model="category"
-            label="Product Category"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
-            v-model="harga"
-            label="Harga"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
-            v-model="desc"
-            label="Product Deskripsi"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
+          <q-input filled v-model="KodeApparel" label="Kode Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+          <q-input filled v-model="NamaApparel" label="Nama Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+          <q-input filled v-model="UkuranApparel" label="Stock Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+          <q-input filled v-model="StockApparel" label="Ukuran"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+          <q-input filled v-model="HargaApparel" label="Harga Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']"/>
+            
            
           <div class="modal-body">
                 <!--UPLOAD-->
@@ -72,42 +47,37 @@
           </div>
         </q-form>
       </div>
-    </div>
-
 </template>
 
 <script>
 import {uploadTGP, upload}  from '../../api/upload/index';
-import product from '../../api/product/index';
+import product from '../../api/barang/apparel';
 const STATUS_INITIAL = 0, STATUS_SAVING = 1, STATUS_SUCCESS = 2, STATUS_FAILED = 3;
 export default {
   name: "upload",
   
   data() {
     return {
-      lorem: "",
-      ipsum: "",
       uploadedFiles: [],
       uploadError: null,
       currentStatus: null,
       uploadFieldName: 'photos',
       name : 'testing',
       string : 'string',
-      nameFile : '',
+      ImgApparel : '',
       waitedFormData: '',
       waitedFormDataPdf: '',
       filesImage: '',
       filesPdf: '',
-      productName: '',
-      qty: '',
-      category: '',
-      desc: '',
-      harga: '',
-      imgurl: '',
-      img: ''
+      KodeApparel : '',
+      NamaApparel : '',
+      UkuranApparel : '',
+      StockApparel : '',
+      HargaApparel : ''
+      
     };
   },
-  computed: {
+ computed: {
       isInitial() {
         return this.currentStatus === STATUS_INITIAL;
       },
@@ -130,8 +100,9 @@ export default {
     },
     methods: {
       postProduct() {
-          product
-          .postproduct(window, this.nameFile, this.harga, this.qty, this.category, this.desc, this.nameFile+'.jpg' )
+          barang2
+          .postBarang(window, this.KodeApparel, this.NamaApparel, this.UkuranApparel, 
+          this.StockApparel, this.HargaApparel, this.ImgApparel+'.jpg' )
           .then(function(result) {
             return result;
           })
@@ -144,13 +115,13 @@ export default {
         this.currentStatus = STATUS_INITIAL;
         this.uploadedFiles = [];
         this.uploadError = null;
-        this.nameFile = ''
+        this.ImgApparel = ''
       },
       save(formData) {
         // upload data to the server
         this.currentStatus = STATUS_SAVING;
        
-        uploadTGP(formData)
+        uploadKSSK(formData)
           .then(x => {
             this.uploadedFiles = [].concat(x);
             this.currentStatus = STATUS_SUCCESS;
@@ -169,9 +140,9 @@ export default {
         Array
           .from(Array(fileList.length).keys())
           .map(x => {
-            let newNameFile = this.nameFile + '.jpg'
-            this.filesImage = newNameFile
-            formData.append(fieldName, fileList[x], newNameFile);
+            let namefile = this.ImgApparel + '.jpg'
+            this.filesImage = newnamefile
+            formData.append(fieldName, fileList[x], newnamefile);
           });
         // save it
         this.waitedFormData = formData

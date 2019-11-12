@@ -17,6 +17,27 @@ export default
         })
     },
 
+    postproduct(window,KodeApparel,NamaApparel,KeteranganApparel,StockApparel,HargaApparel,ImgApparel){
+        return getApiNoAuth2()
+        .post('/formbajus/' ,{
+            KodeApparel : KodeApparel,
+            NamaApparel : NamaApparel,
+            KeteranganApparel : KeteranganApparel,
+            StockApparel : StockApparel,
+            HargaApparel : HargaApparel,
+            ImgApparel: 'http://localhost:3000/api/container/images/download/'+KodeApparel+ '.jpg'
+            
+            
+        })
+        .then(function(response){
+        console.log(response)
+        return response.data
+        }).catch(function(err){
+        console.log(err)
+        })
+    },
+    
+
         getBarangApparel(window) {
           return getApiNoAuth2()
             .get('formbajus')
@@ -39,14 +60,14 @@ export default
             })
           },
 
-    updateBarangApparel(window,id,KodeApparel,NamaApparel,UkuranApparel,StockApparel,HargaApparel,ImgApparel)
+    updateBarangApparel(window,id,KodeApparel,NamaApparel,KeteranganApparel,StockApparel,HargaApparel,ImgApparel)
     {
         return getApiNoAuth2()
         .put('/formbajus/'+id,
         {
             KodeApparel : KodeApparel,
             NamaApparel : NamaApparel,
-            UkuranApparel : UkuranApparel,
+            KeteranganApparel : KeteranganApparel,
             StockApparel : StockApparel,
             HargaApparel : HargaApparel,
             ImgApparel : ImgApparel  
@@ -60,6 +81,17 @@ export default
         {
             console.log(err)
         })
-    }
+    },
+
+    downloadImage(window, file){
+        return getApiNoAuth2()
+        .get('container/images/download/'+file)
+        .then(function(response){
+            return response.config
+        })
+        .catch (function(err){
+            console.log(err)
+        })
+      }
 
 }

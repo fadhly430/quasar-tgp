@@ -117,12 +117,15 @@ const routes = [
       component: () => import('layouts/dashboard/owner.vue'),
       children: [
         { path: '', component:() => import('pages/admin/index.vue')},
-        { path: 'tabelapparel', component:() => import('pages/admin/tabelapparel.vue')},
-        { path: 'tabelwallet', component:() => import('pages/admin/tabelwallet.vue')},
-        { path: 'tabelsepatu', component:() => import('pages/admin/tabelsepatu.vue')},
+        { path: 'tabelapparel', component:() => import('pages/admin/otabelapparel.vue')},
+        { path: 'tabelwallet', component:() => import('pages/admin/otabelwallet.vue')},
+        { path: 'tabelsepatu', component:() => import('pages/admin/otabelsepatu.vue')},
         { path: 'message', component:() => import('pages/admin/message.vue')},
         { path: 'order', component:() => import('pages/admin/order.vue')},
         { path: 'login', component:() => import('pages/admin/login.vue')},
+        { path: 'addapparel', component:() => import('pages/admin/postapparel.vue')},
+        { path: 'addwallet', component:() => import('pages/admin/postwallet.vue')},
+        { path: 'addsepatu', component:() => import('pages/admin/postsepatu.vue')},
       ]
  
   },

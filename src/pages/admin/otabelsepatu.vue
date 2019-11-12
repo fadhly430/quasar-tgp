@@ -6,11 +6,11 @@
             <div class="col">
                 <div class="row justify-between">
                     <div class="col-2">
-                        <div class="text-h6 ">TABLE Wallet</div>
+                        <div class="text-h6 ">TABLE Shoes</div>
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
-                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addwallet')"/>
+                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/owner/addsepatu')"/>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
         <q-separator color="grey-10" inset />
         <div class="column" style="height: 30px"/>
         
-<!-- wallet -->
+<!-- sepatu -->
       <q-list bordered class="rounded-borders bg-white text-white">
         <q-item class="bg-primary">
           <q-item-section avatar top class="col-1 gt-xl text-center" style="align : left">
@@ -27,22 +27,20 @@
           </q-item-section>
 
           <q-item-section top class="col-1 gt-sm text-center" style="align : left">
-              <q-item-label class="q-mt-sm">Kode Wallet</q-item-label>
+              <q-item-label class="q-mt-sm">Kode Shoes</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-3 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">Nama Wallet</q-item-label>
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">Nama Shoes</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">Keterangan</q-item-label>
-          </q-item-section>
+          
           
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Stock</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+          <q-item-section top class="col-3 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Img</q-item-label>
           </q-item-section>
 
@@ -55,39 +53,37 @@
           </q-item-section>
         </q-item>
 
-        <q-item v-for="(formdompet, index) in fromdompets" :key="formdompet.id" class="bg-grey-3 text-black" line="1">
+        <q-item v-for="(formsepatu, index) in fromsepatus" :key="formsepatu.id" class="bg-grey-3 text-black" line="1">
           <q-item-section avatar top class="col-1 gt-xl text-center">
               <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : left">
-              <q-item-label class="q-mt-sm">{{formdompet.KodeWallet}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formsepatu.KodeShoes}}</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-3 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formdompet.NamaWallet}}</q-item-label>
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{formsepatu.NamaShoes}}</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formdompet.KeteranganWallet}}</q-item-label>
-          </q-item-section>
+          
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formdompet.StockWallet}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formsepatu.StockShoes}}</q-item-label>
           </q-item-section>
           
-          <q-item-section top class="col-3 gt-sm flex flex-center ">
-            <q-img style="width:50%" :src="formdompet.ImgWallet"/>
+         <q-item-section top class="col-3 gt-sm flex flex-center ">
+            <q-img style="width:50%" :src="formsepatu.ImgShoes"/>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formdompet.HargaWallet }}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formsepatu.HargaShoes }}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-2 gt-xm">
             <div class="q-mt-sm flex flex-center" style="align : right">
-              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(formdompet.id)" />
-              <q-btn class="gt-xs" size="12px" flat dense round icon="edit"  @click="edit(formdompet)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(formsepatu.id)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="edit"  @click="edit(formsepatu)" />
             </div>
           </q-item-section>
         </q-item>
@@ -98,12 +94,12 @@
             <q-card-section>
               <div id="form" class="q-mx-auto" style="width: 600px">
                 <q-form class="q-gutter-md">
-                    <q-input filled v-model="formwallet.KodeWallet" label="Kode Wallet"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.NamaWallet" label="Nama Wallet"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.KeteranganWallet" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.StockWallet" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.ImgWallet" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.HargaWallet" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formshoes.KodeShoes" label="Kode Shoes"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formshoes.NamaShoes" label="Nama Shoes"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formshoes.KeteranganShoes" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formshoes.StockShoes" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formshoes.ImgShoes" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formshoes.HargaShoes" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     
                     <!-- Button awal -->
                     <div>
@@ -123,22 +119,22 @@
 </template>
 
 <script>
-import wallet from '../../api/barang/wallet';
+import shoes from '../../api/barang/shoes';
 
 export default {
   data () {
     return {
-      
-      fromdompets:[{}],
+     
+      fromsepatus:[{}],
 
       
-      formwallet:{
-        KodeWallet : '',
-        NamaWallet : '',
-        KeteranganWallet : '',
-        StockWallet : '',
-        HargaWallet : '',
-        ImgWallet :''
+      formshoes:{
+        KodeShoes : '',
+        NamaShoes : '',
+        KeteranganShoes : '',
+        StockShoes : '',
+        HargaShoes : '',
+        ImgShoes :''
       },
       dialog: false,
       cancelEnabled: false,
@@ -148,9 +144,9 @@ export default {
 
   async mounted(){
     const response = await
-    wallet.getBarangWallet(window)
+    shoes.getBarangShoes(window)
     {
-      this.fromdompets = response
+      this.fromsepatus = response
     }
   },
 
@@ -158,13 +154,13 @@ export default {
     onDelete(id){
       if(confirm('Apakah anda yakin akan menghapus data ini ?'))
       {
-       wallet.deleteBarangWallet(window.id)
+       shoes.deleteBarangShoes(window.id)
               
        .then((res) => {
-          wallet.getBarangWallet(window)
+          shoes.getBarangShoes(window)
          
           .then((res)=>{
-            this.fromdompets=res.data
+            this.fromsepatus=res.data
             this.$router.go('owner/tabel')
           })
           .catch(()=>
@@ -179,17 +175,17 @@ export default {
         console.log("delete called");
       }
     },
-    edit(frombaju) {
+    edit(fromsepatu) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formwallet.id = frombajuw.id
-        this.formwallet.KodeWallet = frombaju.KodeWallet
-        this.formwallet.NamaWallet = frombaju.NamaWallet
-        this.formwallet.KeteranganWallet = frombaju.KeteranganWallet
-        this.formwallet.StockWallet = frombaju.StockWallet
-        this.formwallet.ImgWallet = frombaju.ImgWallet
-        this.formwallet.HargaWallet = frombaju.HargaWallet
+        this.formshoes.id = fromsepatuw.id
+        this.formshoes.KodeShoes = fromsepatu.KodeShoes
+        this.formshoes.NamaShoes = fromsepatu.NamaShoes
+        this.formshoes.KeteranganShoes = fromsepatu.KeteranganShoes
+        this.formshoes.StockShoes = fromsepatu.StockShoes
+        this.formshoes.ImgShoes = fromsepatu.ImgShoes
+        this.formshoes.HargaShoes = fromsepatu.HargaShoes
       }
       catch (error)
       {
@@ -203,9 +199,9 @@ export default {
   
   updated(id){
     const self = this
-    wallet.updateBarangWallet(window,self.fromdompets.id, self.fromdompets.KodeWallet, 
-    self.fromdompets.NamaWallet, self.fromdompets.KeteranganWallet, self.fromdompets.StockWallet, 
-    self.fromdompets.ImgWallet, self.fromdompets.HargaWallet)
+    Shoes.updateBarangShoes(window,self.fromsepatus.id, self.fromsepatus.KodeShoes, 
+    self.fromsepatus.NamaShoes, self.fromsepatus.KeteranganShoes, self.fromsepatus.StockShoes, 
+    self.fromsepatus.ImgShoes, self.fromsepatus.HargaShoes)
 
     .then(function(result)
     {

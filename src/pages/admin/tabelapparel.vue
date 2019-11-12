@@ -34,15 +34,13 @@
               <q-item-label class="q-mt-sm">Nama Apparel</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">Ukuran</q-item-label>
-          </q-item-section>
+         
           
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Stock</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+          <q-item-section top class="col-3 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Img</q-item-label>
           </q-item-section>
 
@@ -68,16 +66,14 @@
               <q-item-label class="q-mt-sm">{{formbaju.NamaApparel}}</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formbaju.UkuranApparel}}</q-item-label>
-          </q-item-section>
+          
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">{{formbaju.StockApparel}}</q-item-label>
           </q-item-section>
           
-          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formbaju.ImgApparel}}</q-item-label>
+          <q-item-section top class="col-3 gt-sm flex flex-center ">
+            <q-img style="width:50%" :src="formbaju.ImgApparel"/>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
@@ -100,7 +96,7 @@
                 <q-form class="q-gutter-md">
                     <q-input filled v-model="formapparel.KodeApparel" label="Kode Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.NamaApparel" label="Nama Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formapparel.UkuranApparel" label="Ukuran"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <q-input filled v-model="formapparel.KeteranganApparel" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.StockApparel" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.ImgApparel" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.HargaApparel" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
@@ -135,7 +131,7 @@ export default {
       formapparel:{
         KodeApparel : '',
         NamaApparel : '',
-        UkuranApparel : '',
+        KeteranganApparel : '',
         StockApparel : '',
         HargaApparel : '',
         ImgApparel :''
@@ -186,7 +182,7 @@ export default {
         this.formapparel.id = frombajuw.id
         this.formapparel.KodeApparel = frombaju.KodeApparel
         this.formapparel.NamaApparel = frombaju.NamaApparel
-        this.formapparel.UkuranApparel = frombaju.UkuranApparel
+        this.formapparel.KeteranganApparel = frombaju.KeteranganApparel
         this.formapparel.StockApparel = frombaju.StockApparel
         this.formapparel.ImgApparel = frombaju.ImgApparel
         this.formapparel.HargaApparel = frombaju.HargaApparel
@@ -204,7 +200,7 @@ export default {
   updated(id){
     const self = this
     apparel.updateBarangApparel(window,self.frombajus.id, self.frombajus.KodeApparel, 
-    self.frombajus.NamaApparel, self.frombajus.UkuranApparel, self.frombajus.StockApparel, 
+    self.frombajus.NamaApparel, self.frombajus.KeteranganApparel, self.frombajus.StockApparel, 
     self.frombajus.ImgApparel, self.frombajus.HargaApparel)
 
     .then(function(result)

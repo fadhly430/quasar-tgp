@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
-                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addwallet')"/>
+                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/owner/addwallet')"/>
                     </div>
                 </div>
             </div>
@@ -34,15 +34,13 @@
               <q-item-label class="q-mt-sm">Nama Wallet</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">Keterangan</q-item-label>
-          </q-item-section>
+          
           
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Stock</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+          <q-item-section top class="col-3 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Img</q-item-label>
           </q-item-section>
 
@@ -68,9 +66,7 @@
               <q-item-label class="q-mt-sm">{{formdompet.NamaWallet}}</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formdompet.KeteranganWallet}}</q-item-label>
-          </q-item-section>
+         
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">{{formdompet.StockWallet}}</q-item-label>
