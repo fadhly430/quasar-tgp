@@ -63,33 +63,8 @@
               </q-item-section>
             </q-item>
 
-              <div class="column" style="height: 20px"/>
-
-             <!-- <q-expansion-item header-class="text-white" expand-separator icon="dvr" label="Upload" class="text-body1" :content-inset-level="1" default-opened >
-                <q-card class="bg-grey-10">
-                  <q-card-section>
-                    <q-item clickable v-ripple @click="$router.replace('/admin/addapparel')">
-                    <q-item-section>
-                      <div class="text-white text-body1">Apparel</div>
-                    </q-item-section>
-                    </q-item>
-
-                    <q-item clickable v-ripple @click="$router.replace('/admin/addwallet')">
-                    <q-item-section>
-                      <div class="text-white text-body1">Wallet</div>
-                    </q-item-section>
-                    </q-item>
-
-                    <q-item clickable v-ripple @click="$router.replace('/admin/addsepatu')">
-                    <q-item-section>
-                      <div class="text-white text-body1">Shoes</div>
-                    </q-item-section>
-                    </q-item>
-                  </q-card-section>
-                </q-card>
-            </q-expansion-item> -->
-            
-            <div class="column" style="height: 20px"/>
+              <div class="column" style="height: 20px"/>          
+          
             
             <q-item clickable v-ripple @click="$router.replace('/admin/order')">
               <q-item-section avatar>

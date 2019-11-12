@@ -136,6 +136,7 @@ export default {
             })
             .catch(function (error) {
                 console.log(error);
+                alert('Pesan anda kami terima, terimakasih')
             });
             this.Message=null,
             this.Nama=null,
