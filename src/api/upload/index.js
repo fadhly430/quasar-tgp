@@ -15,7 +15,7 @@ function upload(formData,id) {
     }).then(x => x.data)
     // add url field
     .then(x => x.map(img => Object.assign({},
-      img, { url: `${BASE_URL}/images/${img.id}` })));
+      img, { url: `${API_URL2}/images/${img.id}` })));
 }
 
 function uploadTGP(formData) {

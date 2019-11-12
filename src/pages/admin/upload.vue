@@ -2,7 +2,7 @@
 
 
     <div class="flex flex-center">
-      <div class="q-pa-md" style="max-width: 500px; width:100%">
+      <div class="q-pa-md" style="max-width: 300px; width:100%">
         <h4 style="text-align:center;">Upload Items TGP_Projek</h4>
         <q-form class="q-gutter-md">
   
@@ -62,9 +62,9 @@
             
        
                   <div class="q-pa-md q-gutter-sm">
-            <q-btn label="Submit" type="submit" color="" @click="submit(waitedFormData)"/>
+            <q-btn label="Submit" type="submit" color="black" @click="submit(waitedFormData)"/>
 
-            <q-btn label="Reset" type="reset" color=""  @click="reset"/>
+            <q-btn label="Reset" type="reset" color="black"  @click="reset"/>
             </div>
           </div>
         </q-form>

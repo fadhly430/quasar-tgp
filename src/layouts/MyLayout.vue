@@ -183,6 +183,7 @@ export default {
           console.log(error);
          });
          this.email = null
+         alert('Terimakasih anda sudah berlangganan')
         }
     }
   }

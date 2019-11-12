@@ -19,23 +19,24 @@ export default {
         })
     },
     
-    postproduct(window, product_name, harga,
-        kuantity, product_kategory, product_desc, imgurl){
+    postproduct(window, kode_apparel, name_File, jumlah_stock, ukuran,
+        harga, imgurl){
         return getApiNoAuth2()
         .post('/Products/' ,{
-            product_name : product_name,
+            kode_apparel : kode_apparel,
+            name_File : name_File,
+            jumlah_stock : jumlah_stock,
+            ukuran : ukuran,
             harga : harga,
-            kuantity : kuantity,
-            product_kategory : product_kategory,
-            product_desc : product_desc,
-            imgurl: 'http://localhost:3000/api/container/images/download/'+ product_name+ '.jpg'
+            imgurl: imgurl,
+            imgurl: 'http://localhost:3000/api/container/images/download/'+ name_File+ '.jpg'
             
             
         })
         .then(function(response){
         console.log(response)
         return response.data
-        }).catch(function(err){
+        }).catch(function(err){c
         console.log(err)
         })
     },
@@ -51,15 +52,16 @@ export default {
         console.log(err)
         })
     },
-    putproduct(window, id, product_name, harga, kuantity, product_kategory, product_desc, imgurl){
+    putproduct(window, id, kode_apparel, name_File, jumlah_stock, ukuran,
+        harga, imgurl){
         return getApiNoAuth2()
         .put('/Products/' + id ,{
-            product_name: product_name,
-            harga: harga,
-            kuantity : kuantity,
-            product_kategory : product_kategory,
-            product_desc : product_desc,
-            imgurl: imgurl
+            kode_apparel : kode_apparel,
+            name_File : name_File,
+            jumlah_stock : jumlah_stock,
+            ukuran : ukuran,
+            harga : harga,
+            imgurl: imgurl,
 
         })
         .then (function(response){
