@@ -137,7 +137,6 @@ const routes = [
       { path: 'tabelwallet', component:() => import('pages/admin/tabelwallet.vue')},
       { path: 'tabelsepatu', component:() => import('pages/admin/tabelsepatu.vue')},
       { path: 'message', component:() => import('pages/admin/message.vue')},
-      { path: 'upload', component:() => import('pages/admin/upload.vue')},
       { path: 'order', component:() => import('pages/admin/order.vue')},
       { path: 'login', component:() => import('pages/admin/login.vue')},
       { path: 'addapparel', component:() => import('pages/admin/postapparel.vue')},

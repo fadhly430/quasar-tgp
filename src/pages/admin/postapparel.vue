@@ -1,82 +1,15 @@
 <template>
-
-
-    <div class="flex flex-center">
-      <div class="q-pa-md" style="max-width: 300px; width:100%">
-        <h4 style="text-align:center;">Upload Items TGP_Projek</h4>
-        <q-form class="q-gutter-md">
-  
-           <q-input
-            filled
-            v-model="kode_apparel"
-            label="Kode Apparel"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
-            v-model="name_File"
-            label="Nama Apparel"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-           <q-input
-            filled
-            v-model="jumlah_stock"
-            label="Stock Apparel"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-
-          <q-input
-            filled
-            v-model="ukuran"
-            label="Ukuran Apparel"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-          <q-input
-            filled
-            v-model="harga"
-            label="Harga Apparel"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
-          />
-
-       
-           
-          <div class="modal-body">
-                <!--UPLOAD-->
-            <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
-              <div>
-                <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length" accept="image/*" class="dropbox">
-                <p v-if="isInitial">
-                  Drag your Image file(s) into the box to begin
-                </p>
-                <p v-if="isSaving">
-                  Uploading {{ fileCount }} files...
-                </p>
-              </div>
-            </form>
-            <div class="dropbox" v-if="isFailed" @click="$emit('close')">
-              <br>
-              <p v-if="isFailed" style="color: #95D600">Upload Success
-              </p>
+    <div  class="q-pa-md">
+        <div class="column" style="height: 50px"/>
+        <div class="row items-center">
+            <div class="col-5">
+              <q-separator color="blue-grey-3" inset />
             </div>
+          <div class="col-2">
+          <div class="text-h5 text-center text-weight-regular">Apparel</div>
           </div>
-            
-          <div>
-            
-       
-                  <div class="q-pa-md q-gutter-sm">
-            <q-btn label="Submit" type="submit" color="black" @click="submit(waitedFormData)"/>
-
-            <q-btn label="Reset" type="reset" color="black"  @click="reset"/>
-            </div>
+          <div class="col-5">
+            <q-separator color="blue-grey-3" inset />
           </div>
         </div>
         <q-form id= "formlogin"  class="q-gutter-md " >
@@ -124,8 +57,6 @@ export default {
   
   data() {
     return {
-      lorem: "",
-      ipsum: "",
       uploadedFiles: [],
       uploadError: null,
       currentStatus: null,
@@ -159,7 +90,7 @@ export default {
         return this.currentStatus === STATUS_FAILED;
       },
       getImage() {
-        upload.getAllImage(window, this.id).then(function (images) {
+        upload.getlImage(window, this.id).then(function (images) {
           return images.config.url;
         }).catch(function (err) {
           console.log(err)
