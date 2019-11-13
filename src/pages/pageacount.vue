@@ -51,7 +51,7 @@ export default {
     } ,
 
     async mounted(){
-    let getid = localStorage.getItem('id')    
+    let getid = localStorage.getItem('id_customer')    
     const response = await
     acc.getaccount(window,getid)
     {

@@ -47,12 +47,12 @@
 
                         <div class="row">
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="Negara" :options="nega" placeholder="Negara"/>
+                                <q-select outlined v-model="Negara" :options="nega" label="Negara" placeholder="Negara"/>
                             </div>
                             <div class="col-1 q-col-gutter-sm"/>
                             
                             <div class="col-4 q-gutter-xl">
-                                <q-select outlined v-model="Provinsi" :options="prov" placeholder="Provinsi"/>
+                                <q-select outlined v-model="Provinsi" :options="prov" label="Provinsi" placeholder="Provinsi"/>
                             </div>
                             <div class="col-1 q-col-gutter-sm"/>
                             
@@ -72,7 +72,7 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="Shipping" :options="ship" placeholder="Shipping"/>
+                                <q-select outlined v-model="form.Shipping" :options="ship" placeholder="Shipping"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
@@ -93,30 +93,31 @@
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
             <div class="col">
-            <div class="row items-center">
-                   <div class="col-2 q-gutter-md">
+            <div class="row">
+                   <div class="col-2 q-gutter-lg">
                        <q-card>
                          <q-img :src="images.ImgApparel"/>
                        </q-card>
                     </div>
                 <div class="col-1 q-gutter-lg"/>    
-                <div class="col-4">
+                <div class="col-3">
                     <div class="text-overline text-bold"> {{images.NamaApparel}} </div>
                 </div>
                 <div class="col-1 q-gutter-xl"/>    
-                <div class="col-2 ">
-                    <q-select borderless v-model="Ukuruan" :options="size" label="Size"/>
+                <div class="col-2">
+                    <q-select borderless v-model="form.Ukuruan" :options="size" label="Size"/>
                 </div>
-                <div class="col-1 q-gutter-xl"/>
-                <div class="col-2 ">
-                    <q-input borderless type="number" v-model="Jumlah" label="Jumlah" lazy-rules 
+                <div class="col-1 q-gutter-lg"/>
+                <div class="col-2">
+                    <q-input borderless type="number" v-model="form.Jumlah" label="Jumlah" lazy-rules 
                     :rules="[ val => val !== null && val !== '' || 'Please Insert Jumlah']"/>
-                <div class="col-1 q-gutter-xl"/>
                 </div>
-                <div class="col-1">
-                    <div class="text-overline text-body2 text-bold">{{images.HargaApparel}}</div>
+                <div class="col-1 q-gutter-lg"/>
+
+                <div class="col-2">
+                    <div class="text-overline text-body2 text-bold">Rp. {{images.HargaApparel}}</div>
                 </div>
-                </div>
+            </div>
 
             <div class="column" style="height: 50px"/>
             
@@ -130,12 +131,11 @@
 
             <div class="row">
                 <div class="col-8">
-                    <q-input outlined v-model="Diskon"  placeholder="Kode Diskon"/>
+                    <q-input outlined v-model="form.Diskon"  placeholder="Kode Diskon"/>
                 </div>
                 <div class="col-1 q-gutter-lg"/>
                 <div class="col-1">
-                <q-btn style="background: #283b39; color: white" class="text-body2" 
-                label="Apply" size="21px"  type="submit" @click="onSubmit()"/>
+                
                 </div>
             </div>
             <div class="column" style="height: 30px"/>
@@ -148,7 +148,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div>
+                    <div class="text-right text-bold">Rp. {{subtotal}}</div>
                 </div>
             </div>
 
@@ -160,7 +160,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div>
+                    <div class="text-right text-bold">Rp.{{dis}}</div>
                 </div>
             </div>
             <div class="column" style="height: 30px"/>
@@ -170,7 +170,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div>
+                    <div class="text-right text-bold">Rp.{{kurir}}</div>
                 </div>
             </div>
 
@@ -184,7 +184,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">0</div> 
+                    <div class="text-right text-bold">Rp. {{total}}</div> 
                 </div>
              </div>
         </div>
@@ -206,7 +206,19 @@ export default {
             nega: null,
             prov: null,
             ship: null,
+            size: null,
             images:[{}],
+
+            form: [
+            {
+                id_barang:'',
+                id_customer : '',
+                Jumlah : 0,
+                Diskon :0,
+                Shipping : 0,
+                
+            }
+        ],
 
             FNama:"",
             LNama:"",
@@ -217,9 +229,8 @@ export default {
             Provinsi:"",
             Kodepos:"",
             Tlp:"",
-            Shipping:"",
-            Diskon: "",
-            
+            Ukuran: "",
+
             size:['S','M','L',"XL"],
             nega: ['Indonesia'],
             prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
@@ -230,9 +241,37 @@ export default {
     },
 
     computed: {
-      getImgs(){
-          this.getImg()
-        }
+        
+        subtotal:function(){
+        return  parseInt(this.images.HargaApparel) * parseInt(this.form.Jumlah)
+        },
+
+        kurir:function(){
+            if(this.form.Shipping == 'JNE'){
+                return parseInt(13000)
+            }
+            else if (this.form.Shipping == 'TIKI'){
+                return parseInt(11000)
+            }
+            else if (this.form.Shipping == 'SICEPAT'){
+                return parseInt(9000)
+            }
+        },
+
+        dis:function(){
+            if(this.form.Diskon== 'baru'){
+                return parseInt(13000)
+            }
+            
+        },
+
+        total:function() { 
+            if (this.form.Diskon=='baru'){
+                return (this.subtotal + this.kurir) - parseInt(10000)
+            }
+            
+        },
+
     },
 
     beforeCreate(){
@@ -275,7 +314,9 @@ export default {
             this.Tlp=null,
             this.Shipping=null
         }
-    }
+    },
+
+   
 }
 </script>
 
