@@ -28,10 +28,9 @@
             <q-item-label>Search</q-item-label>
           </q-item-section>
           <q-menu transition-show="jump-down" transition-hide="jump-up">
-            <q-input    v-model="text" input-class="text-right" class="q-ml-md">
+            <q-input    v-model="search" input-class="text-right" class="q-ml-md">
               <template v-slot:append>
-                <q-icon v-if="text === ''" name="search" />
-                <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
+                <q-icon name="search" @click="findByName()" />
               </template>
             </q-input>
           </q-menu>
@@ -183,7 +182,8 @@ export default {
        tab: 'mails',
        email: "",
        drawer: false,
-       text: ''
+       text: '',
+       search:[]
     }
   },
   methods: {
@@ -198,10 +198,14 @@ export default {
          });
          this.email = null
          alert('Terimakasih anda sudah berlangganan')
-        }
+        },
+        findByName(search) {
+    console.log(this.search)
+    localStorage.setItem('search', this.search)
     }
-  }
-
+    }
+    
+  };
 </script>
 
 <style lang="sass" scoped>

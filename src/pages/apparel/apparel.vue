@@ -42,13 +42,13 @@
             </div>    
         <!--  -->
 
-            <div class="column" style="height: 70px"/><!-- jarak --->
+            <div class="column" style="height: 70px"/>
 
             <div class="q-pa-lg flex flex-center">
                 <q-pagination v-model="current" color="purple" :max="10" :max-pages="3" :boundary-numbers="true"                >
                 </q-pagination>
             </div>
-            <div class="column" style="height: 80px"/><!-- jarak --->
+            <div class="column" style="height: 80px"/>
 
         </div>
     </div>
@@ -88,9 +88,21 @@ export default {
       show(item){
           localStorage.setItem('idbarang',item.id)
           this.$router.push('/orderapparel')
+      },
+      getBarangApparel(){
+          let getSearch = localStorage.getItem('search')
+          let self=this;
+          product.getBarangApparel(window, getSearch)
+          .then(function(result){
+              console.log("result:", result)
+              return self.images=result.data
+          })
+          .catch(function (err){
+              console.log(err);
+          });
+          }
       }
   }
-}
 </script>
 
 <style lang="sass" scoped>
