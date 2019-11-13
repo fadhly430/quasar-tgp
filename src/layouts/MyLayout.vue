@@ -61,9 +61,7 @@
         <q-tab stretch flat label="HOME" @click="$router.replace('/')" />
 
         <q-btn class="text-grey-4"  flat label="SEMUA PRODUCT"> 
-          <q-tooltip content-class="" :offset="[10, 10]">
-          Silahkan pilih produk kami disini !
-        </q-tooltip>
+          
             <q-menu transition-show="jump-down" transition-hide="jump-up">
 
               <q-list style="min-width:150px" class="text-center">
