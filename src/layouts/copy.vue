@@ -59,6 +59,7 @@
         <q-tab stretch flat label="HOME" @click="$router.replace('/TGProject/')" />
 
         <q-btn class="text-grey-4"  flat label="SEMUA PRODUCT"> 
+          
             <q-menu transition-show="jump-down" transition-hide="jump-up">
 
               <q-list style="min-width:150px" class="text-center">
@@ -84,6 +85,7 @@
         </q-btn>
        
         <q-tab stretch flat label="HUBUNGI TG PROJECT" @click="$router.replace('/TGProject/hubungi') "/>
+    
 
         <q-tab stretch flat label="TENTANG TG PROJECT" @click="$router.replace('/TGProject/about') "/>
 
