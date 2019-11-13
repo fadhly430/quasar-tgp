@@ -17,6 +17,9 @@
        <q-item clickable tag="a" target="" @click="$router.replace('/account')" >
          <q-item-section>
             <q-item-label>Account</q-item-label>
+             <q-tooltip content-class="" :offset="[10, 10]">
+          Silahkan masuk atau daftar !
+        </q-tooltip>
           </q-item-section>
        </q-item>
 
@@ -59,6 +62,9 @@
         <q-tab stretch flat label="HOME" @click="$router.replace('/')" />
 
         <q-btn class="text-grey-4"  flat label="SEMUA PRODUCT"> 
+          <q-tooltip content-class="" :offset="[10, 10]">
+          Silahkan pilih produk kami disini !
+        </q-tooltip>
             <q-menu transition-show="jump-down" transition-hide="jump-up">
 
               <q-list style="min-width:150px" class="text-center">
@@ -82,10 +88,18 @@
             </q-list>
             </q-menu>
         </q-btn>
-       
+       <div>
         <q-tab stretch flat label="HUBUNGI TG PROJECT" @click="$router.replace('/hubungi') "/>
-
+        <q-tooltip content-class="" :offset="[10, 10]">
+          Silahkan hubungi kami disini !
+        </q-tooltip>
+       </div>
+        <div>
         <q-tab stretch flat label="TENTANG TG PROJECT" @click="$router.replace('/about') "/>
+        <q-tooltip content-class="" :offset="[10, 10]">
+           Kenali kami lebih baik!
+        </q-tooltip>
+</div>
 
       </q-tabs>
     </q-header>
