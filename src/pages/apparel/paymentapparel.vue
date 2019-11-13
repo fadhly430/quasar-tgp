@@ -295,10 +295,13 @@ export default {
     methods : {
         onSubmit(){
             let self = this;
+
+            let getidproduct = localStoragege.getItem('id_barang');
+            let getidcustomer = localStorage.getItem('id_customer');
             
-            payment.postmessagedata(window, self.FNama, self.LNama, 
-            self.Alamat, self.Kecamatan, self.Kota, self.Negara, 
-            self.Provinsi, self.Kodepos, self.Tlp, self.form.Shipping ).then(function(result){
+            payment.postmessagedata(window, getidproduct,getidcustomer, self.FNama, self.LNama, 
+            self.Alamat, self.Kecamatan, self.Kota, self.Negara,  self.Provinsi, self.Kodepos, 
+            self.Tlp, self.form.Shipping , self.form.Jumlah, self.total).then(function(result){
                 console.log(response)
                 return self.$router.push("");
                 
