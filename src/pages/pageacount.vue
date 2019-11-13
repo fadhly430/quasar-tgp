@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="text-body1 text-bold text-grey-5" @click="$router.replace('/account')">Logout</div>
                 <div style="height: 20px"/>
-                <div class="text-h5 text-bold text-grey-9">My Account</div>                
+                <div class="text-h5 text-bold text-grey-9">My Account - {{account.firstName}}</div>                
             </div> 
         </div>
         <div class="row" style="height:30px"/>
@@ -34,10 +34,12 @@
 </template>
 
 <script>
+import acc from '../api/login/index';
 export default {
    data()
    {
        return{
+           account:[],
          columns: [
             {name: '', required: true, label: 'Order', align: 'left', format: val => `${val}`, sortable: true},
             { name: '', label: 'Date', field: 'calories', sortable: true },
@@ -46,7 +48,19 @@ export default {
             { name: '', label: 'total', field: 'protein' }
             ],  
         }
-    } 
+    } ,
+
+    async mounted(){
+    let getid = localStorage.getItem('id')    
+    const response = await
+    acc.getaccount(window,getid)
+    {
+     return this.account = response
+      console.log(response)
+    }
+  },
+
+
 }
 </script>
 

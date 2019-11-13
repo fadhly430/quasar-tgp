@@ -6,9 +6,7 @@
             <q-card class="my-card newitem">
             <q-carousel swipeable animated v-model="slide" thumbnails infinite>
                         <q-carousel-slide :name="1" img-src="/statics/apparel/j5.jpg"/>
-                        <q-carousel-slide :name="2" img-src="/statics/apparel/j5-1.jpg"/>
-                        <q-carousel-slide :name="3" img-src="/statics/apparel/j5-2.jpg"/>
-                        <q-carousel-slide :name="4" img-src="/statics/apparel/j5-3.jpg"/>
+                        
                     </q-carousel>
             </q-card>
             </div>
@@ -27,32 +25,12 @@
                     lebaran? Cakep! Ke acara-acara indie artsy? Cakep! Buat pacaran? PASTINYA CAKEP LAAAH~~</div>
                 <div style="height: 20px"/>
 
-                <div class="text-left text-body2">Detail:</div>
-                
-                <div class="row">
-                    <div class="col-1"/>
-                    <div class="col-1">
-                        <div class="text-left text-h3">.</div>
-                        <div class="text-left text-h3">.</div>
-                        <div class="text-left text-h3">.</div>
-                    </div>  
-
-                    <div class="col">
-                        <div style="height: 30px"/>
-                        <div class="text-left text-body2">Black Light Bomber</div>
-                        <div style="height: 27px"/>
-                        <div class="text-left text-body2">Premium Puma Fabric</div>
-                        <div style="height: 30px"/>
-                        <div class="text-left text-body2">Tinggi model pada foto ini adalah 174 cm</div>
-                    </div>  
-                </div>
-
                 <div style="height: 40px"/>
                 <q-select outlined v-model="model" :options="baju" label="Ukuran" />
                 <div style="height: 20px"/>
                 <div class="row">
                     <div class="col-3">
-                        <q-input filled type="number" v-model="jumlah" label="0" lazy-rules :rules="[
+                        <q-input filled type="number" v-model="jumlah" label="Jumlah" lazy-rules :rules="[
                                 val => val !== null && val !== '' || 'Masukan jumlah',
                                 val => val > 0 && val < 100 || 'Masukan Jumlah Order'
                         ]"/>

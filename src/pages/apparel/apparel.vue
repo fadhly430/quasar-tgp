@@ -90,5 +90,5 @@ export default {
   height: 200px
 
 .padding
-    padding: 5px
+    padding: 15px
 </style>

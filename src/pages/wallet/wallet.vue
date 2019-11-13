@@ -88,7 +88,7 @@ export default {
 
 <style lang="sass" scoped>
 .padding
-    padding: 5px
+    padding: 15px
 
 .newitem
   width: 200px

@@ -86,6 +86,7 @@ export default {
             if(result){
               localStorage.setItem('email', result.email)
               localStorage.setItem('role', result.role)
+              localStorage.setItem('id',result.id)
 
                  if(result.role=='admin'){
                 self.$router.push('/admin/')
