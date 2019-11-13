@@ -52,6 +52,9 @@
             </div>
             <div class="col-1">
                 <div clickable tag="a" target="" class="text-overline" @click="$router.replace('/regis')">Buat akun</div>
+                 <q-tooltip content-class="" :offset="[10, 10]">
+          Klik saja untuk buat akun !
+        </q-tooltip>
             </div>
         </div>
 

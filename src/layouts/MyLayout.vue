@@ -17,6 +17,9 @@
        <q-item clickable tag="a" target="" @click="$router.replace('/account')" >
          <q-item-section>
             <q-item-label>Account</q-item-label>
+             <q-tooltip content-class="" :offset="[10, 10]">
+          Silahkan masuk atau daftar !
+        </q-tooltip>
           </q-item-section>
        </q-item>
 
