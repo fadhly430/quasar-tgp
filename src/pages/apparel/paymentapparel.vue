@@ -3,7 +3,7 @@
         <div class="column" style="height: 100px"/>
         <div class="row justify-center">
             <div class="col-1 q-col-gutter-xl"/>
-            <div class="col-7">
+            <div class="col-6">
                 <div class="column">
                     <div class="col-1">
                         <img src="/statics/IconLogo_Transparent_300x.png">
@@ -17,7 +17,7 @@
                             <div class="col-6 q-col-gutter-xl">
                              <q-input outlined v-model="FNama" placeholder="Nama Depan" style="200px" />
                             </div>
-                            <div class="col-1 q-gutter-md"/>
+                            <div class="col-1 q-gutter-sm"/>
                             <div class="col-6 q-col-gutter-xl">
                              <q-input outlined v-model="LNama" placeholder="Nama Belakang" style="200px" />
                             </div>
@@ -49,12 +49,12 @@
                             <div class="col-4 q-gutter-xl">
                                 <q-select outlined v-model="Negara" :options="nega" placeholder="Negara"/>
                             </div>
-                            <div class="col-1 q-col-gutter-md"/>
+                            <div class="col-1 q-col-gutter-sm"/>
                             
                             <div class="col-4 q-gutter-xl">
                                 <q-select outlined v-model="Provinsi" :options="prov" placeholder="Provinsi"/>
                             </div>
-                            <div class="col-1 q-col-gutter-md"/>
+                            <div class="col-1 q-col-gutter-sm"/>
                             
                             <div class="col-4 q-gutter-xl">
                                 <q-input outlined v-model="Kodepos"  placeholder="Kode pos"/>
@@ -89,26 +89,38 @@
                     </div>
                 </div>
             </div>
-            <div class="col-1 q-gutter-xl">
+            <div class="col-1 q-gutter-xl" style="width:70px">
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
             <div class="col">
-                <div class="row">
-                   <div class="col-3">
+            <div class="row items-center">
+                   <div class="col-2 q-gutter-md">
                        <q-card>
-
+                         <q-img :src="images.ImgApparel"/>
                        </q-card>
-                </div>
+                    </div>
+                <div class="col-1 q-gutter-lg"/>    
                 <div class="col-4">
-                    <div class="text-body1 text-bold"> Nama Produk </div>
+                    <div class="text-overline text-bold"> {{images.NamaApparel}} </div>
                 </div>
-                <div class="col-2"/>
-                <div class="col-2">
-                    <div class="text-body2 text-bold">Harga</div>
+                <div class="col-1 q-gutter-xl"/>    
+                <div class="col-2 ">
+                    <q-select borderless v-model="Ukuruan" :options="size" label="Size"/>
+                </div>
+                <div class="col-1 q-gutter-xl"/>
+                <div class="col-2 ">
+                    <q-input borderless type="number" v-model="Jumlah" label="Jumlah" lazy-rules 
+                    :rules="[ val => val !== null && val !== '' || 'Please Insert Jumlah']"/>
+                <div class="col-1 q-gutter-xl"/>
+                </div>
+                <div class="col-1">
+                    <div class="text-overline text-body2 text-bold">{{images.HargaApparel}}</div>
                 </div>
                 </div>
 
             <div class="column" style="height: 50px"/>
+            
+            <div class="column" style="height:20px"/>
             <div class="row">
                 <div class="col">
                     <q-separator color="grey-5" />
@@ -122,7 +134,8 @@
                 </div>
                 <div class="col-1 q-gutter-lg"/>
                 <div class="col-1">
-                <q-btn style="background: #283b39; color: white" class="text-body2" label="Apply" size="21px"  type="submit" @click="onSubmit()"/>
+                <q-btn style="background: #283b39; color: white" class="text-body2" 
+                label="Apply" size="21px"  type="submit" @click="onSubmit()"/>
                 </div>
             </div>
             <div class="column" style="height: 30px"/>
@@ -137,7 +150,18 @@
                 <div class="col-6">
                     <div class="text-right text-bold">0</div>
                 </div>
+            </div>
 
+            <div class="column" style="height: 30px"/>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="text-left text-bold">Discont</div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="text-right text-bold">0</div>
+                </div>
             </div>
             <div class="column" style="height: 30px"/>
             <div class="row">
@@ -171,13 +195,18 @@
 </template>
 
 <script>
-import payment from '../api/payment/index';
+import payment from '../../api/payment/index';
+import containeer from '../../api/container/container';
+import {downloadImage} from '../../api/upload/index';
+import product from '../../api/barang/apparel';
 export default {
     data(){
         return{
+            data:[],
             nega: null,
             prov: null,
             ship: null,
+            images:[{}],
 
             FNama:"",
             LNama:"",
@@ -191,26 +220,50 @@ export default {
             Shipping:"",
             Diskon: "",
             
-
+            size:['S','M','L',"XL"],
             nega: ['Indonesia'],
             prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
         ,'Jawa Tengah','Jawa Timur','Kalimantan Timur',' Kalimantan Utara','Kepulauan Riau','Lampung','Maluku','Maluku Utara','Nusa Tenggara Barat','Nusa Tenggara Timur','Papua','Papua Barat','Riau','Sulawesi Barat','Sulewasi Selatan','Sulawesi Selatan'
         ,'Sulawesi Tengah','Sulawesi Tenggara','Sulawesi Utara','Sumatra Barat','Sumatra Selatan','Sumatra Selatan','Sumatra Utara','Yogyakarta'],
-            ship:['JNE (Regular) - Rp. 13.000']
+            ship:['JNE','TIKI','SICEPAT']
         }
     },
+
+    computed: {
+      getImgs(){
+          this.getImg()
+        }
+    },
+
+    beforeCreate(){
+      let getId= localStorage.getItem('idbarang');
+      console.log(getId)
+
+      let self=this;
+      product.getbyidApparel(window,getId)
+      .then(function (result){
+          self.images=result
+          console.log('test', self.images);
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+    },
+
     methods : {
         onSubmit(){
             let self = this;
             
             payment.postmessagedata(window, self.FNama, self.LNama, self.Alamat, self.Kecamatan, self.Kota, self.Negara, self.Provinsi, self.Kodepos, self.Tlp, self.Shipping ).then(function(result){
                 console.log(response)
-                return self.$router.push("/payment");
+                return self.$router.push("");
                 
             })
             .catch(function (error) {
                 console.log(error);
             });
+
             this.FNama=null,
             this.LNama=null,
             this.Alamat=null,
@@ -221,9 +274,9 @@ export default {
             this.Kodepos=null,
             this.Tlp=null,
             this.Shipping=null
-        
-            
-        }}}
+        }
+    }
+}
 </script>
 
 <style lang="less" scoped>
