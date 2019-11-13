@@ -96,16 +96,16 @@
             <div class="row">
                    <div class="col-2 q-gutter-lg">
                        <q-card>
-                         <q-img :src="images.ImgApparel"/>
+                         <q-img :src="images.ImgWallet"/>
                        </q-card>
                     </div>
                 <div class="col-1 q-gutter-lg"/>    
                 <div class="col-3">
-                    <div class="text-overline text-bold"> {{images.NamaApparel}} </div>
+                    <div class="text-overline text-bold"> {{images.NamaWallet}} </div>
                 </div>
                 <div class="col-1 q-gutter-xl"/>    
                 <div class="col-2">
-                    <q-select borderless v-model="form.Ukuruan" :options="size" label="Size"/>
+                    <!-- <q-select borderless v-model="form.Ukuruan" :options="size" label="Size"/> -->
                 </div>
                 <div class="col-1 q-gutter-lg"/>
                 <div class="col-2">
@@ -115,7 +115,7 @@
                 <div class="col-1 q-gutter-lg"/>
 
                 <div class="col-2">
-                    <div class="text-overline text-body2 text-bold">Rp. {{images.HargaApparel}}</div>
+                    <div class="text-overline text-body2 text-bold">Rp. {{images.HargaWallet}}</div>
                 </div>
             </div>
 
@@ -198,7 +198,7 @@
 import payment from '../../api/payment/index';
 import containeer from '../../api/container/container';
 import {downloadImage} from '../../api/upload/index';
-import product from '../../api/barang/apparel';
+import product from '../../api/barang/wallet';
 import kupon from '../../api/discont/discont';
 
 export default {
@@ -233,7 +233,7 @@ export default {
             Tlp:"",
             Ukuran: "",
 
-            size:['S','M','L','XL'],
+            
             nega: ['Indonesia'],
             prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
         ,'Jawa Tengah','Jawa Timur','Kalimantan Timur',' Kalimantan Utara','Kepulauan Riau','Lampung','Maluku','Maluku Utara','Nusa Tenggara Barat','Nusa Tenggara Timur','Papua','Papua Barat','Riau','Sulawesi Barat','Sulewasi Selatan','Sulawesi Selatan'
@@ -245,7 +245,7 @@ export default {
     computed: {
         
         subtotal:function(){
-        return  parseInt(this.images.HargaApparel) * parseInt(this.form.Jumlah)
+        return  parseInt(this.images.HargaWallet) * parseInt(this.form.Jumlah)
         },
 
         kurir:function(){
@@ -281,7 +281,7 @@ export default {
       console.log(getId)
 
       let self=this;
-      product.getbyidApparel(window,getId)
+      product.getbyidwallet(window,getId)
       .then(function (result){
           self.images=result
           console.log('test', self.images);

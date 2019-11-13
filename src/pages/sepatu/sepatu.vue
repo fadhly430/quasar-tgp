@@ -17,10 +17,8 @@
             <div class="row justify-center ">
                 
                 <div class="col-3 q-gutter-xl padding" v-for="item in images" :key="item.id">
-                    <q-card>
+                    <q-card @click="show(item)">
                     <img :src="item.ImgShoes" >
-                    
-                    <q-btn flat @click="show(item)">
                     <q-card-actions align="around">
 
                         <div class="row justify-center">
@@ -35,7 +33,6 @@
                             </div>
                         </div>
                     </q-card-actions>
-                    </q-btn>
                     </q-card>
                 </div>
 
