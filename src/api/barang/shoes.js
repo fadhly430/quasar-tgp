@@ -48,6 +48,16 @@ export default
               console.log(err)
             })
         },
+        getbyidShoes(window,id) {
+            return getApiNoAuth2()
+              .get('formsepatus/'+id)
+              .then(function (response) {
+                console.log(response)
+                return response.data
+              }).catch(function (err) {
+                console.log(err)
+              })
+          },
 
         deleteBarangShoes(window, id){
             return getApiNoAuth2()

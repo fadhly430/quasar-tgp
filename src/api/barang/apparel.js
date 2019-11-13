@@ -49,6 +49,17 @@ export default
             })
         },
 
+        getbyidApparel(window,id) {
+            return getApiNoAuth2()
+              .get('formbajus/'+id)
+              .then(function (response) {
+                console.log(response)
+                return response.data
+              }).catch(function (err) {
+                console.log(err)
+              })
+          },
+
         deleteBarangApparel(window, id){
             return getApiNoAuth2()
             .delete('/formbajus/'.concat(id))

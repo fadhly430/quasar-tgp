@@ -17,20 +17,30 @@
             <div class="row justify-center ">
                 
                 <div class="col-3 q-gutter-xl padding" v-for="item in images" :key="item.id">
-                    <q-card  @click="show(item)">
+                    <q-card>
                     <img :src="item.ImgShoes" >
+                    
+                    <q-btn flat @click="show(item)">
                     <q-card-actions align="around">
-                         <div class="row justify-center">
+
+                        <div class="row justify-center">
                             <div class="col">
-                    <div class="text-center text-subtitle1">{{item.NamaShoes}}</div>
-                    <div class="text-center" >Rp. {{item.HargaShoes}}</div>
-                    </div>
+                                <div class="text-center text-subtitle1">{{item.NamaShoes}}</div>
+                            </div>
+                        </div>
+                        <div class="row justify-center" style="height:10px"/>
+                        <div class="row justify-center">
+                            <div class="col">
+                                <div class="text-center" >Rp. {{item.HargaShoes}}</div>
+                            </div>
                         </div>
                     </q-card-actions>
+                    </q-btn>
                     </q-card>
                 </div>
 
-            </div>    
+            </div> 
+        <!--  -->
 
            
             <div class="column" style="height: 70px"/><!-- jarak --->
@@ -79,8 +89,8 @@ export default {
   
   methods:{
       show(item){
-          localStorage.setItem('id',item.id)
-          this.$router.push('/payment')
+          localStorage.setItem('idbarang',item.id)
+          this.$router.push('/ordershoes')
       }
   }
   

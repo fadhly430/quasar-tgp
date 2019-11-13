@@ -48,6 +48,16 @@ export default
               console.log(err)
             })
         },
+        getbyidwallet(window,id) {
+            return getApiNoAuth2()
+              .get('formdompets/'+id)
+              .then(function (response) {
+                console.log(response)
+                return response.data
+              }).catch(function (err) {
+                console.log(err)
+              })
+          },
 
         deleteBarangWallet(window, id){
             return getApiNoAuth2()
