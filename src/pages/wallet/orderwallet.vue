@@ -22,8 +22,12 @@
 
                 <div style="height: 40px"/>
                 
-                
+                <q-item clickable tag="a" target="" @click="$router.replace('/wallet')" >
+                <q-item-section>
                 <q-btn outline color="primary" label="Masukan Keranjang" class="full-width" />
+                </q-item-section>
+                </q-item>
+
                 <div style="height: 20px"/>
                 <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" @click="show(images)"/>
 
