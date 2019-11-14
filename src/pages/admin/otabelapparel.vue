@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
-                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/owner/addapparel')"/>
+                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addapparel')"/>
                     </div>
                 </div>
             </div>
@@ -53,37 +53,37 @@
           </q-item-section>
         </q-item>
 
-        <q-item v-for="(frombaju, index) in frombajus" :key="frombaju.id" class="bg-grey-3 text-black" line="1">
+        <q-item v-for="(formbaju, index) in frombajus" :key="formbaju.id" class="bg-grey-3 text-black" line="1">
           <q-item-section avatar top class="col-1 gt-xl text-center">
               <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : left">
-              <q-item-label class="q-mt-sm">{{frombaju.KodeApparel}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formbaju.KodeApparel}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-3 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{frombaju.NamaApparel}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formbaju.NamaApparel}}</q-item-label>
           </q-item-section>
 
-         
+          
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{frombaju.StockApparel}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formbaju.StockApparel}}</q-item-label>
           </q-item-section>
           
           <q-item-section top class="col-3 gt-sm flex flex-center ">
-            <q-img style="width:50%" :src="frombaju.ImgApparel"/>
+            <q-img style="width:50%" :src="formbaju.ImgApparel"/>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{frombaju.HargaApparel }}</q-item-label>
+              <q-item-label class="q-mt-sm">{{formbaju.HargaApparel }}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-2 gt-xm">
             <div class="q-mt-sm flex flex-center" style="align : right">
-              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(frombaju.id)" />
-              <q-btn class="gt-xs" size="12px" flat dense round icon="edit"  @click="edit(frombaju)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(formbaju.id)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="edit"  @click="edit(formbaju)" />
             </div>
           </q-item-section>
         </q-item>
@@ -98,12 +98,11 @@
                     <q-input filled v-model="formapparel.NamaApparel" label="Nama Apparel"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.KeteranganApparel" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.StockApparel" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formapparel.ImgApparel" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formapparel.HargaApparel" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     
                     <!-- Button awal -->
                     <div>
-                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(formapparel)" />
+                        <q-btn label="Update" type="updated" color="blue" v-close-popup @click="updated(formapparel)" />
                         <q-btn flat label="Cancel" color="black" v-close-popup="cancelEnabled" @click="batal()" />
 
                     </div>
@@ -161,7 +160,7 @@ export default {
          
           .then((res)=>{
             this.frombajus=res.data
-            this.$router.go('owner/tabel')
+            this.$router.go('owner/tabelapparel')
           })
           .catch(()=>
           {
@@ -175,17 +174,17 @@ export default {
         console.log("delete called");
       }
     },
-    edit(frombaju) {
+    edit(formbaju) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formapparel.id = frombaju.id
-        this.formapparel.KodeApparel = frombaju.KodeApparel
-        this.formapparel.NamaApparel = frombaju.NamaApparel
-        this.formapparel.KeteranganApparel = frombaju.KeteranganApparel
-        this.formapparel.StockApparel = frombaju.StockApparel
-        this.formapparel.ImgApparel = frombaju.ImgApparel
-        this.formapparel.HargaApparel = frombaju.HargaApparel
+        this.formapparel.id = formbaju.id
+        this.formapparel.KodeApparel = formbaju.KodeApparel
+        this.formapparel.NamaApparel = formbaju.NamaApparel
+        this.formapparel.KeteranganApparel = formbaju.KeteranganApparel
+        this.formapparel.StockApparel = formbaju.StockApparel
+        this.formapparel.ImgApparel = formbaju.ImgApparel
+        this.formapparel.HargaApparel = formbaju.HargaApparel
       }
       catch (error)
       {
@@ -199,13 +198,12 @@ export default {
   
   updated(id){
     const self = this
-    apparel.updateBarangApparel(window,self.frombajus.id, self.frombajus.KodeApparel, 
-    self.frombajus.NamaApparel, self.frombajus.KeteranganApparel, self.frombajus.StockApparel, 
-    self.frombajus.ImgApparel, self.frombajus.HargaApparel)
+    apparel.updateBarangApparel(window,self.formapparel.id, self.formapparel.KodeApparel, 
+    self.formapparel.NamaApparel, self.formapparel.KeteranganApparel, self.formapparel.StockApparel,self.formapparel.HargaApparel, self.frombajus.KodeApparel+ '.jpg')
 
     .then(function(result)
     {
-      self.$router.go('owner/tabel')
+      self.$router.go('owner/tabelapparel')
     })
     .catch(function(err)
     {

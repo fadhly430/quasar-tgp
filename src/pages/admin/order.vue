@@ -78,7 +78,7 @@
 
           <q-item-section top class="col-1 gt-xm">
             <div class="q-mt-sm flex flex-center" style="align : right">
-              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(formbaju.id)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(mesen.id)" />
             </div>
           </q-item-section>
         </q-item>
@@ -143,21 +143,21 @@ export default {
         console.log("delete called");
       }
     },
-    edit(order) {
-      try{
-        this.dialog = true
-        this.updateSubmit = true
-        this.formorder.id_customer = mesen.id_customer
-        this.formorder.id_barang = mesen.id_barang
-        this.formorder.Shipping = mesen.Shipping
-        this.formorder.Jumlah = mesen.Jumlah
-        this.formorder.Total = mesen.Total
-      }
-      catch (error)
-      {
-        console.log(error.order)
-      }
-    },    
+    // edit(mesen) {
+    //   try{
+    //     this.dialog = true
+    //     this.updateSubmit = true
+    //     this.formorder.id_customer = mesen.id_customer
+    //     this.formorder.id_barang = mesen.id_barang
+    //     this.formorder.Shipping = mesen.Shipping
+    //     this.formorder.Jumlah = mesen.Jumlah
+    //     this.formorder.Total = mesen.Total
+    //   }
+    //   catch (error)
+    //   {
+    //     console.log(error.order)
+    //   }
+    // },    
 
     batal(){
       this.dialog = false

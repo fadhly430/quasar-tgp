@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
-                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/owner/addsepatu')"/>
+                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addsesepatupatu')"/>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
           </q-item-section>
           
           <q-item-section top class="col gt-sm">
-            <q-img style="width:50%" :src="formshoes.ImgShoes"/>
+            <q-img style="width:50%" :src="formsepatu.ImgShoes"/>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
@@ -98,7 +98,7 @@
                     <q-input filled v-model="formshoes.NamaShoes" label="Nama Shoes"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formshoes.KeteranganShoes" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formshoes.StockShoes" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formshoes.ImgShoes" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
+                    <!-- <q-input filled v-model="formshoes.ImgShoes" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" /> -->
                     <q-input filled v-model="formshoes.HargaShoes" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     
                     <!-- Button awal -->
@@ -161,7 +161,7 @@ export default {
          
           .then((res)=>{
             this.fromsepatus=res.data
-            this.$router.go('owner/tabel')
+            this.$router.go('admin/tabelsepatu')
           })
           .catch(()=>
           {
@@ -175,17 +175,17 @@ export default {
         console.log("delete called");
       }
     },
-    edit(fromsepatu) {
+    edit(formsepatu) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formshoes.id = fromsepatuw.id
-        this.formshoes.KodeShoes = fromsepatu.KodeShoes
-        this.formshoes.NamaShoes = fromsepatu.NamaShoes
-        this.formshoes.KeteranganShoes = fromsepatu.KeteranganShoes
-        this.formshoes.StockShoes = fromsepatu.StockShoes
-        this.formshoes.ImgShoes = fromsepatu.ImgShoes
-        this.formshoes.HargaShoes = fromsepatu.HargaShoes
+        this.formshoes.id = formsepatu.id
+        this.formshoes.KodeShoes = formsepatu.KodeShoes
+        this.formshoes.NamaShoes = formsepatu.NamaShoes
+        this.formshoes.KeteranganShoes = formsepatu.KeteranganShoes
+        this.formshoes.StockShoes = formsepatu.StockShoes
+        this.formshoes.ImgShoes = formsepatu.ImgShoes
+        this.formshoes.HargaShoes = formsepatu.HargaShoes
       }
       catch (error)
       {
@@ -199,13 +199,13 @@ export default {
   
   updated(id){
     const self = this
-    Shoes.updateBarangShoes(window,self.fromsepatus.id, self.fromsepatus.KodeShoes, 
-    self.fromsepatus.NamaShoes, self.fromsepatus.KeteranganShoes, self.fromsepatus.StockShoes, 
-    self.fromsepatus.ImgShoes, self.fromsepatus.HargaShoes)
+    Shoes.updateBarangShoes(window,self.formshoes.id, self.formshoes.KodeShoes, 
+    self.formshoes.NamaShoes, self.formshoes.KeteranganShoes, self.formshoes.StockShoes, 
+    self.formshoes.ImgShoes, self.formshoes.HargaShoes)
 
     .then(function(result)
     {
-      self.$router.go('owner/tabel')
+      self.$router.go('admin/tabelsepatu')
     })
     .catch(function(err)
     {

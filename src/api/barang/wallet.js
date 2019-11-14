@@ -80,7 +80,7 @@ export default
             KeteranganWallet : KeteranganWallet,
             StockWallet : StockWallet,
             HargaWallet : HargaWallet,
-            ImgWallet : ImgWallet  
+            ImgWallet: 'http://localhost:3000/api/container/images/download/'+KodeWallet+ '.jpg'
         })
         .then(function(response)
         {

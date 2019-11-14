@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
-                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/owner/addwallet')"/>
+                    <q-btn flat color="primary" class="btn-fixed-width" icon="queue" label="Add Data" @click="$router.replace('/admin/addwallet')"/>
                     </div>
                 </div>
             </div>
@@ -33,8 +33,6 @@
           <q-item-section top class="col-3 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Nama Wallet</q-item-label>
           </q-item-section>
-
-          
           
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">Stock</q-item-label>
@@ -66,8 +64,6 @@
               <q-item-label class="q-mt-sm">{{formdompet.NamaWallet}}</q-item-label>
           </q-item-section>
 
-         
-
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
               <q-item-label class="q-mt-sm">{{formdompet.StockWallet}}</q-item-label>
           </q-item-section>
@@ -98,12 +94,11 @@
                     <q-input filled v-model="formwallet.NamaWallet" label="Nama Wallet"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formwallet.KeteranganWallet" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formwallet.StockWallet" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.ImgWallet" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formwallet.HargaWallet" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     
                     <!-- Button awal -->
                     <div>
-                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(form)" />
+                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(formwallet)" />
                         <q-btn flat label="Cancel" color="black" v-close-popup="cancelEnabled" @click="batal()" />
 
                     </div>
@@ -161,7 +156,7 @@ export default {
          
           .then((res)=>{
             this.fromdompets=res.data
-            this.$router.go('owner/tabel')
+            this.$router.go('owner/tabelwallet')
           })
           .catch(()=>
           {
@@ -175,17 +170,17 @@ export default {
         console.log("delete called");
       }
     },
-    edit(frombaju) {
+    edit(formwallet) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formwallet.id = frombajuw.id
-        this.formwallet.KodeWallet = frombaju.KodeWallet
-        this.formwallet.NamaWallet = frombaju.NamaWallet
-        this.formwallet.KeteranganWallet = frombaju.KeteranganWallet
-        this.formwallet.StockWallet = frombaju.StockWallet
-        this.formwallet.ImgWallet = frombaju.ImgWallet
-        this.formwallet.HargaWallet = frombaju.HargaWallet
+        this.formwallet.id = formwallet.id
+        this.formwallet.KodeWallet = formwallet.KodeWallet
+        this.formwallet.NamaWallet = formwallet.NamaWallet
+        this.formwallet.KeteranganWallet = formwallet.KeteranganWallet
+        this.formwallet.StockWallet = formwallet.StockWallet
+        this.formwallet.ImgWallet = formwallet.ImgWallet
+        this.formwallet.HargaWallet = formwallet.HargaWallet
       }
       catch (error)
       {
@@ -199,13 +194,13 @@ export default {
   
   updated(id){
     const self = this
-    wallet.updateBarangWallet(window,self.fromdompets.id, self.fromdompets.KodeWallet, 
-    self.fromdompets.NamaWallet, self.fromdompets.KeteranganWallet, self.fromdompets.StockWallet, 
-    self.fromdompets.ImgWallet, self.fromdompets.HargaWallet)
+    wallet.updateBarangWallet(window,self.formwallet.id, self.formwallet.KodeWallet, 
+    self.formwallet.NamaWallet, self.formwallet.KeteranganWallet, self.formwallet.StockWallet, 
+    self.formwallet.ImgWallet, self.formwallet.HargaWallet)
 
     .then(function(result)
     {
-      self.$router.go('owner/tabel')
+      self.$router.go('owner/tabelwallet')
     })
     .catch(function(err)
     {

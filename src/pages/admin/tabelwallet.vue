@@ -164,7 +164,7 @@ export default {
          
           .then((res)=>{
             this.fromdompets=res.data
-            this.$router.go('owner/tabel')
+            this.$router.go('admin/tabelwallet')
           })
           .catch(()=>
           {
@@ -178,17 +178,17 @@ export default {
         console.log("delete called");
       }
     },
-    edit(frombaju) {
+    edit(formwallet) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formwallet.id = frombajuw.id
-        this.formwallet.KodeWallet = frombaju.KodeWallet
-        this.formwallet.NamaWallet = frombaju.NamaWallet
-        this.formwallet.KeteranganWallet = frombaju.KeteranganWallet
-        this.formwallet.StockWallet = frombaju.StockWallet
-        this.formwallet.ImgWallet = frombaju.ImgWallet
-        this.formwallet.HargaWallet = frombaju.HargaWallet
+        this.formwallet.id = formwallet.id
+        this.formwallet.KodeWallet = formwallet.KodeWallet
+        this.formwallet.NamaWallet = formwallet.NamaWallet
+        this.formwallet.KeteranganWallet = formwallet.KeteranganWallet
+        this.formwallet.StockWallet = formwallet.StockWallet
+        this.formwallet.ImgWallet = formwallet.ImgWallet
+        this.formwallet.HargaWallet = formwallet.HargaWallet
       }
       catch (error)
       {
@@ -202,13 +202,13 @@ export default {
   
   updated(id){
     const self = this
-    wallet.updateBarangWallet(window,self.fromdompets.id, self.fromdompets.KodeWallet, 
-    self.fromdompets.NamaWallet, self.fromdompets.KeteranganWallet, self.fromdompets.StockWallet, 
-    self.fromdompets.ImgWallet, self.fromdompets.HargaWallet)
+    wallet.updateBarangWallet(window,self.formwallet.id, self.formwallet.KodeWallet, 
+    self.formwallet.NamaWallet, self.formwallet.KeteranganWallet, self.formwallet.StockWallet, 
+    self.formwallet.ImgWallet, self.formwallet.HargaWallet)
 
     .then(function(result)
     {
-      self.$router.go('owner/tabel')
+      self.$router.go('admin/tabelwallet')
     })
     .catch(function(err)
     {

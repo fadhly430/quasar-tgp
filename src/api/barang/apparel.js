@@ -81,7 +81,7 @@ export default
             KeteranganApparel : KeteranganApparel,
             StockApparel : StockApparel,
             HargaApparel : HargaApparel,
-            ImgApparel : ImgApparel  
+            ImgApparel: 'http://localhost:3000/api/container/images/download/'+KodeApparel+ '.jpg'
         })
         .then(function(response)
         {

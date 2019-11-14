@@ -72,7 +72,7 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="form.Shipping" :options="ship" placeholder="Shipping"/>
+                                <q-select outlined v-model="form.Shipping" :options="ship" label="Shipping" placeholder="Shipping"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
@@ -93,7 +93,7 @@
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
             <div class="col">
-            <div class="row">
+            <div class="row items-center">
                    <div class="col-2 q-gutter-lg">
                        <q-card>
                          <q-img :src="images.ImgWallet"/>
@@ -129,14 +129,11 @@
             </div>
             <div class="column" style="height: 30px"/>
 
-            <div class="row">
+            <div class="row justify-center">
                 <div class="col-8">
                     <q-input outlined v-model="form.Diskon"  placeholder="Kode Diskon"/>
                 </div>
-                <div class="col-1 q-gutter-lg"/>
-                <div class="col-1">
                 
-                </div>
             </div>
             <div class="column" style="height: 30px"/>
             <q-separator color="grey-5" />

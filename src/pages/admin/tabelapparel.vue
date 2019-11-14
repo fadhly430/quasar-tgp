@@ -161,7 +161,7 @@ export default {
          
           .then((res)=>{
             this.frombajus=res.data
-            this.$router.go('owner/tabel')
+            this.$router.go('admin/tabelapparel')
           })
           .catch(()=>
           {
@@ -175,17 +175,17 @@ export default {
         console.log("delete called");
       }
     },
-    edit(frombaju) {
+    edit(formbaju) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formapparel.id = frombajuw.id
-        this.formapparel.KodeApparel = frombaju.KodeApparel
-        this.formapparel.NamaApparel = frombaju.NamaApparel
-        this.formapparel.KeteranganApparel = frombaju.KeteranganApparel
-        this.formapparel.StockApparel = frombaju.StockApparel
-        this.formapparel.ImgApparel = frombaju.ImgApparel
-        this.formapparel.HargaApparel = frombaju.HargaApparel
+        this.formapparel.id = formbaju.id
+        this.formapparel.KodeApparel = formbaju.KodeApparel
+        this.formapparel.NamaApparel = formbaju.NamaApparel
+        this.formapparel.KeteranganApparel = formbaju.KeteranganApparel
+        this.formapparel.StockApparel = formbaju.StockApparel
+        this.formapparel.ImgApparel = formbaju.ImgApparel
+        this.formapparel.HargaApparel = formbaju.HargaApparel
       }
       catch (error)
       {
@@ -199,13 +199,13 @@ export default {
   
   updated(id){
     const self = this
-    apparel.updateBarangApparel(window,self.frombajus.id, self.frombajus.KodeApparel, 
-    self.frombajus.NamaApparel, self.frombajus.KeteranganApparel, self.frombajus.StockApparel, 
-    self.frombajus.ImgApparel, self.frombajus.HargaApparel)
+    apparel.updateBarangApparel(window,self.formapparel.id, self.formapparel.KodeApparel, 
+    self.formapparel.NamaApparel, self.formapparel.KeteranganApparel, self.formapparel.StockApparel, 
+    self.formapparel.ImgApparel, self.formapparel.HargaApparel)
 
     .then(function(result)
     {
-      self.$router.go('owner/tabel')
+      self.$router.go('admin/tabelapparel')
     })
     .catch(function(err)
     {

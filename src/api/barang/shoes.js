@@ -80,7 +80,7 @@ export default
             KeteranganShoes : KeteranganShoes,
             StockShoes : StockShoes,
             HargaShoes : HargaShoes,
-            ImgShoes : ImgShoes  
+            ImgShoes: 'http://localhost:3000/api/container/images/download/'+KodeShoes+ '.jpg'
         })
         .then(function(response)
         {

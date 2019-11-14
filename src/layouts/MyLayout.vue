@@ -215,7 +215,9 @@
 import promote from '../api/promote/promote';
 import containeer from '../api/container/container';
 import {downloadImage} from '../api/upload/index';
-import product from '../api/barang/apparel';
+import productapparel from '../api/barang/apparel';
+import productwallet from '../api/barang/wallet';
+import productshoes from '../api/barang/shoes';
 // import cart from '../api/cart/index';
 export default {
   data () {
@@ -230,27 +232,7 @@ export default {
     }
   },
 
-    computed: {
-      getImgs(){
-          this.getImg()
-      }
-  },
-
-    beforeCreate(){
-      let getId= localStorage.getItem('idbarang');
-      console.log(getId)
-
-      let self=this;
-      product.getbyidApparel(window,getId)
-      .then(function (result){
-          console.log(result);
-          self.images=result
-      });
-      // .catch(function (err)
-      // {
-      //     console.log(err);
-      // });
-    },
+   
 
   methods: {
         onSubmit(){
@@ -265,6 +247,7 @@ export default {
          this.email = null
          alert('Terimakasih anda sudah berlangganan')
         },
+
         findByName(search) {
     console.log(this.search)
     localStorage.setItem('search', this.search)
@@ -277,8 +260,8 @@ export default {
           this.$router.push('/paymentapparel')
       }
     }
-    
-  };
+
+  }
 </script>
 
 <style lang="sass" scoped>

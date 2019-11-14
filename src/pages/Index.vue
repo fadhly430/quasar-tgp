@@ -48,194 +48,123 @@
         <div class="col-xs-1 q-col-gutter-x-xl" />
         <div class="col-3 ">
           <q-card>
-          <q-img src="./statics/SAKA2.jpg" style="width: 100%"@click="$router.replace('/wallet')"/>
+          <q-img src="./statics/SAKA2.jpg" style="width: 100%" @click="$router.replace('/wallet')"/>
           </q-card>
         </div>
     </div>
 
-    <div class="column" style="height: 30px"/> <!-- jarak --->
+    <div class="column" style="height: 50px"/> <!-- jarak --->
 
     <div class="row items-center">
       <div class="col-5">
         <q-separator color="blue-grey-3" inset />
       </div>
       <div class="col-2">
-        <div class="text-h5 text-center text-weight-regular"> New Items</div>
+        <div class="text-h5 text-center text-weight-regular"> New Apparel Items </div>
       </div>
        <div class="col-5">
         <q-separator color="blue-grey-3" inset />
       </div>
     </div>
 
-    <div class="column" style="height: 20px"/> <!-- jarak --->
+    <div class="column" style="height: 50px"/> <!-- jarak --->
     
     <div class="q-gutter-md row justify-center">
       
 
-      <div class="col-2">
-        <q-card  @click="$router.replace('/taigacoach')">
-          <img src="statics/apparel/j2.jpg" class="responsive">
+      <div class="col-2" v-for="itema in imagesa" :key="itema.id">
+        <q-card  @click="show(itema)">
+          <img :src="itema.ImgApparel">
           <q-card-actions align="around">
             <div class="row justify-center">
               <div class="col">
-                <div class="text-center text--subtitle1">Taiga Coach</div>
-                <div class="text-center" >Rp. 475.000</div>
+                <div class="text-center text--subtitle1">{{itema.NamaApparel}}</div>
+                <div class="text-center" >Rp. {{itema.HargaApparel}}</div>
               </div>
             </div>
           </q-card-actions>
         </q-card>
       </div>
 
-      <div class="col-2">
-        <q-card  @click="$router.replace('/carrieruler')">
-                    <img src="statics/wallet/w8.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Carrie Ruler</div>
-                        <div class="text-center" >Rp. 169.900</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
-
-      <div class="col-2">
-       <q-card  @click="$router.replace('/nolan-chery')">
-                    <img src="statics/sepatu/s9.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Nolan Chery White</div>
-                                <div class="text-center" >Rp. 379.000</div>
-                            </div>
-                         </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
-
-      <div class="col-2">
-         <q-card  @click="$router.replace('/nolan-full')">
-                    <img src="statics/sepatu/s10.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Nolan Full White</div>
-                                <div class="text-center" >Rp. 399.000</div>
-                            </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
-
-      <div class="col-2">
-        <q-card  @click="$router.replace('/gomenasaibomber')">
-                    <img src="statics/apparel/j3.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                        <div class="text-center text--subtitle1">Gomenasai Bomber</div>
-                        <div class="text-center" >Rp. 465.000</div>
-                    </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
+      
 
     </div>
-
-     <div class="column" style="height: 70px"/><!-- jarak --->
-
+<!-- new wallet -->
+    <div class="column" style="height: 50px"/> <!-- jarak --->
 
     <div class="row items-center">
       <div class="col-5">
         <q-separator color="blue-grey-3" inset />
       </div>
       <div class="col-2">
-        <div class="text-h5 text-center text-weight-regular"> Hot Items</div>
+        <div class="text-h5 text-center text-weight-regular"> New Wallet Items </div>
       </div>
        <div class="col-5">
         <q-separator color="blue-grey-3" inset />
-       </div>
+      </div>
     </div>
 
-    <div class="column" style="height: 20px"/> <!-- jarak --->
+    <div class="column" style="height: 50px"/> <!-- jarak --->
     
     <div class="q-gutter-md row justify-center">
       
 
-      <div class="col-2">
-         <q-card  @click="$router.replace('/rua-tosca')">
-                    <img src="statics/sepatu/s6.jpg" class="responsive" >
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Rua White Tosca</div>
-                                <div class="text-center" >Rp. 389.000</div>
-                        </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
+      <div class="col-2" v-for="itemw in imagesw" :key="itemw.id">
+        <q-card  @click="show(itemw)">
+          <img :src="itemw.ImgWallet">
+          <q-card-actions align="around">
+            <div class="row justify-center">
+              <div class="col">
+                <div class="text-center text--subtitle1">{{itemw.NamaWallet}}</div>
+                <div class="text-center" >Rp. {{itemw.HargaWallet}}</div>
+              </div>
+            </div>
+          </q-card-actions>
+        </q-card>
       </div>
 
-      <div class="col-2">
-        <q-card  @click="$router.replace('/adlercaren')">
-                    <img src="statics/wallet/w9.jpg" class="responsive">
-                    <q-card-actions align="around">
-                         <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Adler Caren</div>
-                                <div class="text-center" >Rp. 169.900</div>
-                            </div>
-                         </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
-
-      <div class="col-2">
-        <q-card  @click="$router.replace('/crazyasiancoach')">
-                    <img src="statics/apparel/j1.jpg" class="responsive" >
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Crazy Asian Coach</div>
-                                <div class="text-center" >Rp. 475.000</div>
-                        </div>
-                        </div>
-                        </q-card-actions>
-                    </q-card>
-      </div>
-
-      <div class="col-2">
-        <q-card  @click="$router.replace('/clausnami')">
-                    <img src="statics/wallet/w7.jpg" class="responsive">
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Clausa Nami</div>
-                                <div class="text-center" >Rp. 169.900</div>
-                             </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
-
-      <div class="col-2">
-         <q-card  @click="$router.replace('/naisubomber')">
-                    <img src="statics/apparel/j7.jpg" class="responsive">
-                    <q-card-actions align="around">
-                        <div class="row justify-center">
-                            <div class="col">
-                                <div class="text-center text--subtitle1">Naisu Bomber</div>
-                                <div class="text-center" >Rp. 465.000</div>
-                             </div>
-                        </div>
-                    </q-card-actions>
-                    </q-card>
-      </div>
+      
 
     </div>
 
+    <div class="column" style="height: 50px"/> <!-- jarak --->
+
+    <div class="row items-center">
+      <div class="col-5">
+        <q-separator color="blue-grey-3" inset />
+      </div>
+      <div class="col-2">
+        <div class="text-h5 text-center text-weight-regular"> New Shoes Items </div>
+      </div>
+       <div class="col-5">
+        <q-separator color="blue-grey-3" inset />
+      </div>
+    </div>
+
+    <div class="column" style="height: 50px"/> <!-- jarak --->
+    
+    <div class="q-gutter-md row justify-center">
+      
+
+      <div class="col-2" v-for="itemss in imagess" :key="itemss.id">
+        <q-card  @click="show(itemss)">
+          <img :src="itemss.ImgShoes">
+          <q-card-actions align="around">
+            <div class="row justify-center">
+              <div class="col">
+                <div class="text-center text--subtitle1">{{itemss.NamaShoes}}</div>
+                <div class="text-center" >Rp. {{itemss.HargaShoes}}</div>
+              </div>
+            </div>
+          </q-card-actions>
+        </q-card>
+      </div>
+
+      
+
+    </div>
+
+  
     <div class="column" style="height: 100px"/><!-- jarak --->
 
 
@@ -244,12 +173,114 @@
  
 
 <script>
+import containeer from '../api/container/container';
+import {downloadImage} from '../api/upload/index';
+import producta from '../api/barang/apparel';
+import productw from '../api/barang/wallet';
+import products from '../api/barang/shoes';
+
 export default {
    data () {
     return {
-      slide: '1'
+      slide: '1',
+
+      imagesa:[],
+      imagesw:[],
+      imagess:[],
     }
-  }
+  },
+
+  computed: {
+      getImgs(){
+          this.getImg()
+      }
+  },
+
+  beforeCreate(){
+      let self=this;
+
+      producta.getBarangApparel(window).then(function (result){
+          console.log(result);
+           for (let i = 0; i < 5; i++) {
+            self.imagesa.push(result[i])
+          }
+      })
+
+      productw.getBarangWallet(window).then(function (result){
+          console.log(result);
+           for (let i = 0; i < 5; i++) {
+            self.imagesw.push(result[i])
+          }
+      })
+
+      products.getBarangShoes(window).then(function (result){
+          console.log(result);
+           for (let i = 0; i < 5; i++) {
+            self.imagess.push(result[i])
+          }
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+  },
+
+  methods:{
+      show(itema){
+          localStorage.setItem('idbarang',item.id)
+          this.$router.push('/orderapparel')
+      },
+
+      show(itemw){
+          localStorage.setItem('idbarang',item.id)
+          this.$router.push('/orderwallet')
+      },
+
+      show(items){
+          localStorage.setItem('idbarang',item.id)
+          this.$router.push('/ordershoes')
+      },
+      
+      getBarangApparel(){
+          let getSearch = localStorage.getItem('search')
+          let self=this;
+          producta.getBarangApparel(window, getSearch)
+          .then(function(result){
+              console.log("result:", result)
+              return self.imagesa=result.data
+          })
+          .catch(function (err){
+              console.log(err);
+          });
+      },
+      
+      getBarangWallet(){
+          let getSearch = localStorage.getItem('search')
+          let self=this;
+          producta.getBarangApparel(window, getSearch)
+          .then(function(result){
+              console.log("result:", result)
+              return self.imagesw=result.data
+          })
+          .catch(function (err){
+              console.log(err);
+          });
+      },
+
+      getBarangShoes(){
+          let getSearch = localStorage.getItem('search')
+          let self=this;
+          producta.getBarangApparel(window, getSearch)
+          .then(function(result){
+              console.log("result:", result)
+              return self.imagess=result.data
+          })
+          .catch(function (err){
+              console.log(err);
+          });
+      },
+  }    
+      
 }
 </script>
 

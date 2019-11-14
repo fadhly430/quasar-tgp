@@ -72,7 +72,7 @@
                         
                         <div class="row">
                             <div class="col-12 q-gutter-xl">
-                                <q-select outlined v-model="form.Shipping" :options="ship" placeholder="Shipping"/>
+                                <q-select outlined v-model="form.Shipping" :options="ship" label="Shipping" placeholder="Shipping"/>
                             </div>
                         </div>
                         <div class="row" style="height: 25px"/>
@@ -93,7 +93,7 @@
                  <q-separator  color="blue-grey-3" vertical inset />
             </div>
             <div class="col">
-            <div class="row">
+            <div class="row items-center">
                    <div class="col-2 q-gutter-lg">
                        <q-card>
                          <q-img :src="images.ImgApparel"/>
@@ -129,14 +129,10 @@
             </div>
             <div class="column" style="height: 30px"/>
 
-            <div class="row">
+            <div class="row justify-center">
                 <div class="col-8">
                     <q-input outlined v-model="form.Diskon"  placeholder="Kode Diskon"/>
-                </div>
-                <div class="col-1 q-gutter-lg"/>
-                <div class="col-1">
-                
-                </div>
+                </div> 
             </div>
             <div class="column" style="height: 30px"/>
             <q-separator color="grey-5" />
@@ -261,20 +257,32 @@ export default {
         },
 
         dis:function(){
-            if(this.form.Diskon== 'baru'){
+            if(this.form.Diskon == ('baru')){
                 return parseInt(13000)
+            }
+            else if(this.form.Diskon== null){
+                return parseInt(0)
             }
             
         },
 
         total:function() { 
-            if (this.form.Diskon=='baru'){
-                return (this.subtotal + this.kurir) - parseInt(10000)
-            }
-            
+            return (this.subtotal + this.kurir) - this.dis            
         },
 
     },
+
+    beforeCreate(){
+      let self=this;
+     kupon.getdiscont(window).then(function (result){
+          console.log(result);
+          self.tarik=result
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+  },
 
     beforeCreate(){
       let getId= localStorage.getItem('idbarang');
@@ -284,7 +292,6 @@ export default {
       product.getbyidApparel(window,getId)
       .then(function (result){
           self.images=result
-          console.log('test', self.images);
       })
       .catch(function (err)
       {
