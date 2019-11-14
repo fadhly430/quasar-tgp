@@ -55,6 +55,8 @@
                   </q-card>
                 </div>   
                 
+
+
                 <div class="col-1 q-gutter-sm"/>
 
                 <div class="col-3">
@@ -64,13 +66,14 @@
                 <div class="col-1 q-gutter-md"/>
 
                 <div class="col-3">
-                  <div class="text-center text-H12" >Rp.{{images.HargaApparel}}</div>
-                </div>
-
+                  <div class="text-center text-H11" >Rp.{{images.HargaApparel}}</div>
+   
                 <div class="col-1 q-gutter-sm"/>
-
+                 </div>
+        <div class="cart-items">
+        </div>
                 <div class="col-1">
-                  <q-btn class="gt-xs" size="12px" flat dense round icon="delete"/>
+                  <q-btn class="gt-xs" size="10px" flat dense round icon="delete"/>
                 </div>
               </div>
               <div class="column" style="height:20px"/>
@@ -208,6 +211,7 @@
 </template>
 
 <script>
+
 import promote from '../api/promote/promote';
 import containeer from '../api/container/container';
 import {downloadImage} from '../api/upload/index';
@@ -241,11 +245,11 @@ export default {
       .then(function (result){
           console.log(result);
           self.images=result
-      })
-      .catch(function (err)
-      {
-          console.log(err);
       });
+      // .catch(function (err)
+      // {
+      //     console.log(err);
+      // });
     },
 
   methods: {
