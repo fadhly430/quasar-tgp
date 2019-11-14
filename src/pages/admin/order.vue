@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
-                    <!-- <q-btn-dropdown icon="notification_important" flat label="Notification"/> -->
+                    
                     </div>
                 </div>
             </div>
@@ -91,6 +91,7 @@
 
 <script>
 import order from '../../api/payment/index';
+import acc from '../../api/login/index';
 
 export default {
   data () {
@@ -143,21 +144,15 @@ export default {
         console.log("delete called");
       }
     },
-    // edit(mesen) {
-    //   try{
-    //     this.dialog = true
-    //     this.updateSubmit = true
-    //     this.formorder.id_customer = mesen.id_customer
-    //     this.formorder.id_barang = mesen.id_barang
-    //     this.formorder.Shipping = mesen.Shipping
-    //     this.formorder.Jumlah = mesen.Jumlah
-    //     this.formorder.Total = mesen.Total
-    //   }
-    //   catch (error)
-    //   {
-    //     console.log(error.order)
-    //   }
-    // },    
+    async mounted(){
+      
+    const response = await
+    acc.getaccount(window,id_customer)
+    {
+     return this.account = response
+      console.log(response)
+    }
+  },
 
     batal(){
       this.dialog = false

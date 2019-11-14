@@ -180,7 +180,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">Rp. {{total}}</div> 
+                    <div class="text-right text-bold">Rp. {{Total}}</div> 
                 </div>
              </div>
         </div>
@@ -196,6 +196,7 @@ import containeer from '../../api/container/container';
 import {downloadImage} from '../../api/upload/index';
 import product from '../../api/barang/apparel';
 import kupon from '../../api/discont/discont';
+import acc from '../../api/login/index';
 
 export default {
     data(){
@@ -241,6 +242,7 @@ export default {
     computed: {
         
         subtotal:function(){
+        
         return  parseInt(this.images.HargaApparel) * parseInt(this.form.Jumlah)
         },
 
@@ -254,15 +256,18 @@ export default {
             else if (this.form.Shipping == 'SICEPAT'){
                 return parseInt(9000)
             }
+            else 
+           return parseInt(0)
+            
         },
 
         dis:function(){
             if(this.form.Diskon == ('baru')){
                 return parseInt(13000)
             }
-            else if(this.form.Diskon== null){
+            else 
                 return parseInt(0)
-            }
+            
             
         },
 
@@ -274,28 +279,18 @@ export default {
        }
        else if(this.form.diskon=='BERUSAHA'){
            return parseInt(25000)
-       } else {
+       } 
+       else 
            return parseInt(0)
-       }
+       
     },
 
-        total:function() { 
+        Total:function() { 
             return (this.subtotal + this.kurir) - this.dis            
         },
 
     },
 
-    beforeCreate(){
-      let self=this;
-     kupon.getdiscont(window).then(function (result){
-          console.log(result);
-          self.tarik=result
-      })
-      .catch(function (err)
-      {
-          console.log(err);
-      });
-  },
 
     beforeCreate(){
       let getId= localStorage.getItem('idbarang');
@@ -315,15 +310,14 @@ export default {
     methods : {
         onSubmit(){
             let self = this;
-
-            let getidproduct = localStoragege.getItem('id_barang');
+            let getidbarang = localStorage.getItem('idbarang');
             let getidcustomer = localStorage.getItem('id_customer');
             
-            payment.postmessagedata(window, getidproduct,getidcustomer, self.FNama, self.LNama, 
+            payment.postmessagedata(window, getidbarang,getidcustomer, self.FNama, self.LNama, 
             self.Alamat, self.Kecamatan, self.Kota, self.Negara,  self.Provinsi, self.Kodepos, 
-            self.Tlp, self.form.Shipping , self.form.Jumlah, self.total).then(function(result){
-                console.log(response)
-                return self.$router.push("");
+            self.Tlp, self.form.Shipping , self.form.Jumlah, self.Total).then(function(result){
+                console.log(id_customer)
+                return self.$router.push("/atm");
                 
             })
             .catch(function (error) {
@@ -344,7 +338,7 @@ export default {
             this.subtotal=null,
             this.kurir=null,
             this.Diskon=null,
-            this.total=null
+            this.Total=null
         }
     },
 

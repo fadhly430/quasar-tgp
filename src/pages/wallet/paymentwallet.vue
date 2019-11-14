@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-1 q-gutter-xl"/>    
                 <div class="col-2">
-                    <!-- <q-select borderless v-model="form.Ukuruan" :options="size" label="Size"/> -->
+                    <q-select borderless v-model="form.Ukuruan" :options="size" label="Size"/>
                 </div>
                 <div class="col-1 q-gutter-lg"/>
                 <div class="col-2">
@@ -132,8 +132,7 @@
             <div class="row justify-center">
                 <div class="col-8">
                     <q-input outlined v-model="form.Diskon"  placeholder="Kode Diskon"/>
-                </div>
-                
+                </div> 
             </div>
             <div class="column" style="height: 30px"/>
             <q-separator color="grey-5" />
@@ -181,7 +180,7 @@
                 </div>
                 
                 <div class="col-6">
-                    <div class="text-right text-bold">Rp. {{total}}</div> 
+                    <div class="text-right text-bold">Rp. {{Total}}</div> 
                 </div>
              </div>
         </div>
@@ -197,6 +196,7 @@ import containeer from '../../api/container/container';
 import {downloadImage} from '../../api/upload/index';
 import product from '../../api/barang/wallet';
 import kupon from '../../api/discont/discont';
+import acc from '../../api/login/index';
 
 export default {
     data(){
@@ -230,7 +230,7 @@ export default {
             Tlp:"",
             Ukuran: "",
 
-            
+            size:['S','M','L','XL'],
             nega: ['Indonesia'],
             prov: ['Aceh', 'Bali', 'Bangka Belitung', 'Banten', 'Bengkulu','Gorontalo','Jakarta','Jambi','Jawa Barat'
         ,'Jawa Tengah','Jawa Timur','Kalimantan Timur',' Kalimantan Utara','Kepulauan Riau','Lampung','Maluku','Maluku Utara','Nusa Tenggara Barat','Nusa Tenggara Timur','Papua','Papua Barat','Riau','Sulawesi Barat','Sulewasi Selatan','Sulawesi Selatan'
@@ -242,6 +242,7 @@ export default {
     computed: {
         
         subtotal:function(){
+        
         return  parseInt(this.images.HargaWallet) * parseInt(this.form.Jumlah)
         },
 
@@ -255,33 +256,50 @@ export default {
             else if (this.form.Shipping == 'SICEPAT'){
                 return parseInt(9000)
             }
+            else 
+           return parseInt(0)
+            
         },
 
         dis:function(){
-            if(this.form.Diskon== 'baru'){
+            if(this.form.Diskon == ('baru')){
                 return parseInt(13000)
             }
+            else 
+                return parseInt(0)
+            
             
         },
 
-        total:function() { 
-            if (this.form.Diskon=='baru'){
-                return (this.subtotal + this.kurir) - parseInt(10000)
-            }
-            
+        Discont:function(){
+        if(this.form.diskon=='TGPROCECT'){
+           return parseInt(20000)
+       } else if(this.form.diskon=='DOA'){
+           return parseInt(50000)
+       }
+       else if(this.form.diskon=='BERUSAHA'){
+           return parseInt(25000)
+       } 
+       else 
+           return parseInt(0)
+       
+    },
+
+        Total:function() { 
+            return (this.subtotal + this.kurir) - this.dis            
         },
 
     },
+
 
     beforeCreate(){
       let getId= localStorage.getItem('idbarang');
       console.log(getId)
 
       let self=this;
-      product.getbyidwallet(window,getId)
+      product.getbyidWallet(window,getId)
       .then(function (result){
           self.images=result
-          console.log('test', self.images);
       })
       .catch(function (err)
       {
@@ -292,12 +310,14 @@ export default {
     methods : {
         onSubmit(){
             let self = this;
+            let getidbarang = localStorage.getItem('idbarang');
+            let getidcustomer = localStorage.getItem('id_customer');
             
-            payment.postmessagedata(window, self.FNama, self.LNama, 
-            self.Alamat, self.Kecamatan, self.Kota, self.Negara, 
-            self.Provinsi, self.Kodepos, self.Tlp, self.form.Shipping ).then(function(result){
-                console.log(response)
-                return self.$router.push("");
+            payment.postmessagedata(window, getidbarang,getidcustomer, self.FNama, self.LNama, 
+            self.Alamat, self.Kecamatan, self.Kota, self.Negara,  self.Provinsi, self.Kodepos, 
+            self.Tlp, self.form.Shipping , self.form.Jumlah, self.Total).then(function(result){
+                console.log(id_customer)
+                return self.$router.push("/atm");
                 
             })
             .catch(function (error) {
@@ -313,7 +333,12 @@ export default {
             this.Provinsi=null,
             this.Kodepos=null,
             this.Tlp=null,
-            this.Shipping=null
+            this.Shipping=null,
+            this.dis=null,
+            this.subtotal=null,
+            this.kurir=null,
+            this.Diskon=null,
+            this.Total=null
         }
     },
 

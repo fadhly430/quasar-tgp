@@ -5,8 +5,11 @@ export default
 {
     postmessagedata(window,  id_barang, id_customer, FNama, LNama, 
         Alamat, Kecamatan, Kota, Negara,  Provinsi, Kodepos, 
-        Tlp, Shipping , Jumlah, total)
+        Tlp, Shipping , Jumlah, Total)
     {
+        console.log( id_barang, id_customer, FNama, LNama, 
+            Alamat, Kecamatan, Kota, Negara,  Provinsi, Kodepos, 
+            Tlp, Shipping , Jumlah, Total)
         return getApiNoAuth2()
     .post('payments', 
         {
