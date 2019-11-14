@@ -37,7 +37,11 @@ const routes = [
       { path: 'orderapparel', component: () => import('pages/apparel/orderapparel.vue') },
       { path: 'orderwallet', component: () => import('pages/wallet/orderwallet.vue') },
       { path: 'ordershoes', component: () => import('pages/sepatu/ordershoes.vue') },
+<<<<<<< HEAD
       { path: 'search', component: () => import('pages/sepatu/search.vue') }
+=======
+      { path: 'atm', component: () => import('pages/atm.vue') },
+>>>>>>> 90d4601c2afbdbce7b18a94d945f14c9cb01478c
     ]
   },
   {
