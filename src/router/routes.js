@@ -33,6 +33,7 @@ const routes = [
       { path: 'orderapparel', component: () => import('pages/apparel/orderapparel.vue') },
       { path: 'orderwallet', component: () => import('pages/wallet/orderwallet.vue') },
       { path: 'ordershoes', component: () => import('pages/sepatu/ordershoes.vue') },
+      { path: 'atm', component: () => import('pages/atm.vue') },
     ]
   },
   {
