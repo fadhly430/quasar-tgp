@@ -51,20 +51,20 @@
                 <div class="col-1 q-gutter-xs"/>
                 <div class="col-2">
                   <q-card>
-                    <q-img src="/statics/apparel/j1.jpg" />
+              <q-img :src="images.ImgApparel"/>
                   </q-card>
                 </div>   
                 
                 <div class="col-1 q-gutter-sm"/>
 
                 <div class="col-3">
-                  <div class="text-center text-H12" > Crazy Asian Coach </div>
+                  <div class="text-center text-H12" > {{images.NamaApparel}} </div>
                 </div>
 
                 <div class="col-1 q-gutter-md"/>
 
                 <div class="col-3">
-                  <div class="text-center text-H12" > Rp. 465000 </div>
+                  <div class="text-center text-H12" >Rp.{{images.HargaApparel}}</div>
                 </div>
 
                 <div class="col-1 q-gutter-sm"/>
@@ -76,7 +76,11 @@
               <div class="column" style="height:20px"/>
               <div class="row justify-center">
                 <div class="col-10">
+                   <q-item clickable tag="a" target="" @click="$router.replace('/paymentapparel')" >
+                <q-item-section>
                   <q-btn push color="primary" label="Beli Sekarang" class="full-width" icon="card_giftcard" />
+                  </q-item-section>
+                </q-item>
                 </div>
               </div>
               <div class="column" style="height:15px"/>
@@ -205,6 +209,9 @@
 
 <script>
 import promote from '../api/promote/promote';
+import containeer from '../api/container/container';
+import {downloadImage} from '../api/upload/index';
+import product from '../api/barang/apparel';
 // import cart from '../api/cart/index';
 export default {
   data () {
@@ -212,10 +219,35 @@ export default {
        tab: 'mails',
        email: "",
        drawer: false,
+       images:[],
+        model: null,
        text: '',
        search:[]
     }
   },
+
+    computed: {
+      getImgs(){
+          this.getImg()
+      }
+  },
+
+    beforeCreate(){
+      let getId= localStorage.getItem('idbarang');
+      console.log(getId)
+
+      let self=this;
+      product.getbyidApparel(window,getId)
+      .then(function (result){
+          console.log(result);
+          self.images=result
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+    },
+
   methods: {
         onSubmit(){
           let self = this;
@@ -233,7 +265,11 @@ export default {
     console.log(this.search)
     localStorage.setItem('search', this.search)
     return this.$router.push("/search")
-    }
+    },
+      show(images){
+          localStorage.setItem('idbarang',images.id)
+          this.$router.push('/paymentapparel')
+      }
     }
     
   };
