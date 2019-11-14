@@ -103,7 +103,7 @@
                     
                     <!-- Button awal -->
                     <div>
-                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(form)" />
+                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(formshoes)" />
                         <q-btn flat label="Cancel" color="black" v-close-popup="cancelEnabled" @click="batal()" />
 
                     </div>

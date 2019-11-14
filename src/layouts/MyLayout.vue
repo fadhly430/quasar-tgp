@@ -45,10 +45,35 @@
           </q-item-section>
 
           <q-menu transition-show="jump-down" transition-hide="jump-up">
-             <q-list style="min-width:250px">
-             <q-item clickable>
+             <q-list style="min-width:300px">
+               <div class="column" style="height:15px"/>
+              <div class="row items-center">
+                <div class="col-1 q-gutter-xs"/>
+                <div class="col-2">
+                  <q-card>
+                    <q-img src="/statics/apparel/j1.jpg" />
+                  </q-card>
+                </div>   
+                
+                <div class="col-1 q-gutter-sm"/>
 
-             </q-item>
+                <div class="col-3">
+                  <div class="text-center text-H12" > Crazy Asian Coach </div>
+                </div>
+
+                <div class="col-1 q-gutter-md"/>
+
+                <div class="col-3">
+                  <div class="text-center text-H12" > Rp. 465000 </div>
+                </div>
+
+                <div class="col-1 q-gutter-lg"/>
+
+                <div class="col-2">
+                  <q-btn class="gt-xs" size="12px" flat dense round icon="delete"/>
+                </div>
+              </div>
+              <div class="column" style="height:15px"/>
              </q-list>
           </q-menu>
        </q-item>
@@ -200,6 +225,7 @@ export default {
         findByName(search) {
     console.log(this.search)
     localStorage.setItem('search', this.search)
+    return this.$router.push("/search")
     }
     }
     

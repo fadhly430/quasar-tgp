@@ -102,12 +102,11 @@
                     <q-input filled v-model="formwallet.NamaWallet" label="Nama Wallet"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formwallet.KeteranganWallet" label="Keterangan"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formwallet.StockWallet" label="Stock"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formwallet.ImgWallet" label="Img"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     <q-input filled v-model="formwallet.HargaWallet" label="Harga"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
                     
                     <!-- Button awal -->
                     <div>
-                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(form)" />
+                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(formwallet)" />
                         <q-btn flat label="Cancel" color="black" v-close-popup="cancelEnabled" @click="batal()" />
 
                     </div>

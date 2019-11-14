@@ -20,18 +20,17 @@
                     <q-card @click="show(item)">
                     <img :src="item.ImgShoes" >
                     <q-card-actions align="around">
-                        <div class="column">
+
                         <div class="row justify-center">
                             <div class="col">
                                 <div class="text-center text-subtitle1">{{item.NamaShoes}}</div>
                             </div>
                         </div>
                         <div class="row justify-center" style="height:10px"/>
-                        <!-- <div class="row justify-center"> -->
-                            <!-- <div class="col"> -->
+                        <div class="row justify-center">
+                            <div class="col">
                                 <div class="text-center" >Rp. {{item.HargaShoes}}</div>
-                            <!-- </div> -->
-                        <!-- </div> -->
+                            </div>
                         </div>
                     </q-card-actions>
                     </q-card>
@@ -74,16 +73,18 @@ export default {
   },
 
   beforeCreate(){
+      let getSearch = localStorage.getItem('search')
       let self=this;
-      product.getBarangShoes(window).then(function (result){
-          console.log(result);
-          self.images=result
+      product.getBarangShoes(window, getSearch)
+      .then(function(result){
+          console.log("result:", result)
+          return self.images=result.data
       })
-      .catch(function (err)
-      {
+      .catch(function (err) {
           console.log(err);
       });
-  },
+          
+      },
   
   methods:{
       show(item){

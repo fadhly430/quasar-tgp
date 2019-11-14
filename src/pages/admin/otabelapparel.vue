@@ -53,37 +53,37 @@
           </q-item-section>
         </q-item>
 
-        <q-item v-for="(formbaju, index) in frombajus" :key="formbaju.id" class="bg-grey-3 text-black" line="1">
+        <q-item v-for="(frombaju, index) in frombajus" :key="frombaju.id" class="bg-grey-3 text-black" line="1">
           <q-item-section avatar top class="col-1 gt-xl text-center">
               <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : left">
-              <q-item-label class="q-mt-sm">{{formbaju.KodeApparel}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{frombaju.KodeApparel}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-3 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formbaju.NamaApparel}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{frombaju.NamaApparel}}</q-item-label>
           </q-item-section>
 
          
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formbaju.StockApparel}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{frombaju.StockApparel}}</q-item-label>
           </q-item-section>
           
           <q-item-section top class="col-3 gt-sm flex flex-center ">
-            <q-img style="width:50%" :src="formbaju.ImgApparel"/>
+            <q-img style="width:50%" :src="frombaju.ImgApparel"/>
           </q-item-section>
 
           <q-item-section top class="col-1 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{formbaju.HargaApparel }}</q-item-label>
+              <q-item-label class="q-mt-sm">{{frombaju.HargaApparel }}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-2 gt-xm">
             <div class="q-mt-sm flex flex-center" style="align : right">
-              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(formbaju.id)" />
-              <q-btn class="gt-xs" size="12px" flat dense round icon="edit"  @click="edit(formbaju)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(frombaju.id)" />
+              <q-btn class="gt-xs" size="12px" flat dense round icon="edit"  @click="edit(frombaju)" />
             </div>
           </q-item-section>
         </q-item>
@@ -103,7 +103,7 @@
                     
                     <!-- Button awal -->
                     <div>
-                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(form)" />
+                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(formapparel)" />
                         <q-btn flat label="Cancel" color="black" v-close-popup="cancelEnabled" @click="batal()" />
 
                     </div>
@@ -179,7 +179,7 @@ export default {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formapparel.id = frombajuw.id
+        this.formapparel.id = frombaju.id
         this.formapparel.KodeApparel = frombaju.KodeApparel
         this.formapparel.NamaApparel = frombaju.NamaApparel
         this.formapparel.KeteranganApparel = frombaju.KeteranganApparel

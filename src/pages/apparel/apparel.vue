@@ -17,25 +17,28 @@
             <div class="row justify-center ">
                 
                 <div class="col-3 q-gutter-xl padding" v-for="item in images" :key="item.id">
+                    
                     <q-card @click="show(item)">
                     <img :src="item.ImgApparel" >
                     
                     <!-- <q-btn flat > -->
                     <q-card-actions align="around">
-
+                        <div class="column">
                         <div class="row justify-center">
                             <div class="col">
                                 <div class="text-center text-subtitle1">{{item.NamaApparel}}</div>
                             </div>
                         </div>
                         <div class="row justify-center" style="height:10px"/>
-                        <div class="row justify-center">
-                            <div class="col">
+                        <!-- <div class="row justify-center">
+                            <div class="col"> -->
                                 <div class="text-center" >Rp. {{item.HargaApparel}}</div>
-                            </div>
+                            <!-- </div>
+                        </div> -->
                         </div>
                     </q-card-actions>
                     <!-- </q-btn> -->
+
                     </q-card>
                 </div>
 

@@ -2,9 +2,9 @@ import {getApiNoAuth2} from '../utils'
 
 export default
 {
-getBarangApparel(window) {
+getdiscont(window) {
     return getApiNoAuth2()
-      .get('formbajus')
+      .get('discounts')
       .then(function (response) {
         console.log(response)
         return response.data
@@ -12,4 +12,51 @@ getBarangApparel(window) {
         console.log(err)
       })
   },
+
+  postdiscont(window,Discount,Coupons)
+  {
+    return getApiNoAuth2().post('discounts' ,{
+      Discount : Discount,
+      Coupons : Coupons
+    })
+    .then(function(response){
+      console.log(response)
+      return response.data
+    })
+    .catch(function(err){
+      console.log(err)
+    })
+  },
+
+  deletediscont(window, id){
+    console.log(id)
+    return getApiNoAuth2()
+    .delete('/discounts/'.concat(id))
+    .then(function(response){
+        console.log(response)
+        return response.data
+    }).catch(function(err){
+        console.log(err)
+    })
+  },
+  
+  updateBarangApparel(window,Discount,Coupons)
+    {
+        return getApiNoAuth2()
+        .put('/discounts/'+id,
+        {
+          Discount : Discount,
+          Coupons : Coupons  
+        })
+        .then(function(response)
+        {
+            console.log(response)
+            return response.data
+        })
+        .catch(function(err)
+        {
+            console.log(err)
+        })
+    },
+
 }

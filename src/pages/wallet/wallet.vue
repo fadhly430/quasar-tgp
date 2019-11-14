@@ -19,17 +19,18 @@
                     <q-card flat @click="show(item)" >
                     <img :src="item.ImgWallet" >
                     <q-card-actions align="around">
-
+                        <div class="column">
                         <div class="row justify-center">
                             <div class="col">
                                 <div class="text-center text-subtitle1">{{item.NamaWallet}}</div>
                             </div>
                         </div>
                         <div class="row justify-center" style="height:10px"/>
-                        <div class="row justify-center">
-                            <div class="col">
+                        <!-- <div class="row justify-center"> -->
+                            <!-- <div class="col"> -->
                                 <div class="text-center" >Rp. {{item.HargaWallet}}</div>
-                            </div>
+                            <!-- </div> -->
+                        <!-- </div> -->
                         </div>
                     </q-card-actions>
                     </q-card>

@@ -13,6 +13,8 @@ const routes = [
       { path: 'account', component: () => import('pages/account.vue') },
       { path: 'regis', component: () => import('pages/regis.vue') },
       { path: 'laccount', component: () => import('pages/pageacount.vue') },
+      
+      
     ]
   },
 
@@ -35,6 +37,7 @@ const routes = [
       { path: 'orderapparel', component: () => import('pages/apparel/orderapparel.vue') },
       { path: 'orderwallet', component: () => import('pages/wallet/orderwallet.vue') },
       { path: 'ordershoes', component: () => import('pages/sepatu/ordershoes.vue') },
+      { path: 'search', component: () => import('pages/sepatu/search.vue') }
     ]
   },
   {
@@ -46,8 +49,8 @@ const routes = [
         { path: 'tabelwallet', component:() => import('pages/admin/otabelwallet.vue')},
         { path: 'tabelsepatu', component:() => import('pages/admin/otabelsepatu.vue')},
         { path: 'message', component:() => import('pages/admin/message.vue')},
-        { path: 'order', component:() => import('pages/admin/order.vue')},
-        { path: 'login', component:() => import('pages/admin/login.vue')},
+        { path: 'order', component:() => import('pages/admin/order.vue')},        
+        { path: 'coupons', component:() => import('pages/admin/coupons.vue')},
         { path: 'addapparel', component:() => import('pages/admin/postapparel.vue')},
         { path: 'addwallet', component:() => import('pages/admin/postwallet.vue')},
         { path: 'addsepatu', component:() => import('pages/admin/postsepatu.vue')},
@@ -62,8 +65,8 @@ const routes = [
       { path: 'tabelwallet', component:() => import('pages/admin/tabelwallet.vue')},
       { path: 'tabelsepatu', component:() => import('pages/admin/tabelsepatu.vue')},
       { path: 'message', component:() => import('pages/admin/message.vue')},
-      { path: 'order', component:() => import('pages/admin/order.vue')},
-      { path: 'login', component:() => import('pages/admin/login.vue')},
+      { path: 'order', component:() => import('pages/admin/order.vue')},    
+      { path: 'coupons', component:() => import('pages/admin/acoupons.vue')},
       { path: 'addapparel', component:() => import('pages/admin/postapparel.vue')},
       { path: 'addwallet', component:() => import('pages/admin/postwallet.vue')},
       { path: 'addsepatu', component:() => import('pages/admin/postsepatu.vue')},

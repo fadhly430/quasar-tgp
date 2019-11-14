@@ -319,7 +319,12 @@ export default {
             this.Provinsi=null,
             this.Kodepos=null,
             this.Tlp=null,
-            this.Shipping=null
+            this.Shipping=null,
+            this.dis=null,
+            this.subtotal=null,
+            this.kurir=null,
+            this.Diskon=null,
+            this.total=null
         }
     },
 

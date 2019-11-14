@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="row ">
                     <div class="col-2">
-                        <div class="text-h6 ">TABLE Message</div>
+                        <div class="text-h6 ">TABLE order</div>
                     </div>
                     <div class="col-8 q-col-gutter-xl"/>
                     <div class="col-2">
@@ -27,19 +27,23 @@
             </q-item-section>
 
             <q-item-section top class="col-2 gt-xl text-center" style="align : left">
-                <q-item-label class="q-mt-sm">Nama</q-item-label>
+                <q-item-label class="q-mt-sm">ID Customer</q-item-label>
             </q-item-section>
 
             <q-item-section top class="col-2 gt-xm text-center" style="align : center">
-                <q-item-label class="q-mt-sm">Email</q-item-label>
+                <q-item-label class="q-mt-sm">ID Barang</q-item-label>
             </q-item-section>
 
             <q-item-section top class="col-2 gt-xm text-center" style="align : center">
-                <q-item-label class="q-mt-sm">Phone</q-item-label>
+                <q-item-label class="q-mt-sm">Shipping</q-item-label>
             </q-item-section>
             
-            <q-item-section top class="col-4 gt-xm text-center" style="align : center">
-                <q-item-label class="q-mt-sm">Message</q-item-label>
+            <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+                <q-item-label class="q-mt-sm">Jumlah</q-item-label>
+            </q-item-section>
+
+            <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+                <q-item-label class="q-mt-sm">Total</q-item-label>
             </q-item-section>
 
             <q-item-section top class="col-1 gt-xm">
@@ -47,27 +51,31 @@
             </q-item-section>
           </q-item>
         
-        <q-item v-for="(massage, index) in messages" :key="massage.id" class="bg-grey-3 text-black" line="1">
+        <q-item v-for="(mesen, index) in orders" :key="mesen.id" class="bg-grey-3 text-black" line="1">
           <q-item-section avatar top class="col-1 gt-xl text-center">
               <q-item-label class="q-mt-sm">{{index+1}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-2 gt-xl text-center" style="align : left">
-              <q-item-label class="q-mt-sm">{{massage.Name}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{mesen.id_customer}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-2 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{massage.Email}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{mesen.id_barang}}</q-item-label>
           </q-item-section>
 
           <q-item-section top class="col-2 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{massage.Phone}}</q-item-label>
+              <q-item-label class="q-mt-sm">{{mesen.Shipping}}</q-item-label>
           </q-item-section>
 
-          <q-item-section top class="col-4 gt-xm text-center" style="align : center">
-              <q-item-label class="q-mt-sm">{{massage.Message}}</q-item-label>
+          <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{mesen.Jumlah}}</q-item-label>
           </q-item-section>
         
+        <q-item-section top class="col-2 gt-xm text-center" style="align : center">
+              <q-item-label class="q-mt-sm">{{mesen.Total}}</q-item-label>
+          </q-item-section>
+
           <q-item-section top class="col-1 gt-xm">
             <div class="q-mt-sm flex flex-center" style="align : right">
               <q-btn class="gt-xs" size="12px" flat dense round icon="delete" @click="onDelete(formbaju.id)" />
@@ -76,49 +84,27 @@
         </q-item>
       </q-list>
 
-      <q-dialog v-model="dialog" persistent>
-        <q-card>
-            <q-card-section>
-              <div id="form" class="q-mx-auto" style="width: 600px">
-                <q-form class="q-gutter-md">
-                    <q-input filled v-model="formpesan.Nama" label="Nama"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formpesan.Email" label="Email"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formpesan.Phone" label="Phone"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    <q-input filled v-model="formpesan.Message" label="Message"  lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']" />
-                    
-                    <!-- Button awal -->
-                    <div>
-                        <q-btn label="Update" type="button" color="blue" v-close-popup @click="update(form)" />
-                        <q-btn flat label="Cancel" color="black" v-close-popup="cancelEnabled" @click="batal()" />
-
-                    </div>
-                    <!-- Button akhir -->
-                </q-form>
-                  
-              </div>
-          </q-card-section>
-        </q-card>
-      </q-dialog>
+  
 
     </div> 
 </template>
 
 <script>
-import pesan from '../../api/message/index';
+import order from '../../api/payment/index';
 
 export default {
   data () {
     return {
-      messages: [{}],
+      orders: [{}],
           
-      formpesan:{
-        Name : '',
-        Email : '',
-        Phone : '',
-        Message : ''
+      formorder:{
+        id_customer : '',
+        id_barang : '',
+        Shipping : '',
+        Jumlah : '',
+        Total : '',
       },
       
-      dialog: false,
       cancelEnabled: false,
       
     }
@@ -126,9 +112,9 @@ export default {
 
   async mounted(){
     const response = await
-    pesan.getmessage(window)
+    order.getorder(window)
     {
-      this.messages = response
+      this.orders = response
     }
   },
 
@@ -136,14 +122,14 @@ export default {
     onDelete(id){
       if(confirm('Apakah anda yakin akan menghapus data ini ?'))
       {
-       pesan.deletemessage(window.id)
+      order.deleteorder(window.id)
               
        .then((res) => {
-          pesan.getmessage(window)
+          order.getorder(window)
          
           .then((res)=>{
             this.frombajus=res.data
-            this.$router.go('owner/message')
+            this.$router.go('owner/order')
           })
           .catch(()=>
           {
@@ -157,40 +143,25 @@ export default {
         console.log("delete called");
       }
     },
-    edit(message) {
+    edit(order) {
       try{
         this.dialog = true
         this.updateSubmit = true
-        this.formpesan.id = massage.id
-        this.formpesan.Name = massage.Name
-        this.formpesan.Email = massage.Email
-        this.formpesan.Phone = massage.Phone
-        this.formpesan.Message = massage.Message
+        this.formorder.id_customer = mesen.id_customer
+        this.formorder.id_barang = mesen.id_barang
+        this.formorder.Shipping = mesen.Shipping
+        this.formorder.Jumlah = mesen.Jumlah
+        this.formorder.Total = mesen.Total
       }
       catch (error)
       {
-        console.log(error.message)
+        console.log(error.order)
       }
     },    
 
     batal(){
       this.dialog = false
     },
-  
-  updated(id){
-    const self = this
-    apparel.updateBarangApparel(window,self.formpesan.id, self.formpesan.Name, 
-    self.formpesan.Email, self.formpesan.Phone, self.formpesan.Message)
-
-    .then(function(result)
-    {
-      self.$router.go('owner/message')
-    })
-    .catch(function(err)
-    {
-      console.log(err);
-      });
-    }
   }
  }
 </script>

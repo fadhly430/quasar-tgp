@@ -78,11 +78,23 @@
             
             <q-item clickable v-ripple @click="$router.replace('/owner/order')">
               <q-item-section avatar>
-                <q-icon size="30px" name="style" color="grey-3"/>
+                <q-icon size="30px" name="shop_two" color="grey-3"/>
               </q-item-section>
 
               <q-item-section>
                 <div class="text-white text-body1">Order</div>
+              </q-item-section>
+            </q-item>
+
+            <div class="column" style="height: 20px"/>
+            
+            <q-item clickable v-ripple @click="$router.replace('/owner/coupons')">
+              <q-item-section avatar>
+                <q-icon size="30px" name="style" color="grey-3"/>
+              </q-item-section>
+
+              <q-item-section>
+                <div class="text-white text-body1">coupons</div>
               </q-item-section>
             </q-item>
         </q-list>

@@ -157,7 +157,7 @@ export default {
         console.log("delete called");
       }
     },
-    edit(message) {
+    edit(massage) {
       try{
         this.dialog = true
         this.updateSubmit = true
