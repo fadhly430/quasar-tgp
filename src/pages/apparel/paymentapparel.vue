@@ -266,6 +266,19 @@ export default {
             
         },
 
+        Discont:function(){
+        if(this.form.diskon=='TGPROCECT'){
+           return parseInt(20000)
+       } else if(this.form.diskon=='DOA'){
+           return parseInt(50000)
+       }
+       else if(this.form.diskon=='BERUSAHA'){
+           return parseInt(25000)
+       } else {
+           return parseInt(0)
+       }
+    },
+
         total:function() { 
             return (this.subtotal + this.kurir) - this.dis            
         },

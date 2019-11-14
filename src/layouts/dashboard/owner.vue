@@ -115,17 +115,17 @@ export default {
       left: false
     }
   },
-async  mounted(){
-    let getRole = await localStorage.getItem('role');
-    if(getRole !='owner' || getRole ==='admin'){
-         this.$router.push('/admin/')
-      }
-     if(getRole !='owner' || getRole ==='customer'){
-         this.$router.push('/TGProject')
-      } else {
-        alert('anda login sebagai owner')
-      } 
-    } 
+// async  mounted(){
+//     let getRole = await localStorage.getItem('role');
+//     if(getRole !='owner' || getRole ==='admin'){
+//          this.$router.push('/admin/')
+//       }
+//      if(getRole !='owner' || getRole ==='customer'){
+//          this.$router.push('/TGProject')
+//       } else {
+//         alert('anda login sebagai owner')
+//       } 
+//     } 
 }
 </script>
 
