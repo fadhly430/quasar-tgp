@@ -51,7 +51,7 @@
                 <div class="col-1 q-gutter-xs"/>
                 <div class="col-2">
                   <q-card>
-              <q-img :src="images.ImgApparel"/>
+                   <q-img src="/statics/sepatu/s10.jpg"/>
                   </q-card>
                 </div>   
                 
@@ -60,13 +60,13 @@
                 <div class="col-1 q-gutter-sm"/>
 
                 <div class="col-3">
-                  <div class="text-center text-H12" > {{images.NamaApparel}} </div>
+                  <div class="text-center text-H12" > Nolan Full Coral </div>
                 </div>
 
                 <div class="col-1 q-gutter-md"/>
 
                 <div class="col-3">
-                  <div class="text-center text-H11" >Rp.{{images.HargaApparel}}</div>
+                  <div class="text-center text-H11" >Rp. 379000</div>
    
                 <div class="col-1 q-gutter-sm"/>
                  </div>

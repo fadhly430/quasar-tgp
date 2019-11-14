@@ -294,6 +294,7 @@ export default {
 
     beforeCreate(){
       let getId= localStorage.getItem('idbarang');
+      let getidcustomer = localStorage.getItem('id_customer');
       console.log(getId)
 
       let self=this;
@@ -305,6 +306,16 @@ export default {
       {
           console.log(err);
       });
+      
+    acc.getaccount(window,getidcustomer)
+      .then(function (result){
+          self.acco=result
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+
     },
 
     methods : {
@@ -313,7 +324,7 @@ export default {
             let getidbarang = localStorage.getItem('idbarang');
             let getidcustomer = localStorage.getItem('id_customer');
             
-            payment.postmessagedata(window, getidbarang,getidcustomer, self.FNama, self.LNama, 
+            payment.postmessagedata(window, self.images.KodeShoes, self.acco.firstName, self.FNama, self.LNama, 
             self.Alamat, self.Kecamatan, self.Kota, self.Negara,  self.Provinsi, self.Kodepos, 
             self.Tlp, self.form.Shipping , self.form.Jumlah, self.Total).then(function(result){
                 console.log(id_customer)

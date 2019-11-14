@@ -97,15 +97,7 @@ export default {
   data () {
     return {
       orders: [{}],
-          
-      formorder:{
-        id_customer : '',
-        id_barang : '',
-        Shipping : '',
-        Jumlah : '',
-        Total : '',
-      },
-      
+                
       cancelEnabled: false,
       
     }
