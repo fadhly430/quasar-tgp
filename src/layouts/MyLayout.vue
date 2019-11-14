@@ -232,21 +232,21 @@ export default {
       }
   },
 
-    // beforeCreate(){
-    //   let getId= localStorage.getItem('idbarang');
-    //   console.log(getId)
+    beforeCreate(){
+      let getId= localStorage.getItem('idbarang');
+      console.log(getId)
 
-    //   let self=this;
-    //   product.getbyidApparel(window,getId)
-    //   .then(function (result){
-    //       console.log(result);
-    //       self.images=result
-    //   })
-    //   .catch(function (err)
-    //   {
-    //       console.log(err);
-    //   });
-    // },
+      let self=this;
+      product.getbyidApparel(window,getId)
+      .then(function (result){
+          console.log(result);
+          self.images=result
+      })
+      .catch(function (err)
+      {
+          console.log(err);
+      });
+    },
 
   methods: {
         onSubmit(){
@@ -267,7 +267,7 @@ export default {
     return this.$router.push("/search")
     },
 
-    
+
       show(images){
           localStorage.setItem('idbarang',images.id)
           this.$router.push('/paymentapparel')
