@@ -46,6 +46,7 @@ module.exports = function(ctx) {
             components: [
                 'QImg',
                 'QTooltip'
+                
             ],
             directives: [],
 

@@ -42,8 +42,8 @@ export default
           return getApiNoAuth2()
             .get('formbajus')
             .then(function (response) {
-              console.log(response)
-              return response.data
+              console.log('date', response.data.sort((a, b) => new Date(b.createAt) - new Date(a.createAt)))
+              return response.data.sort((a, b) => new Date(b.createAt) - new Date(a.createAt))
             }).catch(function (err) {
               console.log(err)
             })

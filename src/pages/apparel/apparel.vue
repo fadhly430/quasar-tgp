@@ -92,6 +92,7 @@ export default {
           localStorage.setItem('idbarang',item.id)
           this.$router.push('/orderapparel')
       },
+      
       getBarangApparel(){
           let getSearch = localStorage.getItem('search')
           let self=this;

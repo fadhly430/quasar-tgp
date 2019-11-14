@@ -67,13 +67,20 @@
                   <div class="text-center text-H12" > Rp. 465000 </div>
                 </div>
 
-                <div class="col-1 q-gutter-lg"/>
+                <div class="col-1 q-gutter-sm"/>
 
-                <div class="col-2">
+                <div class="col-1">
                   <q-btn class="gt-xs" size="12px" flat dense round icon="delete"/>
                 </div>
               </div>
+              <div class="column" style="height:20px"/>
+              <div class="row justify-center">
+                <div class="col-10">
+                  <q-btn push color="primary" label="Beli Sekarang" class="full-width" icon="card_giftcard" />
+                </div>
+              </div>
               <div class="column" style="height:15px"/>
+
              </q-list>
           </q-menu>
        </q-item>

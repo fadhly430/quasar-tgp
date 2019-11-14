@@ -32,6 +32,7 @@
       <div class="column" style="height: 30px"/> <!-- jarak --->
   
     <div class="q-gutter-md row justify-center">
+      
         <div class="col-3 ">
           <q-card>
           <q-img src="./statics/KUSKO1.jpg" style="width: 100%" @click="$router.replace('/sepatu')"/>
@@ -44,10 +45,10 @@
           </q-card>
         </div>
       
-        <div class="col-xs-1 q-col-gutter-x-xl" @click="$router.replace('/wallet')"/>
+        <div class="col-xs-1 q-col-gutter-x-xl" />
         <div class="col-3 ">
           <q-card>
-          <q-img src="./statics/SAKA2.jpg" style="width: 100%"/>
+          <q-img src="./statics/SAKA2.jpg" style="width: 100%"@click="$router.replace('/wallet')"/>
           </q-card>
         </div>
     </div>
