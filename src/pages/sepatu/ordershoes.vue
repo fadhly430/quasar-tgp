@@ -25,7 +25,7 @@
                 
                 <q-btn outline color="primary" label="Masukan Keranjang" class="full-width" />
                 <div style="height: 20px"/>
-                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" @click="show(item)"/>
+                <q-btn style="background: #283b39; color: white" label="Beli Sekarang" class="full-width" @click="show(images)"/>
 
             </div> 
         </div>
@@ -70,9 +70,9 @@ export default {
       });
     },
     methods:{
-      show(item){
-          localStorage.setItem('idorder',item.id)
-          this.$router.push('/payment')
+      show(images){
+          localStorage.setItem('idbarang',images.id)
+          this.$router.push('/paymentshoes')
         }
     }
 }
